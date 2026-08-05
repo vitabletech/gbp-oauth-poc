@@ -1,0 +1,50 @@
+{
+  "name": "gbp-oauth-poc",
+  "version": "1.0.0",
+  "description": "Node.js Express application for Google Business Profile API OAuth 2.0 authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "update-locations": "node scripts/UpdateLocation/update-locations.js",
+    "update-locations:dry": "node scripts/UpdateLocation/update-locations.js --dryRun=true",
+    "update-attributes": "node scripts/UpdateAttributes/update-attributes.js",
+    "update-attributes:dry": "node scripts/UpdateAttributes/update-attributes.js --dryRun=true",
+    "update-service-items": "node scripts/UpdateServiceItems/update-service-items.js",
+    "update-service-items:dry": "node scripts/UpdateServiceItems/update-service-items.js --dryRun=true",
+    "upload-media": "node scripts/ManageMedia/upload-media.js",
+    "upload-media:dry": "node scripts/ManageMedia/upload-media.js --dryRun=true",
+    "get-media": "node scripts/ManageMedia/get-media.js",
+    "update-media": "node scripts/ManageMedia/update-media.js",
+    "update-media:dry": "node scripts/ManageMedia/update-media.js --dryRun=true",
+    "delete-media": "node scripts/ManageMedia/delete-media.js",
+    "delete-media:dry": "node scripts/ManageMedia/delete-media.js --dryRun=true",
+    "create-posts": "node scripts/ManagePosts/create-post.js",
+    "create-posts:dry": "node scripts/ManagePosts/create-post.js --dryRun=true",
+    "fetch-posts": "node scripts/ManagePosts/fetch-posts.js",
+    "update-post": "node scripts/ManagePosts/update-post.js",
+    "update-post:dry": "node scripts/ManagePosts/update-post.js --dryRun=true",
+    "delete-posts": "node scripts/ManagePosts/delete-post.js",
+    "delete-posts:dry": "node scripts/ManagePosts/delete-post.js --dryRun=true",
+    "check-verification": "node scripts/CheckVerification/check-verification.js",
+    "fetch-locations": "node scripts/FetchLocation/fetch-locations.js"
+  },
+  "keywords": [
+    "google",
+    "oauth",
+    "business-profile",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitabletech/gbp-sdk": "^1.1.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

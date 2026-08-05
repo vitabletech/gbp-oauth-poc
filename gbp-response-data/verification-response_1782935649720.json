@@ -1,0 +1,22 @@
+{
+  "error": "UNKNOWN_ERROR",
+  "message": "Location is not eligible for the EMAIL method.",
+  "details": {
+    "error": {
+      "code": 400,
+      "message": "Location is not eligible for the EMAIL method.",
+      "status": "FAILED_PRECONDITION",
+      "details": [
+        {
+          "@type": "type.googleapis.com/google.rpc.Help",
+          "links": [
+            {
+              "description": "Google Business Profile API prerequisites guide",
+              "url": "https://developers.google.com/my-business/content/prereqs"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

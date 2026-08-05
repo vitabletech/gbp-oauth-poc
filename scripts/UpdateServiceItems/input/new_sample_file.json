@@ -1,0 +1,196 @@
+{
+    "accounts/108740322282899811056": {
+        "locations/17226809384255296002": [
+            {
+                "freeFormServiceItem": {
+                    "category": "categories/gcid:car_repair",
+                    "label": {
+                        "displayName": "Custom Bike Polish & Wash",
+                        "description": "Complete exterior foam wash and high-gloss ceramic polish."
+                    }
+                },
+                "price": {
+                    "currencyCode": "INR",
+                    "units": "499",
+                    "nanos": 0
+                }
+            },
+            {
+                "freeFormServiceItem": {
+                    "category": "categories/gcid:motorcycle_repair_shop",
+                    "label": {
+                        "displayName": "Emergency Breakdown Doorstep Repair",
+                        "description": "24/7 on-road assistance and doorstep bike repair."
+                    }
+                },
+                "price": {
+                    "currencyCode": "INR",
+                    "units": "299",
+                    "nanos": 0
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:air_and_cabin_filter",
+                    "description": "Air & cabin filter replacement"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:battery",
+                    "description": "Battery check and replacement"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:body_and_trim",
+                    "description": "Body & Trim repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:brake_service_and_repair",
+                    "description": "Brake service & repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:brakes",
+                    "description": "Brake inspection and replacement"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:car_air_conditioning",
+                    "description": "Air conditioning service and gas refill"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:car_electrical",
+                    "description": "Car electrical diagnostics and wiring"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:check_engine_light_diagnostic",
+                    "description": "Auto engine diagnostic"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:electrical_repair",
+                    "description": "Electrical repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:exhaust",
+                    "description": "Exhaust repair and replacement"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:oil_change",
+                    "description": "Engine oil change"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:steering_suspension",
+                    "description": "Steering & suspension repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:tires",
+                    "description": "Tire replacement and rotation"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:transmission",
+                    "description": "Transmission service"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:transmission_repair",
+                    "description": "Transmission repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:wheel_alignment",
+                    "description": "Wheel alignment & balancing"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:air_conditioning",
+                    "description": "A/C services"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:auto_detailing",
+                    "description": "Auto detailing"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:carburetor_cleaning",
+                    "description": "Carburetor cleaning"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:cooling_system_repair",
+                    "description": "Cooling System Repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:engine_repair",
+                    "description": "Engine repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:general_inspection",
+                    "description": "General inspection"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:major_service",
+                    "description": "Major service"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:minor_service",
+                    "description": "Minor service"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:pre_purchase_inspection",
+                    "description": "Pre-purchase inspection"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:rear_shocks",
+                    "description": "Rear Shocks repair"
+                }
+            },
+            {
+                "structuredServiceItem": {
+                    "serviceTypeId": "job_type_id:scooters",
+                    "description": "Scooter repair & maintenance"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,550 @@
+{
+    "attributeMetadata": [
+        {
+            "parent": "attributes/is_owned_by_women",
+            "valueType": "BOOL",
+            "displayName": "Identifies as women-owned",
+            "groupDisplayName": "From the business",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Identifies as women-owned"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_onsite_services",
+            "valueType": "BOOL",
+            "displayName": "Onsite services",
+            "groupDisplayName": "Service options",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Onsite services"
+                },
+                {
+                    "value": false,
+                    "displayName": "Onsite services not available"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_assisted_listening_devices",
+            "valueType": "BOOL",
+            "displayName": "Assisted listening devices",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Assisted listening devices"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_hearing_loop",
+            "valueType": "BOOL",
+            "displayName": "Assistive hearing loop",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Assistive hearing loop"
+                },
+                {
+                    "value": false,
+                    "displayName": " Does not have assistive hearing loop"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_wheelchair_accessible_entrance",
+            "valueType": "BOOL",
+            "displayName": "Wheelchair accessible entrance",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Wheelchair accessible entrance"
+                },
+                {
+                    "value": false,
+                    "displayName": "No wheelchair accessible entrance"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_wheelchair_accessible_parking",
+            "valueType": "BOOL",
+            "displayName": "Wheelchair accessible parking lot",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Wheelchair accessible parking lot"
+                },
+                {
+                    "value": false,
+                    "displayName": "No wheelchair accessible parking lot"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_wheelchair_accessible_restroom",
+            "valueType": "BOOL",
+            "displayName": "Wheelchair accessible restroom",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Wheelchair accessible restroom"
+                },
+                {
+                    "value": false,
+                    "displayName": "No wheelchair accessible restroom"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_wheelchair_accessible_seating",
+            "valueType": "BOOL",
+            "displayName": "Wheelchair accessible seating",
+            "groupDisplayName": "Accessibility",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Wheelchair accessible seating"
+                },
+                {
+                    "value": false,
+                    "displayName": "No wheelchair accessible seating"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_car_wash",
+            "valueType": "BOOL",
+            "displayName": "Car wash",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Car wash"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/offers_compressed_natural_gas",
+            "valueType": "BOOL",
+            "displayName": "CNG",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "CNG"
+                },
+                {
+                    "value": false,
+                    "displayName": "Does not offer compressed natural gas"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/sells_gas_diesel",
+            "valueType": "BOOL",
+            "displayName": "Diesel gas",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Diesel gas"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/sells_gas_ethanol_free",
+            "valueType": "BOOL",
+            "displayName": "Ethanol-free gas",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Ethanol-free gas"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_free_air",
+            "valueType": "BOOL",
+            "displayName": "Free air",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Free air"
+                }
+            ],
+            "deprecated": true
+        },
+        {
+            "parent": "attributes/has_full_service_gas",
+            "valueType": "BOOL",
+            "displayName": "Full service gas",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Full service gas"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/offers_liquefied_petroleum_gas",
+            "valueType": "BOOL",
+            "displayName": "LPG",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "LPG"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_oil_change",
+            "valueType": "BOOL",
+            "displayName": "Oil change",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Oil change"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/offers_pollution_under_control_certification",
+            "valueType": "BOOL",
+            "displayName": "PUC Certification",
+            "groupDisplayName": "Offerings",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "PUC Certification"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_car_vacuum",
+            "valueType": "BOOL",
+            "displayName": "Car vacuum",
+            "groupDisplayName": "Amenities",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Car vacuum"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_onsite_convenience_store",
+            "valueType": "BOOL",
+            "displayName": "Convenience store",
+            "groupDisplayName": "Amenities",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Convenience store"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_restroom_unisex",
+            "valueType": "BOOL",
+            "displayName": "Gender-neutral restroom",
+            "groupDisplayName": "Amenities",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Gender-neutral restroom"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_restroom",
+            "valueType": "BOOL",
+            "displayName": "Restroom",
+            "groupDisplayName": "Amenities",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Restroom"
+                },
+                {
+                    "value": false,
+                    "displayName": "No restroom"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/welcomes_lgbtq",
+            "valueType": "BOOL",
+            "displayName": "LGBTQ+ friendly",
+            "groupDisplayName": "Crowd",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "LGBTQ+ friendly"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/requires_cash_only",
+            "valueType": "BOOL",
+            "displayName": "Cash-only",
+            "groupDisplayName": "Payments",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Cash-only"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/pay_credit_card",
+            "valueType": "BOOL",
+            "displayName": "Credit cards",
+            "groupDisplayName": "Payments",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Credit cards"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/pay_credit_card_types_accepted",
+            "valueType": "REPEATED_ENUM",
+            "displayName": "Credit cards",
+            "groupDisplayName": "Payments",
+            "repeatable": true,
+            "valueMetadata": [
+                {
+                    "value": "american_express",
+                    "displayName": "American Express"
+                },
+                {
+                    "value": "china_union_pay",
+                    "displayName": "China Union Pay"
+                },
+                {
+                    "value": "diners_club",
+                    "displayName": "Diners Club"
+                },
+                {
+                    "value": "discover",
+                    "displayName": "Discover"
+                },
+                {
+                    "value": "jcb",
+                    "displayName": "JCB"
+                },
+                {
+                    "value": "mastercard",
+                    "displayName": "MasterCard"
+                },
+                {
+                    "value": "visa",
+                    "displayName": "VISA"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/pay_debit_card",
+            "valueType": "BOOL",
+            "displayName": "Debit cards",
+            "groupDisplayName": "Payments",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Debit cards"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/pay_mobile_tez",
+            "valueType": "BOOL",
+            "displayName": "Google Pay",
+            "groupDisplayName": "Payments",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Google Pay"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/pay_mobile_nfc",
+            "valueType": "BOOL",
+            "displayName": "NFC mobile payments",
+            "groupDisplayName": "Payments",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "NFC mobile payments"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_garage_free",
+            "valueType": "BOOL",
+            "displayName": "Free parking garage",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Free parking garage"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_lot_free",
+            "valueType": "BOOL",
+            "displayName": "Free parking lot",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Free parking lot"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_street_free",
+            "valueType": "BOOL",
+            "displayName": "Free street parking",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Free street parking"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_onsite_parking",
+            "valueType": "BOOL",
+            "displayName": "On-site parking",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "On-site parking"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_garage_paid",
+            "valueType": "BOOL",
+            "displayName": "Paid parking garage",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Paid parking garage"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_lot_paid",
+            "valueType": "BOOL",
+            "displayName": "Paid parking lot",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Paid parking lot"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/has_parking_street_paid",
+            "valueType": "BOOL",
+            "displayName": "Paid street parking",
+            "groupDisplayName": "Parking",
+            "valueMetadata": [
+                {
+                    "value": true,
+                    "displayName": "Paid street parking"
+                }
+            ]
+        },
+        {
+            "parent": "attributes/url_facebook",
+            "valueType": "URL",
+            "displayName": "Facebook",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_instagram",
+            "valueType": "URL",
+            "displayName": "Instagram",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_linkedin",
+            "valueType": "URL",
+            "displayName": "Linkedin",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_pinterest",
+            "valueType": "URL",
+            "displayName": "Pinterest",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_text_messaging",
+            "valueType": "URL",
+            "displayName": "Texting number",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_whatsapp",
+            "valueType": "URL",
+            "displayName": "WhatsApp",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_twitter",
+            "valueType": "URL",
+            "displayName": "X (Twitter)",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/url_youtube",
+            "valueType": "URL",
+            "displayName": "Youtube",
+            "groupDisplayName": "Place page URLs"
+        },
+        {
+            "parent": "attributes/preferred_messaging_service",
+            "valueType": "ENUM",
+            "displayName": "Primary chat",
+            "groupDisplayName": "Place page attributes",
+            "valueMetadata": [
+                {
+                    "value": "rcs_for_business",
+                    "displayName": "RCS for Business"
+                },
+                {
+                    "value": "text_messaging",
+                    "displayName": "Text message"
+                },
+                {
+                    "value": "whatsapp",
+                    "displayName": "WhatsApp"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+  "accounts/108679175144070620594": {
+    "locations/14395317695646119136": [
+      {
+        "languageCode": "en-US",
+        "summary": "🚀 Exciting News! Bharat Petroleum launches ultra-fast EV Charging & Speed-100 fuel at our Connaught Place station. Stop by today for premium service!",
+        "topicType": "STANDARD",
+        "callToAction": {
+          "actionType": "LEARN_MORE",
+          "url": "https://www.bharatpetroleum.in"
+        },
+        "media": [
+          {
+            "mediaFormat": "PHOTO",
+            "sourceUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200"
+          }
+        ]
+      },
+      {
+        "languageCode": "en-US",
+        "summary": "🎉 Join us for the Annual Clean Fuel & Green Energy Awareness Drive at Connaught Place!",
+        "topicType": "EVENT",
+        "event": {
+          "title": "Clean Energy & EV Workshop 2026",
+          "schedule": {
+            "startDate": { "year": 2026, "month": 12, "day": 15 },
+            "startTime": { "hours": 10, "minutes": 0 },
+            "endDate": { "year": 2026, "month": 12, "day": 15 },
+            "endTime": { "hours": 17, "minutes": 0 }
+          }
+        },
+        "callToAction": {
+          "actionType": "BOOK",
+          "url": "https://www.bharatpetroleum.in/events/clean-energy-2026"
+        }
+      },
+      {
+        "languageCode": "en-US",
+        "summary": "🏷️ Get 10% instant cashback on Speed-100 high-octane fuel when paying via UPI or BPCL SmartCard!",
+        "topicType": "OFFER",
+        "event": {
+          "title": "Special Holiday Fuel Discount Offer",
+          "schedule": {
+            "startDate": { "year": 2026, "month": 12, "day": 1 },
+            "endDate": { "year": 2026, "month": 12, "day": 31 }
+          }
+        },
+        "offer": {
+          "couponCode": "BPCLSPEED10",
+          "redeemOnlineUrl": "https://www.bharatpetroleum.in/offers",
+          "termsConditions": "Valid on purchases of Rs. 1000 and above at participating stations."
+        },
+        "callToAction": {
+          "actionType": "BUY",
+          "url": "https://www.bharatpetroleum.in/offers"
+        }
+      }
+    ]
+  },
+  "accounts/115610166337061724230": {
+    "locations/5176685157983782583": [
+      {
+        "languageCode": "en-US",
+        "summary": "🙏 Special Tuesday Hanuman Chalisa Path & Evening Aarti at Shri Shri Siddh Talwaar Wale Hanuman Ji Maharaj Temple. All devotees are cordially invited.",
+        "topicType": "STANDARD",
+        "callToAction": {
+          "actionType": "LEARN_MORE",
+          "url": "https://www.temple.org"
+        }
+      }
+    ]
+  }
+}

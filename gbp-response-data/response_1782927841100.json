@@ -1,0 +1,126 @@
+{
+  "success": true,
+  "data": {
+    "accounts": [
+      {
+        "name": "accounts/101402422991166582712",
+        "accountName": "Gourav Kotwani",
+        "type": "PERSONAL",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED"
+      },
+      {
+        "name": "accounts/102111251055725412876",
+        "accountName": "API TESTING",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102662808040751860646",
+        "accountName": "a",
+        "type": "USER_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/108116902945918655890",
+        "accountName": "BeCafe",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5845283535",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/112951413727436106504",
+        "accountName": "Bharat Petroleum Corporation Limited",
+        "type": "ORGANIZATION",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5840774211",
+        "permissionLevel": "OWNER_LEVEL",
+        "organizationInfo": {
+          "registeredDomain": "bharatpetroleum.in",
+          "address": {
+            "regionCode": "IN",
+            "languageCode": "en",
+            "postalCode": "400001",
+            "administrativeArea": "Maharashtra",
+            "locality": "Mumbai",
+            "addressLines": [
+              "Bharat Bhavan, 4 and 6 Currimbhoy Road, Ballard Estate,"
+            ]
+          },
+          "phoneNumber": "+91 97693 55121"
+        }
+      },
+      {
+        "name": "accounts/109676089364067506411",
+        "accountName": "Imported",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5349755619",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/109648898959773800181",
+        "accountName": "LIVE RO",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/117032719856501105081",
+        "accountName": "LPG Retailers",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/100370794103850001614",
+        "accountName": "MAK Garages",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5705942611",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/100991872879195615141",
+        "accountName": "Petrol Pumps",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5815121711",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/107337062975349122772",
+        "accountName": "Test Video",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5308633285",
+        "permissionLevel": "OWNER_LEVEL"
+      }
+    ]
+  },
+  "accountCount": 11,
+  "nextEndpoint": "/locations - Get locations for the first account"
+}

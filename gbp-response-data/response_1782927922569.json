@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "account": {
+    "name": "accounts/102111251055725412876",
+    "accountId": "102111251055725412876"
+  },
+  "data": {
+    "locations": [
+      {
+        "name": "locations/5306572885782887525",
+        "storeCode": "101875",
+        "title": "Bharat Petroleum Corporation ltd",
+        "phoneNumbers": {
+          "primaryPhone": "1800 22 4344"
+        },
+        "websiteUri": "https://www.hellobpcl.in/rolocator/petrol-pumps/bharat-petroleum-petrol-pump-dashmesh-automobiles-mumbai-suburban-mumbai-101875",
+        "regularHours": {
+          "periods": [
+            {
+              "openDay": "SUNDAY",
+              "openTime": {},
+              "closeDay": "SUNDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "MONDAY",
+              "openTime": {},
+              "closeDay": "MONDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "TUESDAY",
+              "openTime": {},
+              "closeDay": "TUESDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "WEDNESDAY",
+              "openTime": {},
+              "closeDay": "WEDNESDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "THURSDAY",
+              "openTime": {},
+              "closeDay": "THURSDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "FRIDAY",
+              "openTime": {},
+              "closeDay": "FRIDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            },
+            {
+              "openDay": "SATURDAY",
+              "openTime": {},
+              "closeDay": "SATURDAY",
+              "closeTime": {
+                "hours": 24
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "hasMore": false
+  },
+  "locationCount": 1,
+  "query": {
+    "accountId": "102111251055725412876"
+  },
+  "nextEndpoint": "/reviews?accountId={accountId}&locationId={locationId} - Get reviews for a specific location"
+}

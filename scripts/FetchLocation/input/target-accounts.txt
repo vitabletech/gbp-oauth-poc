@@ -1,0 +1,8 @@
+# Google Business Profile Target Accounts List
+# Add one account ID per line (with or without 'accounts/' prefix)
+accounts/108679175144070620594
+accounts/113919555233990198349
+accounts/103000636145638436311
+accounts/106493004290888924785
+accounts/110204030925921019708
+accounts/115610166337061724230

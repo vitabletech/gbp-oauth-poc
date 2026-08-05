@@ -1,0 +1,304 @@
+{
+  "success": true,
+  "data": {
+    "categories": [
+      {
+        "name": "categories/gcid:garage_builder",
+        "displayName": "Garage builder",
+        "serviceTypes": [
+          {
+            "serviceTypeId": "job_type_id:assemble_furniture",
+            "displayName": "Furniture assembly"
+          },
+          {
+            "serviceTypeId": "job_type_id:clean_gutters",
+            "displayName": "Gutter cleaning"
+          },
+          {
+            "serviceTypeId": "job_type_id:handyman_remodeling",
+            "displayName": "Remodeling"
+          },
+          {
+            "serviceTypeId": "job_type_id:install_drywall",
+            "displayName": "Drywall installation"
+          },
+          {
+            "serviceTypeId": "job_type_id:install_fan",
+            "displayName": "Fan installation"
+          },
+          {
+            "serviceTypeId": "job_type_id:install_flooring",
+            "displayName": "Install flooring"
+          },
+          {
+            "serviceTypeId": "job_type_id:install_tile_work",
+            "displayName": "Tile work installation"
+          },
+          {
+            "serviceTypeId": "job_type_id:install_water_fixtures",
+            "displayName": "Plumbing fixture installation"
+          },
+          {
+            "serviceTypeId": "job_type_id:mount_tv",
+            "displayName": "TV mounting"
+          },
+          {
+            "serviceTypeId": "job_type_id:paint_indoors",
+            "displayName": "Paint indoors"
+          },
+          {
+            "serviceTypeId": "job_type_id:paint_outdoors",
+            "displayName": "Exterior painting"
+          },
+          {
+            "serviceTypeId": "job_type_id:repair_drywall",
+            "displayName": "Drywall repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:repair_fan",
+            "displayName": "Fan repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:repair_flooring",
+            "displayName": "Repair flooring"
+          },
+          {
+            "serviceTypeId": "job_type_id:repair_water_fixtures",
+            "displayName": "Repair water fixtures"
+          },
+          {
+            "serviceTypeId": "job_type_id:replace_tile_work",
+            "displayName": "Tile work replacement"
+          }
+        ],
+        "moreHoursTypes": [
+          {
+            "hoursTypeId": "ACCESS",
+            "displayName": "Access",
+            "localizedDisplayName": "Access"
+          },
+          {
+            "hoursTypeId": "BREAKFAST",
+            "displayName": "Breakfast",
+            "localizedDisplayName": "Breakfast"
+          },
+          {
+            "hoursTypeId": "BRUNCH",
+            "displayName": "Brunch",
+            "localizedDisplayName": "Brunch"
+          },
+          {
+            "hoursTypeId": "DELIVERY",
+            "displayName": "Delivery",
+            "localizedDisplayName": "Delivery"
+          },
+          {
+            "hoursTypeId": "DINNER",
+            "displayName": "Dinner",
+            "localizedDisplayName": "Dinner"
+          },
+          {
+            "hoursTypeId": "DRIVE_THROUGH",
+            "displayName": "Drive through",
+            "localizedDisplayName": "Drive through"
+          },
+          {
+            "hoursTypeId": "HAPPY_HOUR",
+            "displayName": "Happy hours",
+            "localizedDisplayName": "Happy hours"
+          },
+          {
+            "hoursTypeId": "KITCHEN",
+            "displayName": "Kitchen",
+            "localizedDisplayName": "Kitchen"
+          },
+          {
+            "hoursTypeId": "LUNCH",
+            "displayName": "Lunch",
+            "localizedDisplayName": "Lunch"
+          },
+          {
+            "hoursTypeId": "ONLINE_SERVICE_HOURS",
+            "displayName": "Online service hours",
+            "localizedDisplayName": "Online service hours"
+          },
+          {
+            "hoursTypeId": "PICKUP",
+            "displayName": "Pickup",
+            "localizedDisplayName": "Pickup"
+          },
+          {
+            "hoursTypeId": "TAKEOUT",
+            "displayName": "Takeout",
+            "localizedDisplayName": "Takeout"
+          },
+          {
+            "hoursTypeId": "SENIOR_HOURS",
+            "displayName": "Senior hours",
+            "localizedDisplayName": "Senior hours"
+          }
+        ]
+      },
+      {
+        "name": "categories/gcid:garage_door_supplier",
+        "displayName": "Garage door supplier",
+        "serviceTypes": [
+          {
+            "serviceTypeId": "job_type_id:customer_support",
+            "displayName": "Customer support"
+          },
+          {
+            "serviceTypeId": "job_type_id:garage_door_consultation",
+            "displayName": "Garage door consultation"
+          },
+          {
+            "serviceTypeId": "job_type_id:garage_door_design",
+            "displayName": "Garage door design"
+          },
+          {
+            "serviceTypeId": "job_type_id:general_repairs_and_installation",
+            "displayName": "General repairs & installation"
+          }
+        ],
+        "moreHoursTypes": [
+          {
+            "hoursTypeId": "ACCESS",
+            "displayName": "Access",
+            "localizedDisplayName": "Access"
+          },
+          {
+            "hoursTypeId": "BREAKFAST",
+            "displayName": "Breakfast",
+            "localizedDisplayName": "Breakfast"
+          },
+          {
+            "hoursTypeId": "BRUNCH",
+            "displayName": "Brunch",
+            "localizedDisplayName": "Brunch"
+          },
+          {
+            "hoursTypeId": "DELIVERY",
+            "displayName": "Delivery",
+            "localizedDisplayName": "Delivery"
+          },
+          {
+            "hoursTypeId": "DINNER",
+            "displayName": "Dinner",
+            "localizedDisplayName": "Dinner"
+          },
+          {
+            "hoursTypeId": "DRIVE_THROUGH",
+            "displayName": "Drive through",
+            "localizedDisplayName": "Drive through"
+          },
+          {
+            "hoursTypeId": "HAPPY_HOUR",
+            "displayName": "Happy hours",
+            "localizedDisplayName": "Happy hours"
+          },
+          {
+            "hoursTypeId": "KITCHEN",
+            "displayName": "Kitchen",
+            "localizedDisplayName": "Kitchen"
+          },
+          {
+            "hoursTypeId": "LUNCH",
+            "displayName": "Lunch",
+            "localizedDisplayName": "Lunch"
+          },
+          {
+            "hoursTypeId": "ONLINE_SERVICE_HOURS",
+            "displayName": "Online service hours",
+            "localizedDisplayName": "Online service hours"
+          },
+          {
+            "hoursTypeId": "PICKUP",
+            "displayName": "Pickup",
+            "localizedDisplayName": "Pickup"
+          },
+          {
+            "hoursTypeId": "TAKEOUT",
+            "displayName": "Takeout",
+            "localizedDisplayName": "Takeout"
+          },
+          {
+            "hoursTypeId": "SENIOR_HOURS",
+            "displayName": "Senior hours",
+            "localizedDisplayName": "Senior hours"
+          }
+        ]
+      },
+      {
+        "name": "categories/gcid:parking_garage",
+        "displayName": "Garage",
+        "moreHoursTypes": [
+          {
+            "hoursTypeId": "ACCESS",
+            "displayName": "Access",
+            "localizedDisplayName": "Access"
+          },
+          {
+            "hoursTypeId": "BREAKFAST",
+            "displayName": "Breakfast",
+            "localizedDisplayName": "Breakfast"
+          },
+          {
+            "hoursTypeId": "BRUNCH",
+            "displayName": "Brunch",
+            "localizedDisplayName": "Brunch"
+          },
+          {
+            "hoursTypeId": "DELIVERY",
+            "displayName": "Delivery",
+            "localizedDisplayName": "Delivery"
+          },
+          {
+            "hoursTypeId": "DINNER",
+            "displayName": "Dinner",
+            "localizedDisplayName": "Dinner"
+          },
+          {
+            "hoursTypeId": "DRIVE_THROUGH",
+            "displayName": "Drive through",
+            "localizedDisplayName": "Drive through"
+          },
+          {
+            "hoursTypeId": "HAPPY_HOUR",
+            "displayName": "Happy hours",
+            "localizedDisplayName": "Happy hours"
+          },
+          {
+            "hoursTypeId": "KITCHEN",
+            "displayName": "Kitchen",
+            "localizedDisplayName": "Kitchen"
+          },
+          {
+            "hoursTypeId": "LUNCH",
+            "displayName": "Lunch",
+            "localizedDisplayName": "Lunch"
+          },
+          {
+            "hoursTypeId": "ONLINE_SERVICE_HOURS",
+            "displayName": "Online service hours",
+            "localizedDisplayName": "Online service hours"
+          },
+          {
+            "hoursTypeId": "PICKUP",
+            "displayName": "Pickup",
+            "localizedDisplayName": "Pickup"
+          },
+          {
+            "hoursTypeId": "TAKEOUT",
+            "displayName": "Takeout",
+            "localizedDisplayName": "Takeout"
+          },
+          {
+            "hoursTypeId": "SENIOR_HOURS",
+            "displayName": "Senior hours",
+            "localizedDisplayName": "Senior hours"
+          }
+        ]
+      }
+    ]
+  }
+}

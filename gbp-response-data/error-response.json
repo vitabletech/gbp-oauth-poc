@@ -1,0 +1,26 @@
+{
+    "error": {
+        "code": 400,
+        "message": "Request contains an invalid argument.",
+        "status": "INVALID_ARGUMENT",
+        "details": [
+            {
+                "@type": "type.googleapis.com/google.rpc.BadRequest",
+                "fieldViolations": [
+                    {
+                        "field": "service_items[2].free_form_service_item.category",
+                        "description": "Provided free-form service item \"Student Cuts\" uses category \"gcid:hair_salon\" which is not in the list of categories for the stored location as a whole, which are [gcid:gas_station]. Either change the category of this free-form service item to match one in the location or add \"gcid:hair_salon\" to the location's categories field in the same request or a preceding request so that every category used for free-form service items also appears on the location as a whole."
+                    },
+                    {
+                        "field": "service_items[0].structured_service_item.service_type_id",
+                        "description": "Provided service type ID is not among those supported by the business's categories."
+                    },
+                    {
+                        "field": "service_items[1].structured_service_item.service_type_id",
+                        "description": "Provided service type ID is not among those supported by the business's categories."
+                    }
+                ]
+            }
+        ]
+    }
+}

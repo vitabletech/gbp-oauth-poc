@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Business Profile API OAuth</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+          Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 60px 40px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 40px;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .content {
+        margin-bottom: 35px;
+      }
+
+      .description {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .features {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .features h3 {
+        font-size: 12px;
+        color: #667eea;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .features ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .features li {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 6px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .features li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #667eea;
+        font-weight: bold;
+      }
+
+      .endpoints {
+        background: #f0f4ff;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-size: 12px;
+      }
+
+      .endpoints h3 {
+        color: #667eea;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .endpoints p {
+        color: #555;
+        margin-bottom: 6px;
+        font-family: 'Courier New', monospace;
+        background: white;
+        padding: 6px 8px;
+        border-radius: 3px;
+      }
+
+      .cta-button {
+        width: 100%;
+        padding: 14px 24px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
+
+      .cta-button:active {
+        transform: translateY(0);
+      }
+
+      .secondary-button {
+        width: 100%;
+        padding: 12px 24px;
+        background: white;
+        color: #667eea;
+        border: 2px solid #667eea;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .secondary-button:hover {
+        background: #f8f9fa;
+      }
+
+      .info-box {
+        background: #e8f4f8;
+        border-left: 4px solid #00a8cc;
+        padding: 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      .info-box strong {
+        color: #00a8cc;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        font-size: 12px;
+        color: #999;
+      }
+
+      .footer a {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">🔐</div>
+        <h1>Google Business Profile</h1>
+        <p class="subtitle">OAuth 2.0 Authentication</p>
+      </div>
+
+      <div class="content">
+        <p class="description">
+          This application demonstrates OAuth 2.0 authentication flow with the Google Business
+          Profile API. Click the button below to securely log in with your Google account.
+        </p>
+
+        <div class="features">
+          <h3>Features</h3>
+          <ul>
+            <li>OAuth 2.0 Authorization Code Flow</li>
+            <li>Secure Token Management</li>
+            <li>Automatic Token Refresh</li>
+            <li>Business Account Management</li>
+          </ul>
+        </div>
+
+        <div class="endpoints">
+          <h3>API Endpoints</h3>
+          <p>/accounts - List business accounts</p>
+          <p>/locations - Get business locations</p>
+          <p>/reviews - Fetch customer reviews</p>
+        </div>
+
+        <button class="cta-button" onclick="loginWithGoogle()">
+          Login with Google Business Profile
+        </button>
+
+        <button class="secondary-button" onclick="checkAuthStatus()">
+          Check Authentication Status
+        </button>
+
+        <div class="info-box">
+          <strong>ℹ️ Note:</strong> Make sure you have configured the OAuth credentials in your .env
+          file with GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_REDIRECT_URI.
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          <a href="https://support.google.com/business/answer/1296911" target="_blank"
+            >Google Business Profile Help</a
+          >
+          |
+          <a href="https://developers.google.com/my-business/reference/rest" target="_blank"
+            >API Documentation</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function loginWithGoogle() {
+        console.log('Initiating Google OAuth login...');
+        window.location.href = '/auth/google';
+      }
+
+      async function checkAuthStatus() {
+        try {
+          const response = await fetch('/accounts');
+          const data = await response.json();
+
+          if (response.ok) {
+            alert('✓ You are authenticated!\n\nAccounts:\n' + JSON.stringify(data, null, 2));
+          } else {
+            alert('✗ Not authenticated.\n\n' + JSON.stringify(data, null, 2));
+          }
+        } catch (error) {
+          alert('Error checking authentication status:\n' + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>

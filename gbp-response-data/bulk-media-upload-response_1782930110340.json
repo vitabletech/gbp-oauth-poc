@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": [
+    {
+      "status": "failed",
+      "index": 0,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "success",
+      "data": {
+        "name": "accounts/102111251055725412876/locations/5306572885782887525/media/AF1QipOdJ2muDVjeqwc_3PQExg91notTjEBSjqoe6UGl",
+        "sourceUrl": "https://metahoscomevhbblb01.blob.core.windows.net/public-media/arb/hyperLocalImages/101875/1782655861864-e0aab5fb-563f-455b-aba7-6ef75d9ef079_PHOTO-2026-06-28-10-46-44.jpg",
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "EXTERIOR"
+        },
+        "googleUrl": "https://lh3.googleusercontent.com/1jN4BC5YAlO2SDvaGj9aDRxOQeHLRKvACiJ97HfbpImZdZMlOReB5P3iZBFv55QmfuGki804JTaZftOS",
+        "thumbnailUrl": "https://lh3.googleusercontent.com/p/AF1QipOdJ2muDVjeqwc_3PQExg91notTjEBSjqoe6UGl=s300",
+        "createTime": "2026-07-01T18:21:49Z",
+        "dimensions": {
+          "widthPixels": 1280,
+          "heightPixels": 960
+        }
+      }
+    }
+  ]
+}

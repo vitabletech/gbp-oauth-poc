@@ -1,0 +1,17 @@
+{
+  "accounts/108679175144070620594": {
+    "locations/14395317695646119136": [
+      {
+        "postId": "localPosts/1234567890123456789",
+        "updateMask": "summary,callToAction",
+        "data": {
+          "summary": "Updated post content! Stop by our Connaught Place station for 24/7 EV fast charging and Speed fuel.",
+          "callToAction": {
+            "actionType": "LEARN_MORE",
+            "url": "https://www.bharatpetroleum.in/updated"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": {
+    "name": "accounts/102111251055725412876/locations/5306572885782887525/media/profile",
+    "sourceUrl": "https://lh3.googleusercontent.com/a/ACg8ocLjP9ma8e0b2TPA_nnicbC0TDU3Gv4oodruQVV0is1CqSJNIgiJDSxTzLfMNVodzmmcSqAFlrdqwuq7Up9qyovXsEunymQ",
+    "mediaFormat": "PHOTO",
+    "locationAssociation": {
+      "category": "PROFILE"
+    },
+    "googleUrl": "https://lh3.googleusercontent.com/a/ACg8ocLjP9ma8e0b2TPA_nnicbC0TDU3Gv4oodruQVV0is1CqSJNIgiJDSxTzLfMNVodzmmcSqAFlrdqwuq7Up9qyovXsEunymQ",
+    "thumbnailUrl": "https://lh3.googleusercontent.com/a/ACg8ocLjP9ma8e0b2TPA_nnicbC0TDU3Gv4oodruQVV0is1CqSJNIgiJDSxTzLfMNVodzmmcSqAFlrdqwuq7Up9qyovXsEunymQ=s300",
+    "createTime": "1970-01-01T00:00:00Z",
+    "dimensions": {}
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "data": [
+    {
+      "status": "failed",
+      "index": 0,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "success",
+      "data": {
+        "name": "accounts/102111251055725412876/locations/5306572885782887525/media/profile",
+        "sourceUrl": "https://lh3.googleusercontent.com/a/ACg8ocJGaiIs-8_YFZX9X3EMUBpyvJCIXj2o7n5_H04zaC-cGNCwhx4vjTO_oKZN7lFFQt8RdLdhiZb5yQaTk-8ALAu6ecNuakI",
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "PROFILE"
+        },
+        "googleUrl": "https://lh3.googleusercontent.com/a/ACg8ocJGaiIs-8_YFZX9X3EMUBpyvJCIXj2o7n5_H04zaC-cGNCwhx4vjTO_oKZN7lFFQt8RdLdhiZb5yQaTk-8ALAu6ecNuakI",
+        "thumbnailUrl": "https://lh3.googleusercontent.com/a/ACg8ocJGaiIs-8_YFZX9X3EMUBpyvJCIXj2o7n5_H04zaC-cGNCwhx4vjTO_oKZN7lFFQt8RdLdhiZb5yQaTk-8ALAu6ecNuakI=s300",
+        "createTime": "1970-01-01T00:00:00Z",
+        "dimensions": {}
+      }
+    },
+    {
+      "status": "failed",
+      "index": 2,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "failed",
+      "index": 3,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "failed",
+      "index": 4,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "success",
+      "data": {
+        "name": "accounts/102111251055725412876/locations/5306572885782887525/media/AF1QipPF-UzpET0-gLJBv2u5soDdOrSzWwp2DdQ_gFfJ",
+        "sourceUrl": "https://www.bharatpetroleum.in/images/becafe-listing-05.jpg",
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "AT_WORK"
+        },
+        "googleUrl": "https://lh3.googleusercontent.com/kSgvZjAlrxTNJntYp31h5kgiGENPxTGZrwl1_Xc0CpOZ8BuuvTT2nZ1ZQBDc4m28YSQ_4dnEuIkW1IuV",
+        "thumbnailUrl": "https://lh3.googleusercontent.com/p/AF1QipPF-UzpET0-gLJBv2u5soDdOrSzWwp2DdQ_gFfJ=s300",
+        "createTime": "2026-07-01T18:42:24Z",
+        "dimensions": {
+          "widthPixels": 900,
+          "heightPixels": 420
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "index": 6,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "failed",
+      "index": 7,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "failed",
+      "index": 8,
+      "error": "Request contains an invalid argument."
+    },
+    {
+      "status": "failed",
+      "index": 9,
+      "error": "Request contains an invalid argument."
+    }
+  ]
+}

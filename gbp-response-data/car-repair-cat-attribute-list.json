@@ -1,0 +1,77 @@
+[
+    {
+        "attributes/is_owned_by_women": "Identifies as women-owned"
+    },
+    {
+        "attributes/has_onsite_services": "Onsite services"
+    },
+    {
+        "attributes/has_assisted_listening_devices": "Assisted listening devices"
+    },
+    {
+        "attributes/has_hearing_loop": "Assistive hearing loop"
+    },
+    {
+        "attributes/has_wheelchair_accessible_entrance": "Wheelchair accessible entrance"
+    },
+    {
+        "attributes/has_wheelchair_accessible_parking": "Wheelchair accessible parking lot"
+    },
+    {
+        "attributes/has_wheelchair_accessible_restroom": "Wheelchair accessible restroom"
+    },
+    {
+        "attributes/has_wheelchair_accessible_seating": "Wheelchair accessible seating"
+    },
+    {
+        "attributes/has_oil_change": "Oil change"
+    },
+    {
+        "attributes/has_restroom_unisex": "Gender-neutral restroom"
+    },
+    {
+        "attributes/welcomes_lgbtq": "LGBTQ+ friendly"
+    },
+    {
+        "attributes/pay_credit_card": "Credit cards"
+    },
+    {
+        "attributes/pay_credit_card_types_accepted": "Credit cards"
+    },
+    {
+        "attributes/pay_debit_card": "Debit cards"
+    },
+    {
+        "attributes/pay_mobile_nfc": "NFC mobile payments"
+    },
+    {
+        "attributes/url_appointment": "Appointment links"
+    },
+    {
+        "attributes/url_facebook": "Facebook"
+    },
+    {
+        "attributes/url_instagram": "Instagram"
+    },
+    {
+        "attributes/url_linkedin": "Linkedin"
+    },
+    {
+        "attributes/url_pinterest": "Pinterest"
+    },
+    {
+        "attributes/url_text_messaging": "Texting number"
+    },
+    {
+        "attributes/url_whatsapp": "WhatsApp"
+    },
+    {
+        "attributes/url_twitter": "X (Twitter)"
+    },
+    {
+        "attributes/url_youtube": "Youtube"
+    },
+    {
+        "attributes/preferred_messaging_service": "Primary chat"
+    }
+]

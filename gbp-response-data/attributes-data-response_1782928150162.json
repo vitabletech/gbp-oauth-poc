@@ -1,0 +1,270 @@
+{
+  "success": true,
+  "data": {
+    "name": "locations/5306572885782887525/attributes",
+    "attributes": [
+      {
+        "name": "attributes/has_parking_lot_free",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/pay_credit_card",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/pay_debit_card",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/requires_cash_only",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/pay_mobile_nfc",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/sells_gas_diesel",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/offers_pollution_under_control_certification",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/offers_compressed_natural_gas",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/is_owned_by_women",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_onsite_services",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_assisted_listening_devices",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_hearing_loop",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_wheelchair_accessible_entrance",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_wheelchair_accessible_parking",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_wheelchair_accessible_restroom",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_wheelchair_accessible_seating",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/offers_liquefied_petroleum_gas",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_oil_change",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/sells_gas_ethanol_free",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_full_service_gas",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_car_vacuum",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_onsite_convenience_store",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_restroom_unisex",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/welcomes_lgbtq",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/pay_mobile_tez",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_onsite_parking",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_parking_garage_free",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_parking_garage_paid",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_parking_lot_paid",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_parking_street_free",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_parking_street_paid",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_restroom",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_car_wash",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/has_free_air",
+        "valueType": "BOOL",
+        "values": [
+          true
+        ]
+      },
+      {
+        "name": "attributes/url_whatsapp",
+        "valueType": "URL",
+        "uriValues": [
+          {
+            "uri": "https://wa.me/55555555"
+          }
+        ]
+      },
+      {
+        "name": "attributes/pay_credit_card_types_accepted",
+        "valueType": "REPEATED_ENUM",
+        "repeatedEnumValue": {
+          "setValues": [
+            "american_express",
+            "mastercard",
+            "visa",
+            "china_union_pay",
+            "diners_club",
+            "discover",
+            "jcb"
+          ]
+        }
+      }
+    ]
+  }
+}

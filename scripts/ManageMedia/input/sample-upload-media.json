@@ -1,0 +1,82 @@
+{
+  "accounts/108679175144070620594": {
+    "locations/14395317695646119136": [
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "COVER"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200",
+        "description": "Primary exterior cover photo showing the main building entrance."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "PROFILE"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800",
+        "description": "Official company logo profile avatar."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "EXTERIOR"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1527018601619-a508a2be00d6?w=1000",
+        "description": "Daytime exterior shot of the main storefront and signage."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "INTERIOR"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000",
+        "description": "Interior view of the classroom and computer laboratory."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "AT_WORK"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1000",
+        "description": "Instructor conducting interactive coding workshop."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "PRODUCT"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000",
+        "description": "Custom learning course kits and training materials."
+      },
+      {
+        "mediaFormat": "VIDEO",
+        "locationAssociation": {
+          "category": "ADDITIONAL"
+        },
+        "sourceUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        "description": "Video walkthrough tour of the facility."
+      }
+    ]
+  },
+  "accounts/115610166337061724230": {
+    "locations/5176685157983782583": [
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "COVER"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1545232979-fbfd42e20794?w=1200",
+        "description": "Front facade cover photo of the temple."
+      },
+      {
+        "mediaFormat": "PHOTO",
+        "locationAssociation": {
+          "category": "EXTERIOR"
+        },
+        "sourceUrl": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000",
+        "description": "Panoramic view of the temple complex."
+      }
+    ]
+  }
+}

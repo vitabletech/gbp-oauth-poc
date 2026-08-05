@@ -1,0 +1,107 @@
+{
+  "success": true,
+  "account": {
+    "name": "accounts/108740322282899811056",
+    "accountId": "108740322282899811056"
+  },
+  "data": {
+    "locations": [
+      {
+        "name": "locations/17352718289527565675",
+        "storeCode": "DLR0000206554",
+        "title": "Mak Serve - Dev Auto Centre",
+        "phoneNumbers": {
+          "primaryPhone": "097546 77070"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/13259709528151177238",
+        "storeCode": "DLR0000438969",
+        "title": "Mak Serve - Sri Laxmi Narasimha Swamy Bike Service Centre - Secbad",
+        "phoneNumbers": {
+          "primaryPhone": "096664 48624"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/4213252987576196330",
+        "storeCode": "DLR0000273174",
+        "title": "Mak Serve - Hindustan Motors",
+        "phoneNumbers": {
+          "primaryPhone": "088104 89032"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/14695748260834539835",
+        "storeCode": "DLR0000451058",
+        "title": "Mak Serve - Guru Nanak Auto Spare",
+        "phoneNumbers": {
+          "primaryPhone": "073474 09149"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/572587737033619121",
+        "storeCode": "DLR0000341401",
+        "title": "Mak Serve - Btrs Auto Service Tigri",
+        "phoneNumbers": {
+          "primaryPhone": "098110 00257"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/13200435770932760275",
+        "storeCode": "DLR0000209036",
+        "title": "Mak Serve - Babu Motors",
+        "phoneNumbers": {
+          "primaryPhone": "094316 59131"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/15055902728963530977",
+        "storeCode": "DLR0000189010",
+        "title": "Mak Serve - Chaman Auto Spares Bhiti",
+        "phoneNumbers": {
+          "primaryPhone": "094531 97372"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/5268750803703183297",
+        "storeCode": "DLR0000415907",
+        "title": "Mak Serve - Er Garagewala",
+        "phoneNumbers": {
+          "primaryPhone": "063541 92899"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/9457092370376037294",
+        "storeCode": "DLR0000289222",
+        "title": "Mak Serve - Raisooni Enterprises",
+        "phoneNumbers": {
+          "primaryPhone": "090316 50505"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      },
+      {
+        "name": "locations/5389261186770879299",
+        "storeCode": "DLR0000237696",
+        "title": "Mak Serve - Raj Auto Kuraj",
+        "phoneNumbers": {
+          "primaryPhone": "094609 42777"
+        },
+        "websiteUri": "https://www.bharatpetroleum.in/"
+      }
+    ],
+    "hasMore": true
+  },
+  "locationCount": 10,
+  "query": {
+    "accountId": "108740322282899811056"
+  },
+  "nextEndpoint": "/reviews?accountId={accountId}&locationId={locationId} - Get reviews for a specific location"
+}

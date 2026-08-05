@@ -1,0 +1,438 @@
+{
+  "success": true,
+  "data": {
+    "categories": {
+      "primaryCategory": {
+        "name": "categories/gcid:car_repair",
+        "displayName": "Vehicle Repair",
+        "serviceTypes": [
+          {
+            "serviceTypeId": "job_type_id:air_and_cabin_filter",
+            "displayName": "Air & cabin filter replacement"
+          },
+          {
+            "serviceTypeId": "job_type_id:battery",
+            "displayName": "Battery"
+          },
+          {
+            "serviceTypeId": "job_type_id:body_and_trim",
+            "displayName": "Body & Trim"
+          },
+          {
+            "serviceTypeId": "job_type_id:brake_service_and_repair",
+            "displayName": "Brake service & repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:brakes",
+            "displayName": "Brakes"
+          },
+          {
+            "serviceTypeId": "job_type_id:car_air_conditioning",
+            "displayName": "Air conditioning"
+          },
+          {
+            "serviceTypeId": "job_type_id:car_electrical",
+            "displayName": "Electrical"
+          },
+          {
+            "serviceTypeId": "job_type_id:check_engine_light_diagnostic",
+            "displayName": "Auto engine diagnostic"
+          },
+          {
+            "serviceTypeId": "job_type_id:electrical_repair",
+            "displayName": "Electrical repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:exhaust",
+            "displayName": "Exhaust"
+          },
+          {
+            "serviceTypeId": "job_type_id:oil_change",
+            "displayName": "Oil change"
+          },
+          {
+            "serviceTypeId": "job_type_id:steering_suspension",
+            "displayName": "Steering & suspension repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:tires",
+            "displayName": "Tires"
+          },
+          {
+            "serviceTypeId": "job_type_id:transmission",
+            "displayName": "Transmission"
+          },
+          {
+            "serviceTypeId": "job_type_id:transmission_repair",
+            "displayName": "Transmission repair"
+          },
+          {
+            "serviceTypeId": "job_type_id:wheel_alignment",
+            "displayName": "Wheel alignment"
+          }
+        ],
+      },
+      "additionalCategories": [
+        {
+          "name": "categories/gcid:repair_service",
+          "displayName": "Repair service",
+          "serviceTypes": [
+            {
+              "serviceTypeId": "job_type_id:air_conditioning",
+              "displayName": "A/C services"
+            },
+            {
+              "serviceTypeId": "job_type_id:installation",
+              "displayName": "Installation"
+            },
+            {
+              "serviceTypeId": "job_type_id:laptops",
+              "displayName": "Laptops"
+            },
+            {
+              "serviceTypeId": "job_type_id:repair_freezer",
+              "displayName": "Freezer repair"
+            }
+          ],
+          "moreHoursTypes": [
+            {
+              "hoursTypeId": "ACCESS",
+              "displayName": "Access",
+              "localizedDisplayName": "Access"
+            },
+            {
+              "hoursTypeId": "BREAKFAST",
+              "displayName": "Breakfast",
+              "localizedDisplayName": "Breakfast"
+            },
+            {
+              "hoursTypeId": "BRUNCH",
+              "displayName": "Brunch",
+              "localizedDisplayName": "Brunch"
+            },
+            {
+              "hoursTypeId": "DELIVERY",
+              "displayName": "Delivery",
+              "localizedDisplayName": "Delivery"
+            },
+            {
+              "hoursTypeId": "DINNER",
+              "displayName": "Dinner",
+              "localizedDisplayName": "Dinner"
+            },
+            {
+              "hoursTypeId": "DRIVE_THROUGH",
+              "displayName": "Drive through",
+              "localizedDisplayName": "Drive through"
+            },
+            {
+              "hoursTypeId": "HAPPY_HOUR",
+              "displayName": "Happy hours",
+              "localizedDisplayName": "Happy hours"
+            },
+            {
+              "hoursTypeId": "KITCHEN",
+              "displayName": "Kitchen",
+              "localizedDisplayName": "Kitchen"
+            },
+            {
+              "hoursTypeId": "LUNCH",
+              "displayName": "Lunch",
+              "localizedDisplayName": "Lunch"
+            },
+            {
+              "hoursTypeId": "ONLINE_SERVICE_HOURS",
+              "displayName": "Online service hours",
+              "localizedDisplayName": "Online service hours"
+            },
+            {
+              "hoursTypeId": "PICKUP",
+              "displayName": "Pickup",
+              "localizedDisplayName": "Pickup"
+            },
+            {
+              "hoursTypeId": "TAKEOUT",
+              "displayName": "Takeout",
+              "localizedDisplayName": "Takeout"
+            },
+            {
+              "hoursTypeId": "SENIOR_HOURS",
+              "displayName": "Senior hours",
+              "localizedDisplayName": "Senior hours"
+            }
+          ]
+        },
+        {
+          "name": "categories/gcid:oil_change_service",
+          "displayName": "Oil change service",
+          "serviceTypes": [
+            {
+              "serviceTypeId": "job_type_id:air_and_cabin_filter",
+              "displayName": "Air & cabin filter replacement"
+            },
+            {
+              "serviceTypeId": "job_type_id:battery",
+              "displayName": "Battery"
+            },
+            {
+              "serviceTypeId": "job_type_id:body_and_trim",
+              "displayName": "Body & Trim"
+            },
+            {
+              "serviceTypeId": "job_type_id:brakes",
+              "displayName": "Brakes"
+            },
+            {
+              "serviceTypeId": "job_type_id:car_air_conditioning",
+              "displayName": "Air conditioning"
+            },
+            {
+              "serviceTypeId": "job_type_id:car_electrical",
+              "displayName": "Electrical"
+            },
+            {
+              "serviceTypeId": "job_type_id:check_engine_light_diagnostic",
+              "displayName": "Auto engine diagnostic"
+            },
+            {
+              "serviceTypeId": "job_type_id:exhaust",
+              "displayName": "Exhaust"
+            },
+            {
+              "serviceTypeId": "job_type_id:oil_change",
+              "displayName": "Oil change"
+            },
+            {
+              "serviceTypeId": "job_type_id:steering_suspension",
+              "displayName": "Steering & suspension repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:tires",
+              "displayName": "Tires"
+            },
+            {
+              "serviceTypeId": "job_type_id:transmission",
+              "displayName": "Transmission"
+            }
+          ],
+          "moreHoursTypes": [
+            {
+              "hoursTypeId": "ACCESS",
+              "displayName": "Access",
+              "localizedDisplayName": "Access"
+            },
+            {
+              "hoursTypeId": "BREAKFAST",
+              "displayName": "Breakfast",
+              "localizedDisplayName": "Breakfast"
+            },
+            {
+              "hoursTypeId": "BRUNCH",
+              "displayName": "Brunch",
+              "localizedDisplayName": "Brunch"
+            },
+            {
+              "hoursTypeId": "DELIVERY",
+              "displayName": "Delivery",
+              "localizedDisplayName": "Delivery"
+            },
+            {
+              "hoursTypeId": "DINNER",
+              "displayName": "Dinner",
+              "localizedDisplayName": "Dinner"
+            },
+            {
+              "hoursTypeId": "DRIVE_THROUGH",
+              "displayName": "Drive through",
+              "localizedDisplayName": "Drive through"
+            },
+            {
+              "hoursTypeId": "HAPPY_HOUR",
+              "displayName": "Happy hours",
+              "localizedDisplayName": "Happy hours"
+            },
+            {
+              "hoursTypeId": "KITCHEN",
+              "displayName": "Kitchen",
+              "localizedDisplayName": "Kitchen"
+            },
+            {
+              "hoursTypeId": "LUNCH",
+              "displayName": "Lunch",
+              "localizedDisplayName": "Lunch"
+            },
+            {
+              "hoursTypeId": "ONLINE_SERVICE_HOURS",
+              "displayName": "Online service hours",
+              "localizedDisplayName": "Online service hours"
+            },
+            {
+              "hoursTypeId": "PICKUP",
+              "displayName": "Pickup",
+              "localizedDisplayName": "Pickup"
+            },
+            {
+              "hoursTypeId": "TAKEOUT",
+              "displayName": "Takeout",
+              "localizedDisplayName": "Takeout"
+            },
+            {
+              "hoursTypeId": "SENIOR_HOURS",
+              "displayName": "Senior hours",
+              "localizedDisplayName": "Senior hours"
+            }
+          ]
+        },
+        {
+          "name": "categories/gcid:motorcycle_repair_shop",
+          "displayName": "Two Wheeler Repair Shop",
+          "serviceTypes": [
+            {
+              "serviceTypeId": "job_type_id:auto_detailing",
+              "displayName": "Auto detailing"
+            },
+            {
+              "serviceTypeId": "job_type_id:battery",
+              "displayName": "Battery"
+            },
+            {
+              "serviceTypeId": "job_type_id:brake_service_and_repair",
+              "displayName": "Brake service & repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:carburetor_cleaning",
+              "displayName": "Carburetor cleaning"
+            },
+            {
+              "serviceTypeId": "job_type_id:cooling_system_repair",
+              "displayName": "Cooling System Repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:delivery",
+              "displayName": "Delivery"
+            },
+            {
+              "serviceTypeId": "job_type_id:dynamometer",
+              "displayName": "Dynamometer"
+            },
+            {
+              "serviceTypeId": "job_type_id:electrical_repair",
+              "displayName": "Electrical repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:engine_repair",
+              "displayName": "Engine repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:general_inspection",
+              "displayName": "General inspection"
+            },
+            {
+              "serviceTypeId": "job_type_id:major_service",
+              "displayName": "Major service"
+            },
+            {
+              "serviceTypeId": "job_type_id:minor_service",
+              "displayName": "Minor service"
+            },
+            {
+              "serviceTypeId": "job_type_id:oil_change",
+              "displayName": "Oil change"
+            },
+            {
+              "serviceTypeId": "job_type_id:pre_purchase_inspection",
+              "displayName": "Pre-purchase inspection"
+            },
+            {
+              "serviceTypeId": "job_type_id:rear_shocks",
+              "displayName": "Rear Shocks"
+            },
+            {
+              "serviceTypeId": "job_type_id:scooters",
+              "displayName": "Scooters"
+            },
+            {
+              "serviceTypeId": "job_type_id:steering_suspension",
+              "displayName": "Steering & suspension repair"
+            },
+            {
+              "serviceTypeId": "job_type_id:tires",
+              "displayName": "Tires"
+            },
+            {
+              "serviceTypeId": "job_type_id:wheel_alignment",
+              "displayName": "Wheel alignment"
+            }
+          ],
+          "moreHoursTypes": [
+            {
+              "hoursTypeId": "ACCESS",
+              "displayName": "Access",
+              "localizedDisplayName": "Access"
+            },
+            {
+              "hoursTypeId": "BREAKFAST",
+              "displayName": "Breakfast",
+              "localizedDisplayName": "Breakfast"
+            },
+            {
+              "hoursTypeId": "BRUNCH",
+              "displayName": "Brunch",
+              "localizedDisplayName": "Brunch"
+            },
+            {
+              "hoursTypeId": "DELIVERY",
+              "displayName": "Delivery",
+              "localizedDisplayName": "Delivery"
+            },
+            {
+              "hoursTypeId": "DINNER",
+              "displayName": "Dinner",
+              "localizedDisplayName": "Dinner"
+            },
+            {
+              "hoursTypeId": "DRIVE_THROUGH",
+              "displayName": "Drive through",
+              "localizedDisplayName": "Drive through"
+            },
+            {
+              "hoursTypeId": "HAPPY_HOUR",
+              "displayName": "Happy hours",
+              "localizedDisplayName": "Happy hours"
+            },
+            {
+              "hoursTypeId": "KITCHEN",
+              "displayName": "Kitchen",
+              "localizedDisplayName": "Kitchen"
+            },
+            {
+              "hoursTypeId": "LUNCH",
+              "displayName": "Lunch",
+              "localizedDisplayName": "Lunch"
+            },
+            {
+              "hoursTypeId": "ONLINE_SERVICE_HOURS",
+              "displayName": "Online service hours",
+              "localizedDisplayName": "Online service hours"
+            },
+            {
+              "hoursTypeId": "PICKUP",
+              "displayName": "Pickup",
+              "localizedDisplayName": "Pickup"
+            },
+            {
+              "hoursTypeId": "TAKEOUT",
+              "displayName": "Takeout",
+              "localizedDisplayName": "Takeout"
+            },
+            {
+              "hoursTypeId": "SENIOR_HOURS",
+              "displayName": "Senior hours",
+              "localizedDisplayName": "Senior hours"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

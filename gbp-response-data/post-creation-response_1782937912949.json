@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "name": "accounts/102111251055725412876/locations/5306572885782887525/localPosts/8749014929093557640",
+    "languageCode": "en",
+    "summary": "Special offer today!",
+    "callToAction": {
+      "actionType": "LEARN_MORE",
+      "url": "https://www.bharatpetroleum.in/index"
+    },
+    "state": "PROCESSING",
+    "updateTime": "2026-07-01T20:31:52.720786Z",
+    "createTime": "2026-07-01T20:31:52.720786Z",
+    "searchUrl": "https://local.google.com/place?id=10779619878714639399&use=posts&lpsid=CIHM0ogKEOyVp6CWpMXAXA",
+    "media": [
+      {
+        "name": "accounts/102111251055725412876/locations/5306572885782887525/media/localPosts/AF1QipM1fbtUbOzdYx_n70sHCYqY1JcGnNdDGBnTDJOU",
+        "mediaFormat": "PHOTO",
+        "googleUrl": "https://lh3.googleusercontent.com/p/AF1QipM1fbtUbOzdYx_n70sHCYqY1JcGnNdDGBnTDJOU"
+      }
+    ],
+    "topicType": "STANDARD"
+  }
+}

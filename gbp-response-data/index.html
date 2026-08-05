@@ -1,0 +1,194 @@
+<script>
+    const data = {
+        "name": "locations/{{PLACE_ID}}/attributes",
+        "attributes": [
+            {
+                "name": "attributes/is_owned_by_women",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_onsite_services",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_assisted_listening_devices",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_hearing_loop",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_wheelchair_accessible_entrance",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_wheelchair_accessible_parking",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_wheelchair_accessible_restroom",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_wheelchair_accessible_seating",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_car_wash",
+                "values": [true]
+            },
+            {
+                "name": "attributes/offers_compressed_natural_gas",
+                "values": [true]
+            },
+            {
+                "name": "attributes/sells_gas_diesel",
+                "values": [true]
+            },
+            {
+                "name": "attributes/sells_gas_ethanol_free",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_full_service_gas",
+                "values": [true]
+            },
+            {
+                "name": "attributes/offers_liquefied_petroleum_gas",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_oil_change",
+                "values": [true]
+            },
+            {
+                "name": "attributes/offers_pollution_under_control_certification",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_car_vacuum",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_onsite_convenience_store",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_restroom_unisex",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_restroom",
+                "values": [true]
+            },
+            {
+                "name": "attributes/welcomes_lgbtq",
+                "values": [true]
+            },
+            {
+                "name": "attributes/requires_cash_only",
+                "values": [false]
+            },
+            {
+                "name": "attributes/pay_credit_card",
+                "values": [true]
+            },
+            {
+                "name": "attributes/pay_credit_card_types_accepted",
+                "values": [
+                    "american_express",
+                    "china_union_pay",
+                    "diners_club",
+                    "discover",
+                    "jcb",
+                    "mastercard",
+                    "visa"
+                ]
+            },
+            {
+                "name": "attributes/pay_debit_card",
+                "values": [true]
+            },
+            {
+                "name": "attributes/pay_mobile_tez",
+                "values": [true]
+            },
+            {
+                "name": "attributes/pay_mobile_nfc",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_parking_garage_free",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_parking_lot_free",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_parking_street_free",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_onsite_parking",
+                "values": [true]
+            },
+            {
+                "name": "attributes/has_parking_garage_paid",
+                "values": [false]
+            },
+            {
+                "name": "attributes/has_parking_lot_paid",
+                "values": [false]
+            },
+            {
+                "name": "attributes/has_parking_street_paid",
+                "values": [false]
+            },
+            {
+                "name": "attributes/url_facebook",
+                "values": ["https://www.facebook.com/bplc"]
+            },
+            {
+                "name": "attributes/url_instagram",
+                "values": ["https://www.instagram.com/bplc"]
+            },
+            {
+                "name": "attributes/url_linkedin",
+                "values": ["https://www.linkedin.com/company/bplc"]
+            },
+            {
+                "name": "attributes/url_pinterest",
+                "values": ["https://www.pinterest.com/bplc"]
+            },
+            {
+                "name": "attributes/url_text_messaging",
+                "values": ["sms:+917000636149"]
+            },
+            {
+                "name": "attributes/url_whatsapp",
+                "values": ["https://wa.me/917000636149"]
+            },
+            {
+                "name": "attributes/url_twitter",
+                "values": ["https://x.com/bplc"]
+            },
+            {
+                "name": "attributes/url_youtube",
+                "values": ["https://www.youtube.com/@msrajawat298"]
+            },
+            {
+                "name": "attributes/preferred_messaging_service",
+                "values": ["whatsapp"]
+            }
+        ]
+    };
+
+    const getAttributenames = (data) => {
+        const arr = [];
+        data['attributes'].map((data) => arr.push(data.name));
+        return arr.join(',');
+    };
+    console.log(getAttributenames(data));
+</script>

@@ -1,0 +1,224 @@
+{
+  "accounts/101234567890123456789": {
+    "locations/109876543210987654321": {
+      "title": "BPCL Energy Station - Connaught Place",
+      "languageCode": "en-US",
+      "storefrontAddress": {
+        "regionCode": "IN",
+        "languageCode": "en-US",
+        "postalCode": "110001",
+        "administrativeArea": "DL",
+        "locality": "New Delhi",
+        "sublocality": "Connaught Place",
+        "addressLines": [
+          "Block A, Inner Circle",
+          "Near Metro Station Gate 2"
+        ]
+      },
+      "phoneNumbers": {
+        "primaryPhone": "+911123456789",
+        "additionalPhones": [
+          "+911123456790"
+        ]
+      },
+      "websiteUri": "https://www.bharatpetroleum.in/cp-station",
+      "regularHours": {
+        "periods": [
+          {
+            "openDay": "MONDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "MONDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "TUESDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "TUESDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "WEDNESDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "WEDNESDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "THURSDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "THURSDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "FRIDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "FRIDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "SATURDAY",
+            "openTime": { "hours": 6, "minutes": 0 },
+            "closeDay": "SATURDAY",
+            "closeTime": { "hours": 23, "minutes": 0 }
+          },
+          {
+            "openDay": "SUNDAY",
+            "openTime": { "hours": 7, "minutes": 0 },
+            "closeDay": "SUNDAY",
+            "closeTime": { "hours": 22, "minutes": 0 }
+          }
+        ]
+      },
+      "specialHours": {
+        "specialHourPeriods": [
+          {
+            "startDate": { "year": 2026, "month": 12, "day": 25 },
+            "openTime": { "hours": 8, "minutes": 0 },
+            "endDate": { "year": 2026, "month": 12, "day": 25 },
+            "closeTime": { "hours": 18, "minutes": 0 },
+            "closed": false
+          },
+          {
+            "startDate": { "year": 2027, "month": 1, "day": 1 },
+            "closed": true
+          }
+        ]
+      },
+      "categories": {
+        "primaryCategory": {
+          "name": "categories/gcid:gas_station",
+          "displayName": "Gas Station"
+        },
+        "additionalCategories": [
+          {
+            "name": "categories/gcid:convenience_store",
+            "displayName": "Convenience Store"
+          },
+          {
+            "name": "categories/gcid:ev_charging_station",
+            "displayName": "EV Charging Station"
+          }
+        ]
+      },
+      "serviceArea": {
+        "businessType": "CUSTOMERS_AND_BUSINESS_LOCATION",
+        "places": {
+          "placeInfos": [
+            {
+              "name": "places/ChIJu46S-ZZwDDkRviylwvaNDnI",
+              "placeId": "ChIJu46S-ZZwDDkRviylwvaNDnI"
+            }
+          ]
+        }
+      },
+      "labels": [
+        "BPCL",
+        "Speed-Petrol",
+        "EV-Fast-Charger",
+        "24x7-ATM"
+      ],
+      "adWordsLocationExtensions": {
+        "adPhone": "+911123456789"
+      },
+      "latlng": {
+        "latitude": 28.6315,
+        "longitude": 77.2167
+      },
+      "openInfo": {
+        "status": "OPEN",
+        "openingDate": { "year": 2018, "month": 5, "day": 10 }
+      },
+      "profile": {
+        "description": "Bharat Petroleum Energy Station offering high-performance Speed petrol, premium diesel, EV fast charging, nitrogen air, and in-store snacks."
+      }
+    },
+    "locations/109876543210987654322": {
+      "title": "BPCL Express Station - Bandra West",
+      "languageCode": "en-US",
+      "storefrontAddress": {
+        "regionCode": "IN",
+        "languageCode": "en-US",
+        "postalCode": "400050",
+        "administrativeArea": "MH",
+        "locality": "Mumbai",
+        "sublocality": "Bandra West",
+        "addressLines": [
+          "Hill Road",
+          "Opposite St. Andrews Church"
+        ]
+      },
+      "phoneNumbers": {
+        "primaryPhone": "+912226451122"
+      },
+      "websiteUri": "https://www.bharatpetroleum.in/bandra-west",
+      "regularHours": {
+        "periods": [
+          {
+            "openDay": "MONDAY",
+            "openTime": { "hours": 0, "minutes": 0 },
+            "closeDay": "MONDAY",
+            "closeTime": { "hours": 24, "minutes": 0 }
+          }
+        ]
+      },
+      "labels": [
+        "BPCL",
+        "Bandra",
+        "Auto-LPG"
+      ],
+      "profile": {
+        "description": "Round-the-clock Bharat Petroleum station located in the heart of Bandra West."
+      }
+    }
+  },
+  "accounts/101234567890123456790": {
+    "locations/109876543210987654323": {
+      "title": "BPCL Fuel & Care - MG Road Bengaluru",
+      "languageCode": "en-US",
+      "storefrontAddress": {
+        "regionCode": "IN",
+        "languageCode": "en-US",
+        "postalCode": "560001",
+        "administrativeArea": "KA",
+        "locality": "Bengaluru",
+        "sublocality": "MG Road",
+        "addressLines": [
+          "45 MG Road",
+          "Near Trinity Circle"
+        ]
+      },
+      "phoneNumbers": {
+        "primaryPhone": "+918025598877"
+      },
+      "websiteUri": "https://www.bharatpetroleum.in/mg-road-bengaluru",
+      "regularHours": {
+        "periods": [
+          {
+            "openDay": "MONDAY",
+            "openTime": { "hours": 7, "minutes": 0 },
+            "closeDay": "MONDAY",
+            "closeTime": { "hours": 22, "minutes": 0 }
+          }
+        ]
+      },
+      "specialHours": {
+        "specialHourPeriods": [
+          {
+            "startDate": { "year": 2026, "month": 11, "day": 1 },
+            "openTime": { "hours": 9, "minutes": 0 },
+            "endDate": { "year": 2026, "month": 11, "day": 1 },
+            "closeTime": { "hours": 15, "minutes": 0 },
+            "closed": false
+          }
+        ]
+      },
+      "labels": [
+        "BPCL",
+        "Bengaluru",
+        "Speed-100"
+      ],
+      "profile": {
+        "description": "Premium BPCL outlet in Bengaluru offering Speed 100 high-octane fuel and modern car wash facilities."
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "success": true,
+  "data": {
+    "name": "locations/5306572885782887525",
+    "languageCode": "en",
+    "storeCode": "101875",
+    "title": "UPDATED: Bharat Petroleum Corporation ltd",
+    "phoneNumbers": {
+      "primaryPhone": "1800 22 4344"
+    },
+    "categories": {
+      "primaryCategory": {
+        "name": "categories/gcid:gas_station",
+        "displayName": "Petrol Pump",
+        "serviceTypes": [
+          {
+            "serviceTypeId": "job_type_id:car_wash",
+            "displayName": "Car wash"
+          },
+          {
+            "serviceTypeId": "job_type_id:car_window_cleaning",
+            "displayName": "Car window cleaning"
+          },
+          {
+            "serviceTypeId": "job_type_id:fuel_delivery",
+            "displayName": "Fuel delivery"
+          },
+          {
+            "serviceTypeId": "job_type_id:gas_fill_service",
+            "displayName": "Gas fill service"
+          },
+          {
+            "serviceTypeId": "job_type_id:general_repairs_and_maintenance",
+            "displayName": "General repairs & maintenance"
+          },
+          {
+            "serviceTypeId": "job_type_id:oil_change",
+            "displayName": "Oil change"
+          },
+          {
+            "serviceTypeId": "job_type_id:tire_air_pump",
+            "displayName": "Tire air pump"
+          },
+          {
+            "serviceTypeId": "job_type_id:vehicle_fluids_refilling",
+            "displayName": "Vehicle fluids refilling"
+          }
+        ],
+        "moreHoursTypes": [
+          {
+            "hoursTypeId": "ACCESS",
+            "displayName": "Access",
+            "localizedDisplayName": "Access"
+          },
+          {
+            "hoursTypeId": "BREAKFAST",
+            "displayName": "Breakfast",
+            "localizedDisplayName": "Breakfast"
+          },
+          {
+            "hoursTypeId": "BRUNCH",
+            "displayName": "Brunch",
+            "localizedDisplayName": "Brunch"
+          },
+          {
+            "hoursTypeId": "DELIVERY",
+            "displayName": "Delivery",
+            "localizedDisplayName": "Delivery"
+          },
+          {
+            "hoursTypeId": "DINNER",
+            "displayName": "Dinner",
+            "localizedDisplayName": "Dinner"
+          },
+          {
+            "hoursTypeId": "DRIVE_THROUGH",
+            "displayName": "Drive through",
+            "localizedDisplayName": "Drive through"
+          },
+          {
+            "hoursTypeId": "HAPPY_HOUR",
+            "displayName": "Happy hours",
+            "localizedDisplayName": "Happy hours"
+          },
+          {
+            "hoursTypeId": "KITCHEN",
+            "displayName": "Kitchen",
+            "localizedDisplayName": "Kitchen"
+          },
+          {
+            "hoursTypeId": "LUNCH",
+            "displayName": "Lunch",
+            "localizedDisplayName": "Lunch"
+          },
+          {
+            "hoursTypeId": "ONLINE_SERVICE_HOURS",
+            "displayName": "Online service hours",
+            "localizedDisplayName": "Online service hours"
+          },
+          {
+            "hoursTypeId": "PICKUP",
+            "displayName": "Pickup",
+            "localizedDisplayName": "Pickup"
+          },
+          {
+            "hoursTypeId": "TAKEOUT",
+            "displayName": "Takeout",
+            "localizedDisplayName": "Takeout"
+          },
+          {
+            "hoursTypeId": "SENIOR_HOURS",
+            "displayName": "Senior hours",
+            "localizedDisplayName": "Senior hours"
+          }
+        ]
+      }
+    },
+    "storefrontAddress": {
+      "regionCode": "IN",
+      "languageCode": "en",
+      "postalCode": "400070",
+      "administrativeArea": "Maharashtra",
+      "locality": "MUMBAI",
+      "addressLines": [
+        "3VPP+256, Lal Bahadur Shastri Marg, Kamani, Bail Bajar, Saki Naka,"
+      ]
+    },
+    "websiteUri": "https://www.hellobpcl.in/rolocator/petrol-pumps/bharat-petroleum-petrol-pump-dashmesh-automobiles-mumbai-suburban-mumbai-101875",
+    "regularHours": {
+      "periods": [
+        {
+          "openDay": "SUNDAY",
+          "openTime": {},
+          "closeDay": "SUNDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "MONDAY",
+          "openTime": {},
+          "closeDay": "MONDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "TUESDAY",
+          "openTime": {},
+          "closeDay": "TUESDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "WEDNESDAY",
+          "openTime": {},
+          "closeDay": "WEDNESDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "THURSDAY",
+          "openTime": {},
+          "closeDay": "THURSDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "FRIDAY",
+          "openTime": {},
+          "closeDay": "FRIDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        },
+        {
+          "openDay": "SATURDAY",
+          "openTime": {},
+          "closeDay": "SATURDAY",
+          "closeTime": {
+            "hours": 24
+          }
+        }
+      ]
+    },
+    "latlng": {
+      "latitude": 19.08501,
+      "longitude": 72.88555
+    },
+    "openInfo": {
+      "status": "OPEN",
+      "canReopen": true
+    },
+    "metadata": {
+      "hasGoogleUpdated": true,
+      "hasPendingEdits": true,
+      "canDelete": true,
+      "canModifyServiceList": true,
+      "placeId": "ChIJOdMgF4jI5zsRJ4SGtCrnmJU",
+      "mapsUri": "https://maps.google.com/maps?cid=10779619878714639399",
+      "newReviewUri": "https://search.google.com/local/writereview?placeid=ChIJOdMgF4jI5zsRJ4SGtCrnmJU",
+      "hasVoiceOfMerchant": true
+    },
+    "profile": {
+      "description": "The BPCL outlet offers a full range of fueling options including Petrol Pump"
+    },
+    "relationshipData": {}
+  }
+}
