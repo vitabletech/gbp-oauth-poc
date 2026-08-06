@@ -43,6 +43,24 @@ node scripts/UpdateAttributes/update-attributes.js
 node scripts/UpdateAttributes/update-attributes.js --dataFile=./scripts/UpdateAttributes/input/my-custom-attributes.json
 ```
 
+### URL attribute input format
+
+Google Business Profile URL attributes must be supplied using `uriValues` (not
+`values`). The script preserves this structure in the API request and adds the
+required `locations/{locationId}/attributes` resource name automatically.
+
+```json
+{
+  "name": "attributes/url_facebook",
+  "uriValues": [
+    { "uri": "https://facebook.com/your-page" }
+  ]
+}
+```
+
+The script also accepts a string in `uriValues`, and normalizes a legacy
+`url` object property to `uri`. Do not include `values` for URL attributes.
+
 ---
 
 ## Supported Attributes Catalog (39 Attributes)

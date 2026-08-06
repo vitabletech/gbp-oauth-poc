@@ -100,17 +100,28 @@ async function main() {
       const formattedAttributesList = attributesList.map((item) => {
         const rawName = item.name || item.attribute || item.attributeId;
         const name = rawName ? (rawName.startsWith('attributes/') ? rawName : `attributes/${rawName}`) : undefined;
-        let values = item.values;
-        if (!values && item.uriValues && Array.isArray(item.uriValues)) {
-          values = item.uriValues.map((v) => (typeof v === 'string' ? v : v.uri));
+        const obj = { name };
+
+        // Google Business Profile URL attributes must use `uriValues`; URL
+        // values sent in `values` are accepted by the endpoint but ignored.
+        if (Array.isArray(item.uriValues)) {
+          obj.uriValues = item.uriValues.map((value) => {
+            const uri = typeof value === 'string' ? value : (value.uri || value.url);
+            if (!uri) {
+              throw new Error(`Missing URI value for attribute: ${name}`);
+            }
+            return { uri };
+          });
+        } else if (item.values !== undefined) {
+          obj.values = item.values;
         }
-        const obj = { name, valueType: item.valueType };
-        if (values !== undefined) obj.values = values;
+
         if (item.repeatedEnumValue !== undefined) obj.repeatedEnumValue = item.repeatedEnumValue;
         return obj;
       });
 
       const payloadData = {
+        name: `${locationName}/attributes`,
         attributes: formattedAttributesList,
       };
 
@@ -134,7 +145,7 @@ async function main() {
           locationName,
           status: 'SUCCESS',
           isDryRun: true,
-          attributeMask,
+          attributeMask: derivedMask,
           requestBody: payloadData,
           responseBody: { message: 'Dry run successful. No API call made.' },
           durationMs,
@@ -164,7 +175,7 @@ async function main() {
           accountName,
           locationName,
           status: 'SUCCESS',
-          attributeMask,
+          attributeMask: derivedMask,
           requestBody: payloadData,
           responseBody: responseData || { message: 'Attributes updated successfully' },
           durationMs,

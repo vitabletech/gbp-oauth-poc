@@ -3,168 +3,160 @@
     "locations/17226809384255296002": [
       {
         "name": "attributes/url_whatsapp",
-        "valueType": "URL",
-        "values": [
-          "https://wa.me/1800224344"
+        "uriValues": [
+          {
+            "uri": "https://wa.me/7000636149"
+          }
         ]
       },
       {
         "name": "attributes/url_facebook",
-        "valueType": "URL",
-        "values": [
-          "https://www.facebook.com/BharatPetroleumcorporation"
+        "uriValues": [
+          {
+            "uri": "https://www.facebook.com/BharatPetroleumcorporation"
+          }
         ]
       },
       {
         "name": "attributes/url_instagram",
-        "valueType": "URL",
-        "values": [
-          "https://www.instagram.com/BharatPetroleumcorporation"
+        "uriValues": [
+          {
+            "uri": "https://www.instagram.com/BharatPetroleumcorporation"
+          }
         ]
       },
       {
         "name": "attributes/url_linkedin",
-        "valueType": "URL",
-        "values": [
-          "https://www.linkedin.com/company/BharatPetroleumcorporation"
+        "uriValues": [
+          {
+            "uri": "https://www.linkedin.com/company/BharatPetroleumcorporation"
+          }
         ]
       },
       {
         "name": "attributes/url_twitter",
-        "valueType": "URL",
-        "values": [
-          "https://twitter.com/BharatPetroleumcorporation"
+        "uriValues": [
+          {
+            "uri": "https://twitter.com/BharatPetroleumcorporation"
+          }
         ]
       },
       {
         "name": "attributes/url_youtube",
-        "valueType": "URL",
-        "values": [
-          "https://www.youtube.com/@BharatPetroleumcorporation"
+        "uriValues": [
+          {
+            "uri": "https://www.youtube.com/@BharatPetroleumcorporation"
+          }
         ]
       },
       {
         "name": "attributes/has_assisted_listening_devices",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_wheelchair_accessible_entrance",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_wheelchair_accessible_parking",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_wheelchair_accessible_restroom",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_wheelchair_accessible_seating",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_hearing_loop",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_onsite_services",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_restroom_unisex",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/has_oil_change",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/pay_credit_card",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/pay_debit_card",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/pay_mobile_nfc",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/is_owned_by_women",
-        "valueType": "BOOL",
         "values": [
           false
         ]
       },
       {
         "name": "attributes/url_appointment",
-        "valueType": "URL",
-        "values": [
-          "https://api.whatsapp.com/send/?phone=916280671085"
+        "uriValues": [
+          {
+            "uri": "https://wa.me/1800224344"
+          }
         ]
       },
       {
         "name": "attributes/welcomes_lgbtq",
-        "valueType": "BOOL",
         "values": [
-          true
+          false
         ]
       },
       {
         "name": "attributes/preferred_messaging_service",
-        "valueType": "ENUM",
         "values": [
           "whatsapp"
         ]
       },
       {
         "name": "attributes/url_text_messaging",
-        "valueType": "URL",
-        "values": [
-          "tel:1800224344"
+        "uriValues": [
+          {
+            "uri": "tel:1800224344"
+          }
         ]
       },
       {
         "name": "attributes/pay_credit_card_types_accepted",
-        "valueType": "REPEATED_ENUM",
         "values": [
           "VISA",
           "MASTERCARD",
