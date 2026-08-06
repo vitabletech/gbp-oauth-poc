@@ -15,6 +15,20 @@
                     "nanos": 0
                 }
             },
+                        {
+                "freeFormServiceItem": {
+                    "category": "categories/gcid:oil_change_service",
+                    "label": {
+                        "displayName": "MYK Custom category",
+                        "description": "Complete exterior foam wash and high-gloss ceramic polish."
+                    }
+                },
+                "price": {
+                    "currencyCode": "INR",
+                    "units": "499",
+                    "nanos": 0
+                }
+            },
             {
                 "freeFormServiceItem": {
                     "category": "categories/gcid:motorcycle_repair_shop",
