@@ -1,0 +1,478 @@
+{
+  "status": "COMPLETED_WITH_ERRORS",
+  "startTime": "2026-08-06T12:09:36.238Z",
+  "endTime": "2026-08-06T12:09:37.354Z",
+  "durationMs": 1116,
+  "summaryStats": {
+    "totalAccounts": 1,
+    "totalLocations": 1,
+    "successCount": 0,
+    "failedCount": 1
+  },
+  "logDirectory": "C:\\Users\\makushwah\\Documents\\Projects\\GBP_POC\\log\\update-service-items-logs-20260806_173936",
+  "details": [
+    {
+      "accountName": "accounts/102111251055725412876",
+      "locationName": "locations/5306572885782887525",
+      "status": "FAILED",
+      "totalItems": 29,
+      "freeFormCount": 2,
+      "structuredCount": 27,
+      "requestBody": {
+        "serviceItems": [
+          {
+            "freeFormServiceItem": {
+              "category": "categories/gcid:car_repair",
+              "label": {
+                "displayName": "Custom Bike Polish & Wash",
+                "description": "Complete exterior foam wash and high-gloss ceramic polish."
+              }
+            },
+            "price": {
+              "currencyCode": "INR",
+              "units": "499",
+              "nanos": 0
+            }
+          },
+          {
+            "freeFormServiceItem": {
+              "category": "categories/gcid:motorcycle_repair_shop",
+              "label": {
+                "displayName": "Emergency Breakdown Doorstep Repair",
+                "description": "24/7 on-road assistance and doorstep bike repair."
+              }
+            },
+            "price": {
+              "currencyCode": "INR",
+              "units": "299",
+              "nanos": 0
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:air_and_cabin_filter",
+              "description": "Air & cabin filter replacement"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:battery",
+              "description": "Battery check and replacement"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:body_and_trim",
+              "description": "Body & Trim repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:brake_service_and_repair",
+              "description": "Brake service & repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:brakes",
+              "description": "Brake inspection and replacement"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:car_air_conditioning",
+              "description": "Air conditioning service and gas refill"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:car_electrical",
+              "description": "Car electrical diagnostics and wiring"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:check_engine_light_diagnostic",
+              "description": "Auto engine diagnostic"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:electrical_repair",
+              "description": "Electrical repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:exhaust",
+              "description": "Exhaust repair and replacement"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:oil_change",
+              "description": "Engine oil change"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:steering_suspension",
+              "description": "Steering & suspension repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:tires",
+              "description": "Tire replacement and rotation"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:transmission",
+              "description": "Transmission service"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:transmission_repair",
+              "description": "Transmission repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:wheel_alignment",
+              "description": "Wheel alignment & balancing"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:air_conditioning",
+              "description": "A/C services"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:auto_detailing",
+              "description": "Auto detailing"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:carburetor_cleaning",
+              "description": "Carburetor cleaning"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:cooling_system_repair",
+              "description": "Cooling System Repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:engine_repair",
+              "description": "Engine repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:general_inspection",
+              "description": "General inspection"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:major_service",
+              "description": "Major service"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:minor_service",
+              "description": "Minor service"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:pre_purchase_inspection",
+              "description": "Pre-purchase inspection"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:rear_shocks",
+              "description": "Rear Shocks repair"
+            }
+          },
+          {
+            "structuredServiceItem": {
+              "serviceTypeId": "job_type_id:scooters",
+              "description": "Scooter repair & maintenance"
+            }
+          }
+        ]
+      },
+      "responseBody": {
+        "error": {
+          "code": 400,
+          "message": "Request contains an invalid argument.",
+          "status": "INVALID_ARGUMENT",
+          "details": [
+            {
+              "@type": "type.googleapis.com/google.rpc.BadRequest",
+              "fieldViolations": [
+                {
+                  "field": "service_items[9].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[5].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[16].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[14].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[25].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[1].free_form_service_item.category",
+                  "description": "Provided free-form service item \"Emergency Breakdown Doorstep Repair\" uses category \"categories/gcid:motorcycle_repair_shop\" which is not in the list of categories for the stored location as a whole, which are [gcid:gas_station]. Either change the category of this free-form service item to match one in the location or add \"categories/gcid:motorcycle_repair_shop\" to the location's categories field in the same request or a preceding request so that every category used for free-form service items also appears on the location as a whole."
+                },
+                {
+                  "field": "service_items[22].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[10].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[21].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[7].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[11].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[20].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[26].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[17].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[19].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[27].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[6].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[28].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[8].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[0].free_form_service_item.category",
+                  "description": "Provided free-form service item \"Custom Bike Polish & Wash\" uses category \"categories/gcid:car_repair\" which is not in the list of categories for the stored location as a whole, which are [gcid:gas_station]. Either change the category of this free-form service item to match one in the location or add \"categories/gcid:car_repair\" to the location's categories field in the same request or a preceding request so that every category used for free-form service items also appears on the location as a whole."
+                },
+                {
+                  "field": "service_items[2].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[18].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[15].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[23].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[4].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[24].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[13].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                },
+                {
+                  "field": "service_items[3].structured_service_item.service_type_id",
+                  "description": "Provided service type ID is not among those supported by the business's categories."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "error": {
+        "message": "Request contains an invalid argument.",
+        "code": "INVALID_ARGUMENT",
+        "status": 400,
+        "url": "https://mybusinessbusinessinformation.googleapis.com/v1/locations/5306572885782887525?updateMask=serviceItems",
+        "method": "PATCH",
+        "responseBody": {
+          "error": {
+            "code": 400,
+            "message": "Request contains an invalid argument.",
+            "status": "INVALID_ARGUMENT",
+            "details": [
+              {
+                "@type": "type.googleapis.com/google.rpc.BadRequest",
+                "fieldViolations": [
+                  {
+                    "field": "service_items[9].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[5].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[16].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[14].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[25].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[1].free_form_service_item.category",
+                    "description": "Provided free-form service item \"Emergency Breakdown Doorstep Repair\" uses category \"categories/gcid:motorcycle_repair_shop\" which is not in the list of categories for the stored location as a whole, which are [gcid:gas_station]. Either change the category of this free-form service item to match one in the location or add \"categories/gcid:motorcycle_repair_shop\" to the location's categories field in the same request or a preceding request so that every category used for free-form service items also appears on the location as a whole."
+                  },
+                  {
+                    "field": "service_items[22].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[10].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[21].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[7].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[11].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[20].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[26].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[17].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[19].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[27].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[6].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[28].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[8].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[0].free_form_service_item.category",
+                    "description": "Provided free-form service item \"Custom Bike Polish & Wash\" uses category \"categories/gcid:car_repair\" which is not in the list of categories for the stored location as a whole, which are [gcid:gas_station]. Either change the category of this free-form service item to match one in the location or add \"categories/gcid:car_repair\" to the location's categories field in the same request or a preceding request so that every category used for free-form service items also appears on the location as a whole."
+                  },
+                  {
+                    "field": "service_items[2].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[18].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[15].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[23].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[4].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[24].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[13].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  },
+                  {
+                    "field": "service_items[3].structured_service_item.service_type_id",
+                    "description": "Provided service type ID is not among those supported by the business's categories."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "stack": "GBPApiError: Request contains an invalid argument.\n    at HttpClient.createError (C:\\Users\\makushwah\\Documents\\Projects\\GBP_POC\\node_modules\\@vitabletech\\gbp-sdk\\dist\\index.js:650:12)\n    at HttpClient.request (C:\\Users\\makushwah\\Documents\\Projects\\GBP_POC\\node_modules\\@vitabletech\\gbp-sdk\\dist\\index.js:586:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async main (C:\\Users\\makushwah\\Documents\\Projects\\GBP_POC\\scripts\\UpdateServiceItems\\update-service-items.js:138:30)"
+      },
+      "durationMs": 1112
+    }
+  ]
+}

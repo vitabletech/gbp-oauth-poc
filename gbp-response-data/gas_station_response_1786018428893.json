@@ -1,0 +1,254 @@
+{
+  "success": true,
+  "data": {
+    "categories": {
+      "primaryCategory": {
+        "name": "categories/gcid:gas_station",
+        "displayName": "Petrol Pump",
+        "serviceTypes": [
+          {
+            "serviceTypeId": "job_type_id:car_wash",
+            "displayName": "Car wash"
+          },
+          {
+            "serviceTypeId": "job_type_id:car_window_cleaning",
+            "displayName": "Car window cleaning"
+          },
+          {
+            "serviceTypeId": "job_type_id:fuel_delivery",
+            "displayName": "Fuel delivery"
+          },
+          {
+            "serviceTypeId": "job_type_id:gas_fill_service",
+            "displayName": "Gas fill service"
+          },
+          {
+            "serviceTypeId": "job_type_id:general_repairs_and_maintenance",
+            "displayName": "General repairs & maintenance"
+          },
+          {
+            "serviceTypeId": "job_type_id:oil_change",
+            "displayName": "Oil change"
+          },
+          {
+            "serviceTypeId": "job_type_id:tire_air_pump",
+            "displayName": "Tire air pump"
+          },
+          {
+            "serviceTypeId": "job_type_id:vehicle_fluids_refilling",
+            "displayName": "Vehicle fluids refilling"
+          }
+        ],
+        "moreHoursTypes": [
+          {
+            "hoursTypeId": "ACCESS",
+            "displayName": "Access",
+            "localizedDisplayName": "Access"
+          },
+          {
+            "hoursTypeId": "BREAKFAST",
+            "displayName": "Breakfast",
+            "localizedDisplayName": "Breakfast"
+          },
+          {
+            "hoursTypeId": "BRUNCH",
+            "displayName": "Brunch",
+            "localizedDisplayName": "Brunch"
+          },
+          {
+            "hoursTypeId": "DELIVERY",
+            "displayName": "Delivery",
+            "localizedDisplayName": "Delivery"
+          },
+          {
+            "hoursTypeId": "DINNER",
+            "displayName": "Dinner",
+            "localizedDisplayName": "Dinner"
+          },
+          {
+            "hoursTypeId": "DRIVE_THROUGH",
+            "displayName": "Drive through",
+            "localizedDisplayName": "Drive through"
+          },
+          {
+            "hoursTypeId": "HAPPY_HOUR",
+            "displayName": "Happy hours",
+            "localizedDisplayName": "Happy hours"
+          },
+          {
+            "hoursTypeId": "KITCHEN",
+            "displayName": "Kitchen",
+            "localizedDisplayName": "Kitchen"
+          },
+          {
+            "hoursTypeId": "LUNCH",
+            "displayName": "Lunch",
+            "localizedDisplayName": "Lunch"
+          },
+          {
+            "hoursTypeId": "ONLINE_SERVICE_HOURS",
+            "displayName": "Online service hours",
+            "localizedDisplayName": "Online service hours"
+          },
+          {
+            "hoursTypeId": "PICKUP",
+            "displayName": "Pickup",
+            "localizedDisplayName": "Pickup"
+          },
+          {
+            "hoursTypeId": "TAKEOUT",
+            "displayName": "Takeout",
+            "localizedDisplayName": "Takeout"
+          },
+          {
+            "hoursTypeId": "SENIOR_HOURS",
+            "displayName": "Senior hours",
+            "localizedDisplayName": "Senior hours"
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "canDelete": true,
+      "canModifyServiceList": true,
+      "placeId": "ChIJOdMgF4jI5zsRJ4SGtCrnmJU",
+      "mapsUri": "https://maps.google.com/maps?cid=10779619878714639399",
+      "newReviewUri": "https://search.google.com/local/writereview?placeid=ChIJOdMgF4jI5zsRJ4SGtCrnmJU",
+      "hasVoiceOfMerchant": true
+    },
+    "serviceItems": [
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "MAK Lubricants",
+            "description": "Genuine MAK lubricants and engine oils available for cars, bikes and commercial vehicles."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Smart Fleet Services",
+            "description": "Fuel and fleet management solutions available for commercial fleet customers."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Vehicle Insurance Assistance",
+            "description": "Assistance with vehicle insurance-related services where available."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "First Aid",
+            "description": "Basic first aid support is available for emergencies at the outlet."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Smart Drive Fuel",
+            "description": "Premium SmartDrive fuel designed for enhanced engine performance and efficiency."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Zip Fuel Diesel Delivery",
+            "description": "ZipFuel Diesel Delivery"
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Fuel Kart Diesel Delivery",
+            "description": "Get diesel delivered directly to your business location through BPCL FuelKart."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "MAK Quik Oil Change",
+            "description": "Quick engine oil change using genuine MAK lubricants by trained professionals."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Pure for Sure",
+            "description": "Experience BPCL's commitment to quality-assured fuel with Pure for Sure."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Calibrated Digital Air"
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Free Air"
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Free Drinking Water",
+            "description": "Free drinking water is available for customers visiting the outlet."
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Oil Change"
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Additional Amenities",
+            "description": "Vehicle Service Themes, PUC"
+          }
+        }
+      },
+      {
+        "freeFormServiceItem": {
+          "category": "categories/gcid:gas_station",
+          "label": {
+            "displayName": "Automotive Products",
+            "description": "EBMS"
+          }
+        }
+      }
+    ]
+  }
+}
