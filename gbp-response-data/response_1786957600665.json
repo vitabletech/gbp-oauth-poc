@@ -1,0 +1,406 @@
+{
+  "success": true,
+  "data": {
+    "accounts": [
+      {
+        "name": "accounts/116664408787547598054",
+        "accountName": "z_bpcl_digital z_bpcl_digital",
+        "type": "PERSONAL",
+        "verificationState": "UNVERIFIED",
+        "vettedState": "NOT_VETTED"
+      },
+      {
+        "name": "accounts/110409892422162956647",
+        "accountName": "All Duplicates",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5764282037",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105210602470187562771",
+        "accountName": "Andhra Pradesh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5306047800",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/101104395329132657746",
+        "accountName": "Arunachal Pradesh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5243714373",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105464262485928821262",
+        "accountName": "Assam",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5360011462",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102826283910134524548",
+        "accountName": "BeCafe",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5640512172",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/109809553240638462055",
+        "accountName": "Bihar",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5286242400",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/111497844493354432383",
+        "accountName": "Chandigarh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5666624379",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/106264102318828439282",
+        "accountName": "Chhattisgarh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5566159476",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/103165373787544490158",
+        "accountName": "Claimed",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5596844634",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/110601161071130910290",
+        "accountName": "Daman & Diu And Dadar And Nagar Haveli",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5252694446",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102314108067879283611",
+        "accountName": "Delhi",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5400677159",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/110797799152280442831",
+        "accountName": "Goa",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5128788696",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/100318663508302569351",
+        "accountName": "Gujarat",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5692688206",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/111019250954720118595",
+        "accountName": "Haryana",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5532173411",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/116622172178549430612",
+        "accountName": "Himachal Pradesh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5495621211",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/109676089364067506411",
+        "accountName": "Imported",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5349755619",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/115606378064132175275",
+        "accountName": "Jammu & Kashmir",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5881351621",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/101701966160532700109",
+        "accountName": "Jharkhand",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5976374385",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/118269685605255118580",
+        "accountName": "Karnataka",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5610729944",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105367192393629764463",
+        "accountName": "Kerala",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5202905636",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102826150544816955558",
+        "accountName": "Ladakh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5895202038",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/106163074717411130044",
+        "accountName": "LPG All Dealers",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5983573019",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/103309210760144792059",
+        "accountName": "Madhya Pradesh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5284452891",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/118210967573159466952",
+        "accountName": "Maharastra",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5659300268",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/108740322282899811056",
+        "accountName": "MAK Serve Locations",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5907385098",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102816836530111362689",
+        "accountName": "Manipur",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5718348972",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105107954194572935907",
+        "accountName": "Meghalaya",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5520757834",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/101142665810771723824",
+        "accountName": "Mizoram",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5998909510",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/113192657630672573081",
+        "accountName": "Nagaland",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5799527769",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/109363949597145460090",
+        "accountName": "Odisha",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5197781766",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/109485181971706704282",
+        "accountName": "Punjab",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5697766541",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/102341199379840734862",
+        "accountName": "Rajasthan",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5545511867",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/103864386060460831331",
+        "accountName": "Sikkim",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5866897498",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/112913770344641737733",
+        "accountName": "Tamil Nadu",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5944714223",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/112098505835984655685",
+        "accountName": "Telangana",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5212182778",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/118064196444124886484",
+        "accountName": "Tripura",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5931289546",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105273663527051869021",
+        "accountName": "Uttar Pradesh",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5555806228",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/114176118937745518954",
+        "accountName": "Uttarakhand",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5379364628",
+        "permissionLevel": "OWNER_LEVEL"
+      },
+      {
+        "name": "accounts/105160587763928248190",
+        "accountName": "West Bengal",
+        "type": "LOCATION_GROUP",
+        "role": "PRIMARY_OWNER",
+        "verificationState": "VERIFIED",
+        "vettedState": "NOT_VETTED",
+        "accountNumber": "5243682422",
+        "permissionLevel": "OWNER_LEVEL"
+      }
+    ]
+  },
+  "accountCount": 40,
+  "nextEndpoint": "/locations - Get locations for the first account"
+}
