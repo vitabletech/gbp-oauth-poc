@@ -94,6 +94,109 @@ app.get('/edit-ro', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'edit-ro.html'));
 });
 
+app.get('/quotas', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    const service = req.query.service || 'mybusinessbusinessinformation.googleapis.com';
+    
+    if (!projectId || !service) {
+      return res.status(400).json({
+        error: 'BAD_REQUEST',
+        message: 'projectId and service query parameters are required',
+      });
+    }
+
+    const quotas = await googleService.getQuotas(projectId, service);
+    res.json({
+      success: true,
+      data: quotas,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: 'QUOTAS_ERROR',
+      message: error.message,
+    });
+  }
+});
+
+
+app.get('/quotas/business-information', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getBusinessInformationQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/account-management', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getAccountManagementQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/verifications', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getVerificationsQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/qanda', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getQAndAQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/lodging', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getLodgingQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/place-actions', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getPlaceActionsQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
+app.get('/quotas/legacy', async (req, res) => {
+  try {
+    const projectId = req.query.projectId || '513681269462'; 
+    if (!projectId) return res.status(400).json({ error: 'BAD_REQUEST', message: 'projectId required' });
+    const quotas = await googleService.getLegacyQuotas(projectId);
+    res.json({ success: true, data: quotas });
+  } catch (error) {
+    res.status(500).json({ error: 'QUOTAS_ERROR', message: error.message });
+  }
+});
+
 // Mount route handlers
 app.use('/auth', authRoutes);
 app.use('/accounts', accountsRoutes);

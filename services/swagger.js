@@ -171,6 +171,207 @@ const swaggerSpec = {
         }
       }
     },
+
+    
+    "/quotas/business-information": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: business information",
+        "description": "Returns Google Cloud Service Usage quotas for business information.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/account-management": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: account management",
+        "description": "Returns Google Cloud Service Usage quotas for account management.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/verifications": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: verifications",
+        "description": "Returns Google Cloud Service Usage quotas for verifications.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/qanda": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: qanda",
+        "description": "Returns Google Cloud Service Usage quotas for qanda.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/lodging": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: lodging",
+        "description": "Returns Google Cloud Service Usage quotas for lodging.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/place-actions": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: place actions",
+        "description": "Returns Google Cloud Service Usage quotas for place actions.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas/legacy": {
+      "get": {
+        "tags": ["Utility"],
+        "summary": "Get Quotas: legacy",
+        "description": "Returns Google Cloud Service Usage quotas for legacy.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Quotas list" }
+        }
+      }
+    },
+    "/quotas": {
+      "get": {
+        "tags": [
+          "Utility"
+        ],
+        "summary": "Get Quotas",
+        "description": "Returns Google Cloud Service Usage quotas.",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "513681269462"
+            },
+            "description": "Google Cloud Project ID (or Number)",
+            "example": "513681269462"
+          },
+          {
+            "name": "service",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "mybusinessbusinessinformation.googleapis.com"
+            },
+            "description": "Google API Service Name (e.g. mybusinessbusinessinformation.googleapis.com)",
+            "example": "mybusinessbusinessinformation.googleapis.com"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Quotas list"
+          }
+        }
+      }
+    },
     "/auth/google": {
       "get": {
         "tags": [

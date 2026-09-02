@@ -24,7 +24,8 @@ const getClient = () => {
       clientSecret: clientSecret,
       redirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/auth/google/callback',
       tokenStorage: tokenStorage,
-      refreshToken: process.env.GOOGLE_REFRESH_TOKEN
+      refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+      enableQuotaAccess: true
     });
   }
   return clientInstance;
@@ -42,7 +43,7 @@ const client = new Proxy({}, {
 });
 
 const generateAuthUrl = () => {
-  return client.getAuthorizationUrl(['https://www.googleapis.com/auth/business.manage']);
+  return client.getAuthorizationUrl();
 };
 
 const getTokens = async () => {
@@ -378,6 +379,10 @@ const getReviews = async (accountIdOrName, locationIdOrName) => {
     return client.attributes.updatePreferredMessagingService(locationId, service);
   }
 
+  const getQuotas = async (projectId, service) => {
+    return client.quotas.get({ projectId, service });
+  }
+
 const handleCallback = async (code) => {
   await client.processAuthCode(code);
   const { accessToken, refreshToken } = await getTokens();
@@ -388,7 +393,44 @@ const handleCallback = async (code) => {
   };
 };
 
+
+  const getBusinessInformationQuotas = async (projectId) => {
+    return client.quotas.getBusinessInformation(projectId);
+  }
+
+  const getAccountManagementQuotas = async (projectId) => {
+    return client.quotas.getAccountManagement(projectId);
+  }
+
+  const getVerificationsQuotas = async (projectId) => {
+    return client.quotas.getVerifications(projectId);
+  }
+
+  const getQAndAQuotas = async (projectId) => {
+    return client.quotas.getQAndA(projectId);
+  }
+
+  const getLodgingQuotas = async (projectId) => {
+    return client.quotas.getLodging(projectId);
+  }
+
+  const getPlaceActionsQuotas = async (projectId) => {
+    return client.quotas.getPlaceActions(projectId);
+  }
+
+  const getLegacyQuotas = async (projectId) => {
+    return client.quotas.getLegacy(projectId);
+  }
+
 module.exports = {
+  getBusinessInformationQuotas,
+  getAccountManagementQuotas,
+  getVerificationsQuotas,
+  getQAndAQuotas,
+  getLodgingQuotas,
+  getPlaceActionsQuotas,
+  getLegacyQuotas,
+
   generateAuthUrl,
   getTokens,
   handleCallback,
@@ -439,4 +481,5 @@ module.exports = {
   updateTwitterUrl,
   updateYouTubeUrl,
   updatePreferredMessagingService,
+  getQuotas,
 };

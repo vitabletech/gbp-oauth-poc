@@ -38,7 +38,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vitabletech/gbp-sdk": "^1.1.0",
+    "@vitabletech/gbp-sdk": "file:../gitProjectes/gbp-sdk",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
