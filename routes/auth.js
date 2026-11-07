@@ -13,11 +13,9 @@ router.get('/config', (req, res) => {
     res.json({
       success: true,
       data: {
-        clientId: creds.clientId,
-        clientSecret: creds.clientSecret,
+        clientId: creds.clientId || '',
         redirectUri: creds.redirectUri,
         hasClientSecret: Boolean(creds.clientSecret),
-        defaultClientId: process.env.GOOGLE_CLIENT_ID || '',
         defaultRedirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/auth/google/callback',
       },
     });

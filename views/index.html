@@ -666,8 +666,8 @@
                 <span>💾</span> Save Credentials
               </button>
 
-              <button type="button" class="btn btn-demo" onclick="useDemoCredentials()">
-                <span>🔄</span> Reset to Demo Defaults
+              <button type="button" class="btn btn-secondary" onclick="clearCredentials()">
+                <span>🗑️</span> Clear Inputs
               </button>
 
               <a href="/api-docs" class="btn btn-secondary" target="_blank">
@@ -787,17 +787,12 @@
         }
       }
 
-      function useDemoCredentials() {
-        if (serverDefaults.clientId) {
-          document.getElementById('clientIdInput').value = serverDefaults.clientId;
-          document.getElementById('clientSecretInput').value = serverDefaults.clientSecret;
-          localStorage.removeItem('gbp_custom_client_id');
-          localStorage.removeItem('gbp_custom_client_secret');
-          saveCredentials(true);
-          showToast('Reset to server configured credentials!');
-        } else {
-          showToast('Please enter your Google Client ID and Secret.');
-        }
+      function clearCredentials() {
+        document.getElementById('clientIdInput').value = '';
+        document.getElementById('clientSecretInput').value = '';
+        localStorage.removeItem('gbp_custom_client_id');
+        localStorage.removeItem('gbp_custom_client_secret');
+        showToast('Credentials cleared. Please enter your own credentials.');
       }
 
       async function saveCredentials(isSilent = false) {
@@ -892,27 +887,19 @@
           redirectInput.value = activeUri;
         }
 
-        // Fetch server default configuration
-        try {
-          const res = await fetch('/auth/config');
-          const cfg = await res.json();
-          if (cfg && cfg.data) {
-            serverDefaults.clientId = cfg.data.clientId || '';
-            serverDefaults.clientSecret = cfg.data.clientSecret || '';
+        // Restore user's own saved credentials from localStorage
+        const storedClientId = localStorage.getItem('gbp_custom_client_id');
+        const storedClientSecret = localStorage.getItem('gbp_custom_client_secret');
 
-            const storedClientId = localStorage.getItem('gbp_custom_client_id');
-            const storedClientSecret = localStorage.getItem('gbp_custom_client_secret');
-
-            if (storedClientId && storedClientSecret) {
-              document.getElementById('clientIdInput').value = storedClientId;
-              document.getElementById('clientSecretInput').value = storedClientSecret;
-            } else if (serverDefaults.clientId) {
-              document.getElementById('clientIdInput').value = serverDefaults.clientId;
-              document.getElementById('clientSecretInput').value = serverDefaults.clientSecret;
-            }
-          }
-        } catch (e) {
-          console.warn('Could not load config:', e.message);
+        // Purge any old demo credentials from localStorage
+        if (storedClientId && storedClientId.startsWith('485790434071')) {
+          localStorage.removeItem('gbp_custom_client_id');
+          localStorage.removeItem('gbp_custom_client_secret');
+          document.getElementById('clientIdInput').value = '';
+          document.getElementById('clientSecretInput').value = '';
+        } else if (storedClientId && storedClientSecret) {
+          document.getElementById('clientIdInput').value = storedClientId;
+          document.getElementById('clientSecretInput').value = storedClientSecret;
         }
 
         // Check backend auth status
