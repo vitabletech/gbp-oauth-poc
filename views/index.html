@@ -609,9 +609,10 @@
                   type="text"
                   id="redirectUriInput"
                   class="redirect-input"
+                  value="https://gbp-playground.vitabletech.in/auth/google/callback"
                   readonly
                 />
-                <script>
+                <script data-cfasync="false">
                   try {
                     document.getElementById('redirectUriInput').value =
                       window.location.origin + '/auth/google/callback';
@@ -740,7 +741,7 @@
     <!-- Toast Component -->
     <div id="toast" class="toast">Action completed successfully</div>
 
-    <script>
+    <script data-cfasync="false">
       let serverDefaults = { clientId: '', clientSecret: '' };
 
       // Computes current active redirect URI based on window location
