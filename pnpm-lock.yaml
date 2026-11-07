@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@vitabletech/gbp-sdk':
-        specifier: ^0.1.0
-        version: 0.1.1
+        specifier: ^1.3.0
+        version: 1.3.0
       axios:
         specifier: ^1.6.0
         version: 1.18.1
@@ -20,6 +20,9 @@ importers:
       express:
         specifier: ^4.18.2
         version: 4.22.2
+      serverless-http:
+        specifier: ^4.0.0
+        version: 4.0.0
       swagger-ui-express:
         specifier: ^4.6.3
         version: 4.6.3(express@4.22.2)
@@ -33,8 +36,8 @@ packages:
   '@scarf/scarf@1.4.0':
     resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
 
-  '@vitabletech/gbp-sdk@0.1.1':
-    resolution: {integrity: sha512-KtzqsBTX5TEWsd6Zinibfeer//+WW1d2j+Qdy1SQ0Bd1GwvVmVCQcbM3jEzv7zmE0Zu5HxN9o626rmmw2chzQw==}
+  '@vitabletech/gbp-sdk@1.3.0':
+    resolution: {integrity: sha512-JrDQYS7mEODGEZpS2oCGe7r42v+CAbnphK6lxFm9o/Qp56fsELLcs75/lG+l23RlT8jp1CCzQFUDNSVS2Lk0gg==}
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -406,6 +409,10 @@ packages:
     resolution: {integrity: sha512-x0RTqQel6g5SY7Lg6ZreMmsOzncHFU7nhnRWkKgWuMTu5NN0DR5oruckMqRvacAN9d5w6ARnRBXl9xhDCgfMeA==}
     engines: {node: '>= 0.8.0'}
 
+  serverless-http@4.0.0:
+    resolution: {integrity: sha512-KKl9h1+VApX9y2vHsVMogf906UXBwO3FDYiWPzqS0mCjEEx4Sx91JrssbWA7RN43HBuxrtoh8MkocZPvjyGnLg==}
+    engines: {node: '>=12.0'}
+
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
@@ -481,7 +488,7 @@ snapshots:
 
   '@scarf/scarf@1.4.0': {}
 
-  '@vitabletech/gbp-sdk@0.1.1': {}
+  '@vitabletech/gbp-sdk@1.3.0': {}
 
   accepts@1.3.8:
     dependencies:
@@ -883,6 +890,8 @@ snapshots:
       send: 0.19.2
     transitivePeerDependencies:
       - supports-color
+
+  serverless-http@4.0.0: {}
 
   setprototypeof@1.2.0: {}
 
