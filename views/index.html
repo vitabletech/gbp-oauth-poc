@@ -3,8 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Business Profile API OAuth</title>
+    <title>Google Business Profile API Explorer | Vitabletech</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
     <style>
+      :root {
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
+        --vitable-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #8b5cf6 100%);
+        --bg-dark: #0f172a;
+        --card-bg: #ffffff;
+        --card-border: #e2e8f0;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --accent-green: #10b981;
+        --accent-amber: #f59e0b;
+        --radius-lg: 16px;
+        --radius-md: 10px;
+        --shadow-xl: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -12,283 +31,883 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-          Arial, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: #f8fafc;
+        color: var(--text-primary);
+        line-height: 1.5;
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        padding: 40px 20px;
       }
 
-      .container {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        padding: 60px 40px;
-        max-width: 500px;
-        width: 100%;
+      .app-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
       }
 
-      .header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .logo {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      /* Marketing Top Banner */
+      .marketing-banner {
+        background: var(--vitable-gradient);
         color: white;
-        font-size: 40px;
+        padding: 14px 24px;
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+      }
+
+      .marketing-banner-text {
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .marketing-banner-badge {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 2px 8px;
+        border-radius: 9999px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .marketing-banner-links {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .banner-btn {
+        background: white;
+        color: #2563eb;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .banner-btn:hover {
+        background: #f0fdf4;
+        transform: translateY(-1px);
+      }
+
+      /* Main Card */
+      .main-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+        overflow: hidden;
+      }
+
+      /* Hero Header */
+      .header-section {
+        padding: 40px 40px 30px;
+        border-bottom: 1px solid var(--card-border);
+        text-align: center;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      }
+
+      .brand-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #eef2ff;
+        color: #4338ca;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .brand-pill a {
+        color: #4f46e5;
+        text-decoration: none;
+      }
+      .brand-pill a:hover {
+        text-decoration: underline;
       }
 
       h1 {
-        font-size: 28px;
-        color: #333;
+        font-size: 30px;
+        font-weight: 800;
+        color: #0f172a;
         margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+
+      .tagline {
+        color: var(--text-secondary);
+        font-size: 15px;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      /* Content Area */
+      .card-body {
+        padding: 32px 40px;
+      }
+
+      /* Section Heading */
+      .section-title {
+        font-size: 16px;
         font-weight: 700;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
       }
 
-      .subtitle {
-        color: #666;
-        font-size: 14px;
-        line-height: 1.6;
+      /* Config / BYOC Box */
+      .config-box {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-md);
+        padding: 24px;
+        margin-bottom: 30px;
       }
 
-      .content {
-        margin-bottom: 35px;
-      }
-
-      .description {
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        font-size: 14px;
-      }
-
-      .features {
-        background: #f8f9fa;
-        border-left: 4px solid #667eea;
-        padding: 15px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-      }
-
-      .features h3 {
-        font-size: 12px;
-        color: #667eea;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-
-      .features ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .features li {
-        font-size: 13px;
-        color: #666;
-        margin-bottom: 6px;
-        padding-left: 20px;
-        position: relative;
-      }
-
-      .features li:before {
-        content: '✓';
-        position: absolute;
-        left: 0;
-        color: #667eea;
-        font-weight: bold;
-      }
-
-      .endpoints {
-        background: #f0f4ff;
-        padding: 15px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        font-size: 12px;
-      }
-
-      .endpoints h3 {
-        color: #667eea;
-        font-size: 12px;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-
-      .endpoints p {
-        color: #555;
-        margin-bottom: 6px;
-        font-family: 'Courier New', monospace;
+      /* Redirect URI Display */
+      .redirect-uri-container {
+        margin-bottom: 24px;
         background: white;
-        padding: 6px 8px;
-        border-radius: 3px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 16px;
       }
 
-      .cta-button {
-        width: 100%;
-        padding: 14px 24px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .redirect-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+      }
+
+      .badge-req {
+        background: #fee2e2;
+        color: #dc2626;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+      }
+
+      .redirect-bar {
+        display: flex;
+        gap: 8px;
+      }
+
+      .redirect-input {
+        flex: 1;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        padding: 10px 14px;
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        color: #0f172a;
+        font-weight: 500;
+      }
+
+      .copy-btn {
+        background: #0f172a;
         color: white;
         border: none;
         border-radius: 6px;
-        font-size: 15px;
+        padding: 0 16px;
+        font-size: 13px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
       }
 
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      .copy-btn:hover {
+        background: #334155;
       }
 
-      .cta-button:active {
-        transform: translateY(0);
+      .redirect-hint {
+        font-size: 12px;
+        color: var(--text-secondary);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
-      .secondary-button {
+      /* Form inputs */
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #334155;
+      }
+
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .text-input {
         width: 100%;
-        padding: 12px 24px;
-        background: white;
-        color: #667eea;
-        border: 2px solid #667eea;
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
         border-radius: 6px;
         font-size: 14px;
-        font-weight: 600;
+        font-family: var(--font-mono);
+        transition: border-color 0.2s ease;
+      }
+
+      .text-input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+      }
+
+      .toggle-visibility {
+        position: absolute;
+        right: 12px;
+        background: none;
+        border: none;
+        color: var(--text-secondary);
         cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 10px;
+        font-size: 13px;
+        padding: 4px;
       }
 
-      .secondary-button:hover {
-        background: #f8f9fa;
-      }
-
-      .info-box {
-        background: #e8f4f8;
-        border-left: 4px solid #00a8cc;
-        padding: 12px;
-        border-radius: 4px;
-        font-size: 12px;
-        color: #333;
+      /* Action Buttons */
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
         margin-top: 20px;
       }
 
-      .info-box strong {
-        color: #00a8cc;
-      }
-
-      .footer {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid #e0e0e0;
-        font-size: 12px;
-        color: #999;
-      }
-
-      .footer a {
-        color: #667eea;
+      .btn {
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
         text-decoration: none;
       }
 
-      .footer a:hover {
+      .btn-primary {
+        background: var(--primary-gradient);
+        color: white;
+        box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+        flex: 1;
+        min-width: 220px;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+      }
+
+      .btn-secondary:hover {
+        background: #f1f5f9;
+      }
+
+      .btn-demo {
+        background: #f0fdf4;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+      }
+
+      .btn-demo:hover {
+        background: #dcfce7;
+      }
+
+      /* Status Alert Box */
+      .status-box {
+        background: #f1f5f9;
+        border-radius: 8px;
+        padding: 14px 18px;
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        font-size: 12px;
+      }
+
+      .status-active {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .status-idle {
+        background: #fef3c7;
+        color: #b45309;
+      }
+
+      /* Product Showcase / Marketing Card */
+      .sdk-showcase {
+        background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+        color: white;
+        border-radius: var(--radius-md);
+        padding: 28px;
+        margin-top: 10px;
+      }
+
+      .sdk-badge {
+        display: inline-block;
+        background: rgba(14, 165, 233, 0.2);
+        color: #38bdf8;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .sdk-showcase h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .sdk-showcase p {
+        color: #94a3b8;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .feature-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 14px;
+      }
+
+      .feature-item-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #f8fafc;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .feature-item-desc {
+        font-size: 12px;
+        color: #94a3b8;
+        line-height: 1.4;
+      }
+
+      .showcase-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .showcase-btn-primary {
+        background: #38bdf8;
+        color: #0f172a;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .showcase-btn-primary:hover {
+        background: #7dd3fc;
+      }
+
+      .showcase-btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.2s;
+      }
+
+      .showcase-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Footer */
+      .app-footer {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+
+      .app-footer a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .app-footer a:hover {
         text-decoration: underline;
+      }
+
+      /* Toast Notification */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #0f172a;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 640px) {
+        .card-body, .header-section {
+          padding: 24px 20px;
+        }
+        .marketing-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .button-row {
+          flex-direction: column;
+        }
+        .btn-primary {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <div class="logo">🔐</div>
-        <h1>Google Business Profile</h1>
-        <p class="subtitle">OAuth 2.0 Authentication</p>
-      </div>
-
-      <div class="content">
-        <p class="description">
-          This application demonstrates OAuth 2.0 authentication flow with the Google Business
-          Profile API. Click the button below to securely log in with your Google account.
-        </p>
-
-        <div class="features">
-          <h3>Features</h3>
-          <ul>
-            <li>OAuth 2.0 Authorization Code Flow</li>
-            <li>Secure Token Management</li>
-            <li>Automatic Token Refresh</li>
-            <li>Business Account Management</li>
-          </ul>
+    <div class="app-wrapper">
+      
+      <!-- Marketing Banner -->
+      <div class="marketing-banner">
+        <div class="marketing-banner-text">
+          <span class="marketing-banner-badge">Official Release</span>
+          <span>⚡ Built by <strong><a href="https://vitabletech.in/" target="_blank" style="color:white;text-decoration:underline;">Vitabletech</a></strong> — Discover <strong>@vitabletech/gbp-sdk v1.3.0</strong></span>
         </div>
-
-        <div class="endpoints">
-          <h3>API Endpoints</h3>
-          <p>/accounts - List business accounts</p>
-          <p>/locations - Get business locations</p>
-          <p>/reviews - Fetch customer reviews</p>
-        </div>
-
-        <button class="cta-button" onclick="loginWithGoogle()">
-          Login with Google Business Profile
-        </button>
-
-        <button class="secondary-button" onclick="checkAuthStatus()">
-          Check Authentication Status
-        </button>
-
-        <div class="info-box">
-          <strong>ℹ️ Note:</strong> Make sure you have configured the OAuth credentials in your .env
-          file with GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_REDIRECT_URI.
+        <div class="marketing-banner-links">
+          <a href="https://gbp.vitabletech.in/" target="_blank" class="banner-btn">Documentation ➔</a>
+          <a href="https://vitabletech.in/" target="_blank" class="banner-btn">Hire Us</a>
         </div>
       </div>
 
-      <div class="footer">
+      <!-- Main Application Card -->
+      <div class="main-card">
+        
+        <!-- Header -->
+        <div class="header-section">
+          <div class="brand-pill">
+            <span>🏢 Developed by <a href="https://vitabletech.in/" target="_blank">Vitabletech Team</a></span>
+            <span>•</span>
+            <span>v1.3.0 SDK</span>
+          </div>
+          <h1>Google Business Profile API Explorer</h1>
+          <p class="tagline">
+            Test and interact with all Google Business Profile APIs (Locations, Performance Metrics, Reviews, Verifications, Quotas, and Menus) with your own credentials or pre-configured defaults.
+          </p>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body">
+          
+          <!-- Authentication Status Card -->
+          <div class="status-box">
+            <div>
+              <span style="font-weight: 600; color: #334155;">Authentication Status:</span>
+              <span id="authStatusText" style="color: #64748b; margin-left: 6px;">Checking session...</span>
+            </div>
+            <div>
+              <span id="authPill" class="status-pill status-idle">Checking...</span>
+            </div>
+          </div>
+
+          <!-- BYOC (Bring Your Own Credentials) Form -->
+          <div class="config-box">
+            <div class="section-title">
+              <span>⚙️ OAuth Configuration &amp; Credentials</span>
+            </div>
+
+            <!-- Dynamic Redirect URI Display -->
+            <div class="redirect-uri-container">
+              <div class="redirect-label">
+                <span>Google Authorized Redirect URI <span class="badge-req">Mandatory</span></span>
+                <span style="font-size: 11px; color: #64748b;">Copy and whitelist in Google Cloud Console</span>
+              </div>
+              <div class="redirect-bar">
+                <input
+                  type="text"
+                  id="redirectUriInput"
+                  class="redirect-input"
+                  readonly
+                />
+                <button type="button" class="copy-btn" onclick="copyRedirectUri()">
+                  <span id="copyIcon">📋</span> <span id="copyText">Copy URI</span>
+                </button>
+              </div>
+              <p class="redirect-hint">
+                <span>ℹ️</span>
+                <span>In Google Cloud Console ➔ <strong>APIs &amp; Services ➔ Credentials ➔ Authorized redirect URIs</strong>, paste this exact URI.</span>
+              </p>
+            </div>
+
+            <!-- Credentials Form Inputs -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="clientIdInput">Google Client ID</label>
+                <input
+                  type="text"
+                  id="clientIdInput"
+                  class="text-input"
+                  placeholder="e.g. 485790434071-...apps.googleusercontent.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clientSecretInput">Google Client Secret</label>
+                <div class="input-wrapper">
+                  <input
+                    type="password"
+                    id="clientSecretInput"
+                    class="text-input"
+                    placeholder="e.g. GOCSPX-..."
+                  />
+                  <button type="button" class="toggle-visibility" onclick="toggleSecretVisibility()">
+                    <span id="toggleSecretText">Show</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons Row -->
+            <div class="button-row">
+              <button type="button" class="btn btn-primary" onclick="loginWithGoogle()">
+                <span>🚀</span> Login with Google Business Profile
+              </button>
+
+              <button type="button" class="btn btn-secondary" onclick="saveCredentials()">
+                <span>💾</span> Save Credentials
+              </button>
+
+              <button type="button" class="btn btn-demo" onclick="useDemoCredentials()">
+                <span>🔄</span> Reset to Demo Defaults
+              </button>
+
+              <a href="/api-docs" class="btn btn-secondary" target="_blank">
+                <span>📘</span> Open Swagger API Docs
+              </a>
+
+              <button type="button" class="btn btn-secondary" onclick="logout()">
+                <span>🚪</span> Logout
+              </button>
+            </div>
+          </div>
+
+          <!-- Marketing Spotlight Section: Why Developers Choose @vitabletech/gbp-sdk -->
+          <div class="sdk-showcase">
+            <span class="sdk-badge">ENTERPRISE NODE.JS SDK</span>
+            <h3>Powered by @vitabletech/gbp-sdk (v1.3.0)</h3>
+            <p>
+              Tired of fragmented endpoints, token refreshing headaches, and manual pagination? <strong>@vitabletech/gbp-sdk</strong> is the definitive production SDK for Google Business Profile, built by the engineering team at Vitabletech.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-item-title">🔐 Zero-Config OAuth 2.0</div>
+                <div class="feature-item-desc">Thread-safe token manager with auto-refresh and pluggable file/memory storage.</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-title">📊 Performance API v1</div>
+                <div class="feature-item-desc">Daily time series metrics, mobile/desktop search views, and monthly keyword impression counts.</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-title">📑 Auto-Pagination</div>
+                <div class="feature-item-desc">Seamless <code>listAll()</code> and cursor paginators for thousands of records with 0 loops.</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-title">🛡️ Strict TypeScript</div>
+                <div class="feature-item-desc">100% typed request/response models for Locations, Menus, Verifications, and Quotas.</div>
+              </div>
+            </div>
+
+            <div class="showcase-actions">
+              <a href="https://gbp.vitabletech.in/" target="_blank" class="showcase-btn-primary">
+                Explore Full Documentation ➔
+              </a>
+              <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" class="showcase-btn-secondary">
+                View on npm (v1.3.0)
+              </a>
+              <a href="https://vitabletech.in/" target="_blank" class="showcase-btn-secondary">
+                Contact Vitabletech Team
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="app-footer">
         <p>
-          <a href="https://support.google.com/business/answer/1296911" target="_blank"
-            >Google Business Profile Help</a
-          >
-          |
-          <a href="https://developers.google.com/my-business/reference/rest" target="_blank"
-            >API Documentation</a
-          >
+          Google Business Profile API Explorer • Built with ❤️ by
+          <a href="https://vitabletech.in/" target="_blank">Vitabletech</a>
         </p>
-      </div>
+        <p style="margin-top: 6px; font-size: 12px;">
+          <a href="https://gbp.vitabletech.in/" target="_blank">SDK Documentation</a> |
+          <a href="https://github.com/vitabletech/gbp-sdk" target="_blank">GitHub</a> |
+          <a href="https://developers.google.com/my-business" target="_blank">Google API Docs</a> |
+          <a href="https://vitabletech.in/" target="_blank">Vitabletech.in</a>
+        </p>
+      </footer>
     </div>
 
+    <!-- Toast Component -->
+    <div id="toast" class="toast">Action completed successfully</div>
+
     <script>
-      function loginWithGoogle() {
-        console.log('Initiating Google OAuth login...');
-        window.location.href = '/auth/google';
+      let serverDefaults = { clientId: '', clientSecret: '' };
+
+      // Computes current active redirect URI based on window location
+      function getActiveRedirectUri() {
+        return window.location.origin + '/auth/google/callback';
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      }
+
+      function copyRedirectUri() {
+        const input = document.getElementById('redirectUriInput');
+        navigator.clipboard.writeText(input.value).then(() => {
+          document.getElementById('copyIcon').textContent = '✅';
+          document.getElementById('copyText').textContent = 'Copied!';
+          showToast('Redirect URI copied to clipboard!');
+          setTimeout(() => {
+            document.getElementById('copyIcon').textContent = '📋';
+            document.getElementById('copyText').textContent = 'Copy URI';
+          }, 2500);
+        }).catch(err => {
+          input.select();
+          document.execCommand('copy');
+          showToast('Copied to clipboard!');
+        });
+      }
+
+      function toggleSecretVisibility() {
+        const input = document.getElementById('clientSecretInput');
+        const text = document.getElementById('toggleSecretText');
+        if (input.type === 'password') {
+          input.type = 'text';
+          text.textContent = 'Hide';
+        } else {
+          input.type = 'password';
+          text.textContent = 'Show';
+        }
+      }
+
+      function useDemoCredentials() {
+        if (serverDefaults.clientId) {
+          document.getElementById('clientIdInput').value = serverDefaults.clientId;
+          document.getElementById('clientSecretInput').value = serverDefaults.clientSecret;
+          localStorage.removeItem('gbp_custom_client_id');
+          localStorage.removeItem('gbp_custom_client_secret');
+          saveCredentials(true);
+          showToast('Reset to server configured credentials!');
+        } else {
+          showToast('Please enter your Google Client ID and Secret.');
+        }
+      }
+
+      async function saveCredentials(isSilent = false) {
+        const clientId = document.getElementById('clientIdInput').value.trim();
+        const clientSecret = document.getElementById('clientSecretInput').value.trim();
+        const redirectUri = document.getElementById('redirectUriInput').value.trim();
+
+        if (!clientId || !clientSecret) {
+          alert('Please provide both Client ID and Client Secret.');
+          return;
+        }
+
+        // Save in browser localStorage
+        localStorage.setItem('gbp_custom_client_id', clientId);
+        localStorage.setItem('gbp_custom_client_secret', clientSecret);
+        localStorage.setItem('gbp_custom_redirect_uri', redirectUri);
+
+        try {
+          // Sync with backend
+          const res = await fetch('/auth/config', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ clientId, clientSecret, redirectUri })
+          });
+          const data = await res.json();
+          if (!isSilent) {
+            showToast('Credentials saved & applied successfully!');
+          }
+        } catch (err) {
+          console.warn('Backend sync warning:', err.message);
+          if (!isSilent) {
+            showToast('Saved locally in browser.');
+          }
+        }
+      }
+
+      async function loginWithGoogle() {
+        const clientId = document.getElementById('clientIdInput').value.trim();
+        const clientSecret = document.getElementById('clientSecretInput').value.trim();
+        const redirectUri = document.getElementById('redirectUriInput').value.trim();
+
+        if (!clientId || !clientSecret) {
+          alert('Please enter your Google Client ID and Google Client Secret before logging in.');
+          return;
+        }
+
+        // Save before initiating
+        await saveCredentials(true);
+
+        const authUrl = `/auth/google?clientId=${encodeURIComponent(clientId)}&clientSecret=${encodeURIComponent(clientSecret)}&redirectUri=${encodeURIComponent(redirectUri)}`;
+        window.location.href = authUrl;
       }
 
       async function checkAuthStatus() {
         try {
-          const response = await fetch('/accounts');
-          const data = await response.json();
+          const res = await fetch('/auth/status');
+          const data = await res.json();
+          const pill = document.getElementById('authPill');
+          const text = document.getElementById('authStatusText');
 
-          if (response.ok) {
-            alert('✓ You are authenticated!\n\nAccounts:\n' + JSON.stringify(data, null, 2));
+          if (data.isAuthenticated) {
+            pill.className = 'status-pill status-active';
+            pill.textContent = 'Authenticated ✓';
+            text.textContent = 'Active OAuth Tokens Loaded. Ready to call APIs!';
           } else {
-            alert('✗ Not authenticated.\n\n' + JSON.stringify(data, null, 2));
+            pill.className = 'status-pill status-idle';
+            pill.textContent = 'Not Authenticated';
+            text.textContent = 'Click "Login with Google Business Profile" to connect.';
           }
-        } catch (error) {
-          alert('Error checking authentication status:\n' + error.message);
+        } catch (e) {
+          console.warn('Error checking auth:', e.message);
         }
       }
+
+      async function logout() {
+        try {
+          const res = await fetch('/auth/logout');
+          const data = await res.json();
+          showToast('Logged out! Tokens cleared.');
+          checkAuthStatus();
+        } catch (e) {
+          alert('Logout error: ' + e.message);
+        }
+      }
+
+      // Initialize on load
+      window.addEventListener('DOMContentLoaded', async () => {
+        // Set dynamic redirect URI
+        const activeUri = getActiveRedirectUri();
+        document.getElementById('redirectUriInput').value = activeUri;
+
+        // Fetch server default configuration
+        try {
+          const res = await fetch('/auth/config');
+          const cfg = await res.json();
+          if (cfg && cfg.data) {
+            serverDefaults.clientId = cfg.data.clientId || '';
+            serverDefaults.clientSecret = cfg.data.clientSecret || '';
+
+            const storedClientId = localStorage.getItem('gbp_custom_client_id');
+            const storedClientSecret = localStorage.getItem('gbp_custom_client_secret');
+
+            if (storedClientId && storedClientSecret) {
+              document.getElementById('clientIdInput').value = storedClientId;
+              document.getElementById('clientSecretInput').value = storedClientSecret;
+            } else if (serverDefaults.clientId) {
+              document.getElementById('clientIdInput').value = serverDefaults.clientId;
+              document.getElementById('clientSecretInput').value = serverDefaults.clientSecret;
+            }
+          }
+        } catch (e) {
+          console.warn('Could not load config:', e.message);
+        }
+
+        // Check backend auth status
+        checkAuthStatus();
+      });
     </script>
   </body>
 </html>

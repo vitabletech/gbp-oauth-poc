@@ -372,6 +372,62 @@ const swaggerSpec = {
         }
       }
     },
+    "/auth/config": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Get OAuth configuration",
+        "description": "Returns current OAuth credentials and default demo values.",
+        "responses": {
+          "200": {
+            "description": "Current OAuth configuration"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Update OAuth credentials",
+        "description": "Allows frontend user to bring their own Google Client ID, Client Secret, and Redirect URI.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["clientId", "clientSecret"],
+                "properties": {
+                  "clientId": { "type": "string" },
+                  "clientSecret": { "type": "string" },
+                  "redirectUri": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Configuration updated"
+          }
+        }
+      }
+    },
+    "/auth/status": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Check authentication status",
+        "description": "Returns whether the user currently has active OAuth tokens.",
+        "responses": {
+          "200": {
+            "description": "Auth status"
+          }
+        }
+      }
+    },
     "/auth/google": {
       "get": {
         "tags": [
@@ -2234,8 +2290,8 @@ const swaggerSpec = {
         "tags": [
           "Metrics"
         ],
-        "summary": "Get performance metrics",
-        "description": "Retrieves multi-daily performance metrics for a location using the Business Profile Performance API.",
+        "summary": "Get multi-daily performance metrics",
+        "description": "Retrieves multi-daily performance metrics for a location using the Business Profile Performance API (locations.fetchMultiDailyMetricsTimeSeries).",
         "parameters": [
           {
             "name": "locationId",
@@ -2260,7 +2316,12 @@ const swaggerSpec = {
                   "BUSINESS_IMPRESSIONS_DESKTOP_MAPS",
                   "BUSINESS_IMPRESSIONS_DESKTOP_SEARCH",
                   "BUSINESS_IMPRESSIONS_MOBILE_MAPS",
-                  "BUSINESS_IMPRESSIONS_MOBILE_SEARCH"
+                  "BUSINESS_IMPRESSIONS_MOBILE_SEARCH",
+                  "BUSINESS_CONVERSATIONS",
+                  "BUSINESS_DIRECTION_REQUESTS",
+                  "BUSINESS_BOOKINGS",
+                  "BUSINESS_FOOD_ORDERS",
+                  "BUSINESS_FOOD_MENU_CLICKS"
                 ]
               }
             },
@@ -2275,7 +2336,7 @@ const swaggerSpec = {
             "schema": {
               "type": "integer"
             },
-            "description": "Start date year (e.g., 2023)"
+            "description": "Start date year (e.g., 2024)"
           },
           {
             "name": "startMonth",
@@ -2302,7 +2363,7 @@ const swaggerSpec = {
             "schema": {
               "type": "integer"
             },
-            "description": "End date year (e.g., 2023)"
+            "description": "End date year (e.g., 2024)"
           },
           {
             "name": "endMonth",
@@ -2336,6 +2397,267 @@ const swaggerSpec = {
                     },
                     "data": {
                       "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required"
+          }
+        }
+      }
+    },
+    "/locations/{locationId}/daily-metrics-time-series": {
+      "get": {
+        "tags": [
+          "Metrics"
+        ],
+        "summary": "Get daily metrics time series",
+        "description": "Retrieves daily time-series metrics for a single metric over a specified date range using the Business Profile Performance API (locations.getDailyMetricsTimeSeries).",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The location ID (e.g. 1234567890) or full location name."
+          },
+          {
+            "name": "dailyMetric",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "WEBSITE_CLICKS",
+                "CALL_CLICKS",
+                "BUSINESS_IMPRESSIONS_DESKTOP_MAPS",
+                "BUSINESS_IMPRESSIONS_DESKTOP_SEARCH",
+                "BUSINESS_IMPRESSIONS_MOBILE_MAPS",
+                "BUSINESS_IMPRESSIONS_MOBILE_SEARCH",
+                "BUSINESS_CONVERSATIONS",
+                "BUSINESS_DIRECTION_REQUESTS",
+                "BUSINESS_BOOKINGS",
+                "BUSINESS_FOOD_ORDERS",
+                "BUSINESS_FOOD_MENU_CLICKS"
+              ]
+            },
+            "description": "The specific metric to retrieve."
+          },
+          {
+            "name": "startYear",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Start date year (e.g., 2024)"
+          },
+          {
+            "name": "startMonth",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Start date month (1-12)"
+          },
+          {
+            "name": "startDay",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "description": "Start date day (1-31, default: 1)"
+          },
+          {
+            "name": "endYear",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "End date year (e.g., 2024)"
+          },
+          {
+            "name": "endMonth",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "End date month (1-12)"
+          },
+          {
+            "name": "endDay",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "description": "End date day (1-31, default: 1)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Daily metrics time series response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "timeSeries": {
+                          "type": "object",
+                          "properties": {
+                            "datedValues": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "date": {
+                                    "type": "object",
+                                    "properties": {
+                                      "year": { "type": "integer" },
+                                      "month": { "type": "integer" },
+                                      "day": { "type": "integer" }
+                                    }
+                                  },
+                                  "value": { "type": "string" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required"
+          }
+        }
+      }
+    },
+    "/locations/{locationId}/searchkeywords/impressions/monthly": {
+      "get": {
+        "tags": [
+          "Metrics"
+        ],
+        "summary": "Get monthly search keywords impressions",
+        "description": "Retrieves search keywords used to find the business profile with monthly impression counts or threshold privacy flags (locations.searchkeywords.impressions.monthly.list).",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The location ID (e.g. 1234567890) or full location name."
+          },
+          {
+            "name": "startYear",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Start month year (e.g., 2024)"
+          },
+          {
+            "name": "startMonth",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Start month (1-12)"
+          },
+          {
+            "name": "endYear",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "End month year (e.g., 2024)"
+          },
+          {
+            "name": "endMonth",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "End month (1-12)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Number of results requested per page."
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token for pagination."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Monthly search keywords impressions response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "searchKeywordsCounts": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "searchKeyword": { "type": "string" },
+                              "insightsValue": {
+                                "type": "object",
+                                "properties": {
+                                  "value": { "type": "string" },
+                                  "threshold": { "type": "string" }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "nextPageToken": { "type": "string" }
+                      }
                     }
                   }
                 }

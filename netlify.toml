@@ -1,0 +1,62 @@
+[build]
+  functions = "netlify/functions"
+  publish = "views"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["data/**", "views/**"]
+
+[[redirects]]
+  from = "/api-docs*"
+  to = "/.netlify/functions/api/api-docs:splat"
+  status = 200
+
+[[redirects]]
+  from = "/auth/*"
+  to = "/.netlify/functions/api/auth/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/accounts*"
+  to = "/.netlify/functions/api/accounts:splat"
+  status = 200
+
+[[redirects]]
+  from = "/locations*"
+  to = "/.netlify/functions/api/locations:splat"
+  status = 200
+
+[[redirects]]
+  from = "/reviews*"
+  to = "/.netlify/functions/api/reviews:splat"
+  status = 200
+
+[[redirects]]
+  from = "/categories*"
+  to = "/.netlify/functions/api/categories:splat"
+  status = 200
+
+[[redirects]]
+  from = "/chains*"
+  to = "/.netlify/functions/api/chains:splat"
+  status = 200
+
+[[redirects]]
+  from = "/quotas*"
+  to = "/.netlify/functions/api/quotas:splat"
+  status = 200
+
+[[redirects]]
+  from = "/token-status*"
+  to = "/.netlify/functions/api/token-status:splat"
+  status = 200
+
+[[redirects]]
+  from = "/health*"
+  to = "/.netlify/functions/api/health:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200

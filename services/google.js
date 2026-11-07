@@ -3,47 +3,151 @@ const { GBPClient, FileTokenStorage } = require('@vitabletech/gbp-sdk');
 const path = require('path');
 const fs = require('fs');
 
-const TOKENS_FILE = path.join(__dirname, '../data/gbp-token.json');
+const isServerless = Boolean(process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const TOKENS_FILE = isServerless
+  ? path.join('/tmp', 'gbp-token.json')
+  : path.join(__dirname, '../data/gbp-token.json');
+
+// Ensure token file directory exists
+try {
+  const dir = path.dirname(TOKENS_FILE);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  if (isServerless && !fs.existsSync(TOKENS_FILE)) {
+    const defaultDataFile = path.join(__dirname, '../data/gbp-token.json');
+    if (fs.existsSync(defaultDataFile)) {
+      fs.copyFileSync(defaultDataFile, TOKENS_FILE);
+    }
+  }
+} catch (e) {
+  console.warn('Could not initialize token directory:', e.message);
+}
+
 const tokenStorage = new FileTokenStorage(TOKENS_FILE);
 
+const DEFAULT_CREDENTIALS = {
+  clientId: process.env.GOOGLE_CLIENT_ID || '',
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+  redirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/auth/google/callback',
+};
+
+let activeCredentials = { ...DEFAULT_CREDENTIALS };
 let clientInstance = null;
 
-const getClient = () => {
-  if (!clientInstance) {
-    const clientId = process.env.GOOGLE_CLIENT_ID;
-    const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+const setCredentials = (creds = {}) => {
+  if (creds.clientId) activeCredentials.clientId = String(creds.clientId).trim();
+  if (creds.clientSecret) activeCredentials.clientSecret = String(creds.clientSecret).trim();
+  if (creds.redirectUri) activeCredentials.redirectUri = String(creds.redirectUri).trim();
+  clientInstance = null;
+  return { ...activeCredentials };
+};
 
-    if (!clientId || !clientSecret || clientId === 'your_client_id_here' || clientSecret === 'your_client_secret_here') {
-      throw new Error(
-        'Google OAuth credentials (GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET) are missing or set to placeholder values in .env. Please configure valid OAuth credentials in your .env file.'
-      );
+const getCredentials = () => {
+  return { ...activeCredentials };
+};
+
+const clearTokens = async () => {
+  try {
+    if (fs.existsSync(TOKENS_FILE)) {
+      fs.unlinkSync(TOKENS_FILE);
     }
+    clientInstance = null;
+    return true;
+  } catch (e) {
+    console.error('Error clearing tokens:', e.message);
+    return false;
+  }
+};
 
+const getClient = (customCreds = null) => {
+  const creds = customCreds || activeCredentials;
+  const clientId = creds.clientId;
+  const clientSecret = creds.clientSecret;
+  const redirectUri = creds.redirectUri || 'http://localhost:3000/auth/google/callback';
+
+  if (
+    !clientId ||
+    !clientSecret ||
+    clientId === 'your_client_id_here' ||
+    clientSecret === 'your_client_secret_here'
+  ) {
+    throw new Error(
+      'Google OAuth credentials (GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET) are missing or set to placeholder values. Please configure valid OAuth credentials in the frontend UI or .env file.'
+    );
+  }
+
+  if (customCreds) {
+    return new GBPClient({
+      clientId,
+      clientSecret,
+      redirectUri,
+      tokenStorage,
+      enableQuotaAccess: true,
+    });
+  }
+
+  if (!clientInstance) {
     clientInstance = new GBPClient({
-      clientId: clientId,
-      clientSecret: clientSecret,
-      redirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/auth/google/callback',
-      tokenStorage: tokenStorage,
+      clientId,
+      clientSecret,
+      redirectUri,
+      tokenStorage,
       refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-      enableQuotaAccess: true
+      enableQuotaAccess: true,
     });
   }
   return clientInstance;
 };
 
-const client = new Proxy({}, {
-  get(_target, prop) {
-    const instance = getClient();
-    const value = instance[prop];
-    if (typeof value === 'function') {
-      return value.bind(instance);
-    }
-    return value;
+const client = new Proxy(
+  {},
+  {
+    get(_target, prop) {
+      const instance = getClient();
+      const value = instance[prop];
+      if (typeof value === 'function') {
+        return value.bind(instance);
+      }
+      return value;
+    },
   }
-});
+);
 
-const generateAuthUrl = () => {
-  return client.getAuthorizationUrl();
+const generateAuthUrl = (customCreds = null) => {
+  const creds = { ...activeCredentials, ...(customCreds || {}) };
+  // Encode credentials into state so the OAuth callback is stateless and works reliably on Netlify
+  const stateData = {
+    clientId: creds.clientId,
+    clientSecret: creds.clientSecret,
+    redirectUri: creds.redirectUri,
+    timestamp: Date.now(),
+  };
+  const state = Buffer.from(JSON.stringify(stateData)).toString('base64url');
+  const clientForAuth = getClient(creds);
+  return clientForAuth.getAuthorizationUrl(undefined, state);
+};
+
+const handleCallback = async (code, state = null) => {
+  let targetCreds = activeCredentials;
+  if (state) {
+    try {
+      const decoded = JSON.parse(Buffer.from(state, 'base64url').toString('utf-8'));
+      if (decoded.clientId && decoded.clientSecret) {
+        targetCreds = {
+          clientId: decoded.clientId,
+          clientSecret: decoded.clientSecret,
+          redirectUri: decoded.redirectUri || activeCredentials.redirectUri,
+        };
+        setCredentials(targetCreds);
+      }
+    } catch (e) {
+      console.warn('Could not decode state param:', e.message);
+    }
+  }
+
+  const clientToUse = getClient(targetCreds);
+  return clientToUse.handleAuthorizationCode(code);
 };
 
 const getTokens = async () => {
@@ -195,6 +299,27 @@ const getReviews = async (accountIdOrName, locationIdOrName) => {
    */
   const fetchMultiDailyMetricsTimeSeries = async (locationId, request) => {
     return client.metrics.fetchMultiDailyMetricsTimeSeries(locationId, request);
+  }
+
+  /**
+   * Fetches daily metrics time series for a location using native SDK.
+   */
+  const getDailyMetricsTimeSeries = async (locationId, request) => {
+    return client.metrics.getDailyMetricsTimeSeries(locationId, request);
+  }
+
+  /**
+   * Fetches monthly search keywords impressions for a location using native SDK.
+   */
+  const listSearchKeywordsImpressionsMonthly = async (locationId, request) => {
+    return client.metrics.listSearchKeywordsImpressionsMonthly(locationId, request);
+  }
+
+  /**
+   * Automatically fetches all monthly search keywords impressions across all pages.
+   */
+  const listAllSearchKeywordsImpressionsMonthly = async (locationId, request) => {
+    return client.metrics.listAllSearchKeywordsImpressionsMonthly(locationId, request);
   }
 
   const fetchVerificationOptions = async (locationId, request) => {
@@ -383,17 +508,6 @@ const getReviews = async (accountIdOrName, locationIdOrName) => {
     return client.quotas.get({ projectId, service });
   }
 
-const handleCallback = async (code) => {
-  await client.processAuthCode(code);
-  const { accessToken, refreshToken } = await getTokens();
-  return {
-    accessToken,
-    refreshToken,
-    expiryDate: Date.now() + 3599000,
-  };
-};
-
-
   const getBusinessInformationQuotas = async (projectId) => {
     return client.quotas.getBusinessInformation(projectId);
   }
@@ -422,7 +536,14 @@ const handleCallback = async (code) => {
     return client.quotas.getLegacy(projectId);
   }
 
+  const getPerformanceQuotas = async (projectId) => {
+    return client.quotas.getPerformance(projectId);
+  }
+
 module.exports = {
+  setCredentials,
+  getCredentials,
+  clearTokens,
   getBusinessInformationQuotas,
   getAccountManagementQuotas,
   getVerificationsQuotas,
@@ -430,6 +551,7 @@ module.exports = {
   getLodgingQuotas,
   getPlaceActionsQuotas,
   getLegacyQuotas,
+  getPerformanceQuotas,
 
   generateAuthUrl,
   getTokens,
@@ -460,6 +582,9 @@ module.exports = {
   patchMedia,
   deleteMedia,
   fetchMultiDailyMetricsTimeSeries,
+  getDailyMetricsTimeSeries,
+  listSearchKeywordsImpressionsMonthly,
+  listAllSearchKeywordsImpressionsMonthly,
   fetchVerificationOptions,
   getVoiceOfMerchantState,
   verifyLocation,

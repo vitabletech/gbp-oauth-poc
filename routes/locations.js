@@ -680,6 +680,95 @@ router.get('/:locationId/performance-metrics', async (req, res) => {
 });
 
 /**
+ * GET /locations/:locationId/daily-metrics-time-series
+ * Retrieves daily time-series metrics for a single metric across a date range
+ */
+router.get('/:locationId/daily-metrics-time-series', async (req, res) => {
+  try {
+    const tokens = await googleService.getTokens();
+    const locationIdParam = req.params.locationId;
+    const { dailyMetric, startYear, startMonth, startDay, endYear, endMonth, endDay } = req.query;
+
+    if (!tokens.accessToken && !tokens.refreshToken) {
+      return res.status(401).json({ error: 'UNAUTHENTICATED', message: 'Not authenticated. Please login first.' });
+    }
+
+    if (!dailyMetric || !startYear || !endYear) {
+      return res.status(400).json({ error: 'MISSING_DATA', message: 'Please provide dailyMetric, startYear, and endYear in query params.' });
+    }
+
+    let locationName = decodeURIComponent(locationIdParam);
+    if (!locationName.startsWith('locations/')) locationName = `locations/${locationName}`;
+
+    const requestPayload = {
+      dailyMetric,
+      dailyRange: {
+        startDate: {
+          year: parseInt(startYear, 10),
+          month: parseInt(startMonth || '1', 10),
+          day: parseInt(startDay || '1', 10),
+        },
+        endDate: {
+          year: parseInt(endYear, 10),
+          month: parseInt(endMonth || '1', 10),
+          day: parseInt(endDay || '1', 10),
+        },
+      },
+    };
+
+    const result = await googleService.getDailyMetricsTimeSeries(locationName, requestPayload);
+    res.json({ success: true, data: result });
+  } catch (error) {
+    console.error(`[${new Date().toISOString()}] Error fetching daily metrics time series:`, error.message);
+    res.status(500).json({ error: 'UNKNOWN_ERROR', message: error.message, details: error.responseBody || undefined });
+  }
+});
+
+/**
+ * GET /locations/:locationId/searchkeywords/impressions/monthly
+ * Retrieves monthly search keywords impressions
+ */
+router.get('/:locationId/searchkeywords/impressions/monthly', async (req, res) => {
+  try {
+    const tokens = await googleService.getTokens();
+    const locationIdParam = req.params.locationId;
+    const { startYear, startMonth, endYear, endMonth, pageSize, pageToken } = req.query;
+
+    if (!tokens.accessToken && !tokens.refreshToken) {
+      return res.status(401).json({ error: 'UNAUTHENTICATED', message: 'Not authenticated. Please login first.' });
+    }
+
+    if (!startYear || !startMonth || !endYear || !endMonth) {
+      return res.status(400).json({ error: 'MISSING_DATA', message: 'Please provide startYear, startMonth, endYear, and endMonth in query params.' });
+    }
+
+    let locationName = decodeURIComponent(locationIdParam);
+    if (!locationName.startsWith('locations/')) locationName = `locations/${locationName}`;
+
+    const requestPayload = {
+      monthlyRange: {
+        startMonth: {
+          year: parseInt(startYear, 10),
+          month: parseInt(startMonth, 10),
+        },
+        endMonth: {
+          year: parseInt(endYear, 10),
+          month: parseInt(endMonth, 10),
+        },
+      },
+      ...(pageSize && { pageSize: parseInt(pageSize, 10) }),
+      ...(pageToken && { pageToken }),
+    };
+
+    const result = await googleService.listSearchKeywordsImpressionsMonthly(locationName, requestPayload);
+    res.json({ success: true, data: result });
+  } catch (error) {
+    console.error(`[${new Date().toISOString()}] Error fetching search keywords impressions:`, error.message);
+    res.status(500).json({ error: 'UNKNOWN_ERROR', message: error.message, details: error.responseBody || undefined });
+  }
+});
+
+/**
  * POST /locations/:locationId/media/bulk
  * Uploads multiple media items to a location
  */
