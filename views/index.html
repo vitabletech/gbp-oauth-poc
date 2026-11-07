@@ -3,25 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Business Profile API Explorer | Vitabletech</title>
+    <title>Google Business Profile API Explorer | Enterprise Playground by VitableTech</title>
+    <meta
+      name="description"
+      content="Test, explore, and manage the Google Business Profile API with an enterprise developer playground. Powered by @vitabletech/gbp-sdk for locations, reviews, posts, and performance metrics."
+    />
+    <meta name="keywords" content="Google Business Profile API, GBP SDK, OAuth 2.0, GBP Playground, VitableTech, Google My Business API, Performance API" />
+    <meta property="og:title" content="Google Business Profile API Explorer | VitableTech" />
+    <meta property="og:description" content="Enterprise-grade playground to test Google Business Profile APIs with real-time OAuth 2.0 and TypeScript SDK." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gbp-playground.vitabletech.in" />
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
     <style>
       :root {
         --primary: #4f46e5;
-        --primary-hover: #4338ca;
+        --primary-dark: #3730a3;
         --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
-        --vitable-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #8b5cf6 100%);
-        --bg-dark: #0f172a;
-        --card-bg: #ffffff;
-        --card-border: #e2e8f0;
-        --text-primary: #1e293b;
-        --text-secondary: #64748b;
-        --accent-green: #10b981;
-        --accent-amber: #f59e0b;
-        --radius-lg: 16px;
+        --cta-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        --vitable-accent: #2563eb;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --text-light: #94a3b8;
+        --bg-main: #f8fafc;
+        --bg-card: #ffffff;
+        --border-color: #e2e8f0;
+        --border-focus: #818cf8;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --radius-xl: 20px;
+        --radius-lg: 14px;
         --radius-md: 10px;
-        --shadow-xl: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
-        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        --radius-sm: 6px;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+        --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.18);
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       }
 
       * {
@@ -31,340 +54,558 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        background: #f8fafc;
-        color: var(--text-primary);
+        font-family: var(--font-sans);
+        background: #f8fafc radial-gradient(circle at 50% 0%, rgba(224, 231, 255, 0.45) 0%, rgba(248, 250, 252, 0) 65%);
+        color: var(--text-main);
         line-height: 1.5;
         min-height: 100vh;
-        padding: 40px 20px;
+        overflow-x: hidden;
       }
 
-      .app-wrapper {
-        max-width: 900px;
+      /* -------------------------------------------
+         Top Navigation Bar
+         ------------------------------------------- */
+      .top-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.88);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      .nav-container {
+        max-width: 1320px;
         margin: 0 auto;
-      }
-
-      /* Marketing Top Banner */
-      .marketing-banner {
-        background: var(--vitable-gradient);
-        color: white;
-        padding: 14px 24px;
-        border-radius: var(--radius-md);
+        padding: 12px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 24px;
-        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+        gap: 20px;
       }
 
-      .marketing-banner-text {
-        font-size: 14px;
-        font-weight: 500;
+      .nav-brand {
         display: flex;
         align-items: center;
-        gap: 8px;
-      }
-
-      .marketing-banner-badge {
-        background: rgba(255, 255, 255, 0.25);
-        padding: 2px 8px;
-        border-radius: 9999px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .marketing-banner-links {
-        display: flex;
         gap: 12px;
+        text-decoration: none;
+      }
+
+      .brand-logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        font-size: 20px;
+        box-shadow: 0 4px 10px rgba(99, 102, 241, 0.28);
+      }
+
+      .brand-titles {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-name {
+        font-size: 19px;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .brand-name span.tech {
+        color: #4f46e5;
+      }
+
+      .brand-motto {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: #64748b;
+      }
+
+      .nav-pills {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #f1f5f9;
+        padding: 5px;
+        border-radius: 9999px;
+        border: 1px solid #e2e8f0;
+      }
+
+      .nav-pill-item {
+        padding: 7px 16px;
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #475569;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .nav-pill-item:hover {
+        color: #0f172a;
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .nav-pill-item.active {
+        background: white;
+        color: #4338ca;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .nav-pill-item.active .pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #4f46e5;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn-nav-outline {
+        padding: 8px 18px;
+        border-radius: 9999px;
+        border: 1px solid #cbd5e1;
+        background: white;
+        color: #334155;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-nav-outline:hover {
+        background: #f8fafc;
+        border-color: #94a3b8;
+      }
+
+      .btn-nav-primary {
+        padding: 8px 18px;
+        border-radius: 9999px;
+        background: var(--cta-gradient);
+        color: white;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-nav-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(79, 70, 229, 0.38);
+      }
+
+      /* -------------------------------------------
+         Hero Section
+         ------------------------------------------- */
+      .hero-section {
+        max-width: 1040px;
+        margin: 40px auto 28px;
+        padding: 0 24px;
+        text-align: center;
+      }
+
+      .hero-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ede9fe;
+        color: #5b21b6;
+        border: 1px solid #ddd6fe;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        margin-bottom: 18px;
+        box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
+      }
+
+      .hero-title {
+        font-size: 42px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: #0f172a;
+        margin-bottom: 14px;
+        line-height: 1.18;
+      }
+
+      .hero-title .gradient-text {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 60%, #2563eb 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        color: var(--text-muted);
+        max-width: 720px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* -------------------------------------------
+         Main Enterprise 3-Column / Flanked Layout
+         ------------------------------------------- */
+      .playground-layout {
+        max-width: 1360px;
+        margin: 0 auto 60px;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 260px 1fr 280px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* Left Sidebar Feature Pills */
+      .side-features-col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: sticky;
+        top: 88px;
+      }
+
+      .feature-pill-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease;
+        text-decoration: none;
+        color: #1e293b;
+      }
+
+      .feature-pill-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: #cbd5e1;
+      }
+
+      .feature-pill-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #4f46e5;
         flex-shrink: 0;
       }
 
-      .banner-btn {
-        background: white;
-        color: #2563eb;
-        padding: 6px 14px;
-        border-radius: 6px;
+      .feature-pill-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .feature-pill-title {
         font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s ease;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.3;
       }
 
-      .banner-btn:hover {
-        background: #f0fdf4;
-        transform: translateY(-1px);
+      .feature-pill-sub {
+        font-size: 11px;
+        color: #64748b;
       }
 
-      /* Main Card */
-      .main-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
+      /* Right Sidebar 3D & Checklist Card */
+      .side-checklist-col {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: sticky;
+        top: 88px;
+      }
+
+      .storefront-card {
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid #e2e8f0;
         border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-xl);
+        padding: 24px 20px;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .storefront-visual {
+        width: 140px;
+        height: 120px;
+        margin-bottom: 12px;
+      }
+
+      .storefront-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 4px;
+      }
+
+      .storefront-tag {
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      .checklist-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .checklist-card h4 {
+        font-size: 13px;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .checklist-items {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .checklist-items li {
+        font-size: 13px;
+        color: #334155;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .checklist-items li .check-circle {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #dcfce7;
+        color: #16a34a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+
+      /* -------------------------------------------
+         Central Interactive Console Window
+         ------------------------------------------- */
+      .console-window {
+        background: var(--bg-card);
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg), var(--shadow-glow);
         overflow: hidden;
       }
 
-      /* Hero Header */
-      .header-section {
-        padding: 40px 40px 30px;
-        border-bottom: 1px solid var(--card-border);
-        text-align: center;
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-      }
-
-      .brand-pill {
-        display: inline-flex;
+      /* Console Dark Glass Header Bar */
+      .console-topbar {
+        background: #0f172a;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
         align-items: center;
-        gap: 8px;
-        background: #eef2ff;
-        color: #4338ca;
-        padding: 6px 14px;
-        border-radius: 9999px;
-        font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 16px;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
       }
 
-      .brand-pill a {
-        color: #4f46e5;
-        text-decoration: none;
-      }
-      .brand-pill a:hover {
-        text-decoration: underline;
+      .console-window-dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
-      h1 {
-        font-size: 30px;
-        font-weight: 800;
-        color: #0f172a;
-        margin-bottom: 10px;
-        letter-spacing: -0.5px;
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
       }
+      .dot.red { background: #ef4444; }
+      .dot.yellow { background: #f59e0b; }
+      .dot.green { background: #10b981; }
 
-      .tagline {
-        color: var(--text-secondary);
-        font-size: 15px;
-        max-width: 650px;
-        margin: 0 auto;
-      }
-
-      /* Content Area */
-      .card-body {
-        padding: 32px 40px;
-      }
-
-      /* Section Heading */
-      .section-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #0f172a;
+      .console-title-pill {
         display: flex;
         align-items: center;
         gap: 8px;
-        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 13px;
+        color: #f8fafc;
+        margin-left: 8px;
       }
 
-      /* Config / BYOC Box */
-      .config-box {
+      .console-trust-badges {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 12px;
+        color: #94a3b8;
+      }
+
+      .console-trust-badges span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #cbd5e1;
+      }
+
+      .console-quick-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-console-link {
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .btn-console-link:hover {
+        background: rgba(255, 255, 255, 0.24);
+      }
+
+      /* Console Body */
+      .console-body {
+        padding: 28px 32px 36px;
+      }
+
+      /* Sub Header inside Card */
+      .console-subhead {
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .console-subhead h2 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .console-subhead p {
+        font-size: 13px;
+        color: #64748b;
+      }
+
+      /* Console Tabs Switcher */
+      .console-tabs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border-bottom: 1px solid #e2e8f0;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+
+      .tab-buttons {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .tab-btn {
+        padding: 10px 18px;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        font-size: 13px;
+        font-weight: 600;
+        color: #64748b;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+      }
+
+      .tab-btn:hover {
+        color: #0f172a;
+      }
+
+      .tab-btn.active {
+        color: #4f46e5;
+        border-bottom-color: #4f46e5;
+      }
+
+      .tab-badge-mode {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fde68a;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* Auth Status Banner */
+      .auth-status-bar {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
         border-radius: var(--radius-md);
-        padding: 24px;
-        margin-bottom: 30px;
-      }
-
-      /* Redirect URI Display */
-      .redirect-uri-container {
-        margin-bottom: 24px;
-        background: white;
-        border: 1px solid #cbd5e1;
-        border-radius: 8px;
-        padding: 16px;
-      }
-
-      .redirect-label {
+        padding: 12px 18px;
+        margin-bottom: 22px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-items: center;
-        font-size: 13px;
-        font-weight: 600;
-        color: #334155;
-        margin-bottom: 8px;
-      }
-
-      .badge-req {
-        background: #fee2e2;
-        color: #dc2626;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 11px;
-      }
-
-      .redirect-bar {
-        display: flex;
-        gap: 8px;
-      }
-
-      .redirect-input {
-        flex: 1;
-        font-family: var(--font-mono);
-        font-size: 13px;
-        padding: 10px 14px;
-        background: #f8fafc;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        color: #0f172a;
-        font-weight: 500;
-      }
-
-      .copy-btn {
-        background: #0f172a;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 0 16px;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition: all 0.2s ease;
-      }
-
-      .copy-btn:hover {
-        background: #334155;
-      }
-
-      .redirect-hint {
-        font-size: 12px;
-        color: var(--text-secondary);
-        margin-top: 8px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      /* Form inputs */
-      .form-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .form-label {
-        font-size: 13px;
-        font-weight: 600;
-        color: #334155;
-      }
-
-      .input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
-
-      .text-input {
-        width: 100%;
-        padding: 10px 14px;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        font-size: 14px;
-        font-family: var(--font-mono);
-        transition: border-color 0.2s ease;
-      }
-
-      .text-input:focus {
-        outline: none;
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-      }
-
-      .toggle-visibility {
-        position: absolute;
-        right: 12px;
-        background: none;
-        border: none;
-        color: var(--text-secondary);
-        cursor: pointer;
-        font-size: 13px;
-        padding: 4px;
-      }
-
-      /* Action Buttons */
-      .button-row {
-        display: flex;
-        flex-wrap: wrap;
         gap: 12px;
-        margin-top: 20px;
-      }
-
-      .btn {
-        padding: 12px 20px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: none;
-        text-decoration: none;
-      }
-
-      .btn-primary {
-        background: var(--primary-gradient);
-        color: white;
-        box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
-        flex: 1;
-        min-width: 220px;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
-      }
-
-      .btn-secondary {
-        background: white;
-        color: #334155;
-        border: 1px solid #cbd5e1;
-      }
-
-      .btn-secondary:hover {
-        background: #f1f5f9;
-      }
-
-      .btn-demo {
-        background: #f0fdf4;
-        color: #166534;
-        border: 1px solid #bbf7d0;
-      }
-
-      .btn-demo:hover {
-        background: #dcfce7;
-      }
-
-      /* Status Alert Box */
-      .status-box {
-        background: #f1f5f9;
-        border-radius: 8px;
-        padding: 14px 18px;
-        margin-bottom: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         font-size: 13px;
       }
 
@@ -372,8 +613,8 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-weight: 600;
-        padding: 4px 10px;
+        font-weight: 700;
+        padding: 4px 12px;
         border-radius: 9999px;
         font-size: 12px;
       }
@@ -384,130 +625,481 @@
       }
 
       .status-idle {
-        background: #fef3c7;
-        color: #b45309;
+        background: #f1f5f9;
+        color: #475569;
+        border: 1px solid #cbd5e1;
       }
 
-      /* Product Showcase / Marketing Card */
-      .sdk-showcase {
-        background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
-        color: white;
-        border-radius: var(--radius-md);
-        padding: 28px;
-        margin-top: 10px;
-      }
-
-      .sdk-badge {
-        display: inline-block;
-        background: rgba(14, 165, 233, 0.2);
-        color: #38bdf8;
-        padding: 4px 12px;
-        border-radius: 9999px;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 12px;
-      }
-
-      .sdk-showcase h3 {
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 8px;
-      }
-
-      .sdk-showcase p {
-        color: #94a3b8;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
+      /* OAuth Config Box */
+      .credentials-form-box {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-sm);
         margin-bottom: 24px;
       }
 
-      .feature-item {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        padding: 14px;
+      .form-section-title {
+        font-size: 14px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
-      .feature-item-title {
+      .form-section-title span.number-badge {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #4f46e5;
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Form Grids */
+      .form-grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .form-label {
         font-size: 13px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .badge-tag-req {
+        background: #fee2e2;
+        color: #b91c1c;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
+
+      .input-with-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .input-icon-prefix {
+        position: absolute;
+        left: 12px;
+        color: #94a3b8;
+        font-size: 14px;
+        pointer-events: none;
+      }
+
+      .text-input {
+        width: 100%;
+        padding: 10px 14px 10px 34px;
+        border: 1px solid #cbd5e1;
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-family: var(--font-mono);
+        color: #0f172a;
+        background: #ffffff;
+        transition: all 0.2s ease;
+      }
+
+      .text-input:focus {
+        outline: none;
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+      }
+
+      .toggle-secret-btn {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        color: #64748b;
+        cursor: pointer;
+        font-size: 12px;
         font-weight: 600;
+        padding: 4px 6px;
+      }
+
+      .toggle-secret-btn:hover {
+        color: #0f172a;
+      }
+
+      /* Redirect URI Box */
+      .redirect-box {
+        margin-bottom: 18px;
+      }
+
+      .redirect-input-group {
+        display: flex;
+        gap: 8px;
+      }
+
+      .redirect-input {
+        flex: 1;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        padding: 10px 14px 10px 34px;
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: var(--radius-sm);
+        color: #0f172a;
+        font-weight: 500;
+      }
+
+      .btn-copy {
+        background: #0f172a;
+        color: white;
+        border: none;
+        border-radius: var(--radius-sm);
+        padding: 0 16px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+
+      .btn-copy:hover {
+        background: #334155;
+      }
+
+      .field-help-hint {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 5px;
+      }
+
+      /* Scope Dropdown */
+      .scope-select {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #cbd5e1;
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-family: var(--font-mono);
+        color: #1e293b;
+        background: white;
+        margin-bottom: 22px;
+      }
+
+      /* Form Action Buttons */
+      .actions-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 6px;
+      }
+
+      .btn-action {
+        padding: 11px 20px;
+        border-radius: var(--radius-sm);
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-login-google {
+        background: var(--cta-gradient);
+        color: white;
+        box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+        flex: 1.4;
+        min-width: 240px;
+      }
+
+      .btn-login-google:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+      }
+
+      .btn-save-cfg {
+        background: white;
+        color: #0f172a;
+        border: 1px solid #cbd5e1;
+        flex: 1;
+      }
+
+      .btn-save-cfg:hover {
+        background: #f8fafc;
+        border-color: #94a3b8;
+      }
+
+      .btn-clear-cfg {
+        background: white;
+        color: #475569;
+        border: 1px solid #cbd5e1;
+      }
+
+      .btn-clear-cfg:hover {
+        background: #fee2e2;
+        color: #b91c1c;
+        border-color: #fca5a5;
+      }
+
+      /* Sub Links under action buttons */
+      .console-sub-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px dashed #e2e8f0;
+        font-size: 12px;
+      }
+
+      .sub-action-links {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .sub-action-links a {
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .sub-action-links a:hover {
+        text-decoration: underline;
+      }
+
+      .btn-logout {
+        background: none;
+        border: none;
+        color: #94a3b8;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .btn-logout:hover {
+        color: #ef4444;
+      }
+
+      /* -------------------------------------------
+         SDK Showcase Box inside Central View
+         ------------------------------------------- */
+      .sdk-spotlight-box {
+        margin-top: 24px;
+        background: linear-gradient(145deg, #0f172a 0%, #1e1b4b 100%);
+        border-radius: var(--radius-lg);
+        color: white;
+        padding: 24px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .sdk-spotlight-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      .sdk-version-pill {
+        background: rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .sdk-spotlight-title {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .sdk-spotlight-desc {
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.5;
+        margin-bottom: 18px;
+      }
+
+      .sdk-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .sdk-grid-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-sm);
+        padding: 12px;
+      }
+
+      .sdk-grid-title {
+        font-size: 12px;
+        font-weight: 700;
         color: #f8fafc;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
         display: flex;
         align-items: center;
         gap: 6px;
       }
 
-      .feature-item-desc {
-        font-size: 12px;
+      .sdk-grid-desc {
+        font-size: 11px;
         color: #94a3b8;
-        line-height: 1.4;
+        line-height: 1.35;
       }
 
-      .showcase-actions {
+      .sdk-cta-row {
         display: flex;
+        align-items: center;
+        gap: 10px;
         flex-wrap: wrap;
-        gap: 12px;
       }
 
-      .showcase-btn-primary {
+      .btn-sdk-doc {
         background: #38bdf8;
         color: #0f172a;
-        padding: 10px 18px;
+        padding: 8px 16px;
         border-radius: 6px;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 700;
         text-decoration: none;
-        transition: all 0.2s;
+        transition: all 0.2s ease;
       }
 
-      .showcase-btn-primary:hover {
+      .btn-sdk-doc:hover {
         background: #7dd3fc;
       }
 
-      .showcase-btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
+      .btn-sdk-npm {
+        background: rgba(255, 255, 255, 0.12);
         color: white;
-        padding: 10px 18px;
+        padding: 8px 16px;
         border-radius: 6px;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
         text-decoration: none;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.2s;
+        transition: all 0.2s ease;
       }
 
-      .showcase-btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
+      .btn-sdk-npm:hover {
+        background: rgba(255, 255, 255, 0.22);
       }
 
-      /* Footer */
-      .app-footer {
-        text-align: center;
-        padding: 30px 20px;
+      /* -------------------------------------------
+         Bottom 4-Column Enterprise Trust Bar
+         ------------------------------------------- */
+      .bottom-trust-section {
+        max-width: 1320px;
+        margin: 0 auto 50px;
+        padding: 0 24px;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .trust-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .trust-icon-box {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: #eff6ff;
+        color: #2563eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .trust-title {
         font-size: 13px;
-        color: var(--text-secondary);
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 3px;
       }
 
-      .app-footer a {
-        color: var(--primary);
+      .trust-desc {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.4;
+      }
+
+      /* -------------------------------------------
+         Footer
+         ------------------------------------------- */
+      .site-footer {
+        border-top: 1px solid #e2e8f0;
+        background: white;
+        padding: 32px 24px;
+        text-align: center;
+        font-size: 13px;
+        color: #64748b;
+      }
+
+      .site-footer a {
+        color: #4f46e5;
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
       }
 
-      .app-footer a:hover {
+      .site-footer a:hover {
         text-decoration: underline;
       }
 
-      /* Toast Notification */
-      .toast {
+      /* Toast */
+      .toast-msg {
         position: fixed;
         bottom: 24px;
         right: 24px;
@@ -517,74 +1109,222 @@
         border-radius: 8px;
         font-size: 13px;
         font-weight: 600;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(12px);
         transition: all 0.3s ease;
         pointer-events: none;
-        z-index: 999;
+        z-index: 1000;
       }
 
-      .toast.show {
+      .toast-msg.show {
         opacity: 1;
         transform: translateY(0);
       }
 
-      @media (max-width: 640px) {
-        .card-body, .header-section {
-          padding: 24px 20px;
+      /* -------------------------------------------
+         Responsive Breakpoints
+         ------------------------------------------- */
+      @media (max-width: 1180px) {
+        .playground-layout {
+          grid-template-columns: 1fr;
         }
-        .marketing-banner {
+        .side-features-col, .side-checklist-col {
+          position: static;
+        }
+        .side-features-col {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .trust-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-pills {
+          display: none;
+        }
+        .hero-title {
+          font-size: 30px;
+        }
+        .form-grid-2col {
+          grid-template-columns: 1fr;
+        }
+        .sdk-grid {
+          grid-template-columns: 1fr;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr;
+        }
+        .console-body {
+          padding: 20px;
+        }
+        .console-topbar {
           flex-direction: column;
           align-items: flex-start;
-        }
-        .button-row {
-          flex-direction: column;
-        }
-        .btn-primary {
-          width: 100%;
         }
       }
     </style>
   </head>
   <body>
-    <div class="app-wrapper">
-      
-      <!-- Marketing Banner -->
-      <div class="marketing-banner">
-        <div class="marketing-banner-text">
-          <span class="marketing-banner-badge">Official Release</span>
-          <span>⚡ Built by <strong><a href="https://vitabletech.in/" target="_blank" style="color:white;text-decoration:underline;">Vitabletech</a></strong> — Discover <strong>@vitabletech/gbp-sdk v1.3.0</strong></span>
-        </div>
-        <div class="marketing-banner-links">
-          <a href="https://gbp.vitabletech.in/" target="_blank" class="banner-btn">Documentation ➔</a>
-          <a href="https://vitabletech.in/" target="_blank" class="banner-btn">Hire Us</a>
+    <!-- Top Enterprise Navigation -->
+    <header class="top-navbar">
+      <div class="nav-container">
+        <a href="https://vitabletech.in/" target="_blank" class="nav-brand">
+          <div class="brand-logo-icon">V</div>
+          <div class="brand-titles">
+            <div class="brand-name">Vitable<span class="tech">Tech</span></div>
+            <div class="brand-motto">Transparency | Trust | Growth</div>
+          </div>
+        </a>
+
+        <nav class="nav-pills">
+          <a href="#" class="nav-pill-item active">
+            <span class="pill-dot"></span>
+            <span>GBPs Playground</span>
+          </a>
+          <a href="/api-docs" target="_blank" class="nav-pill-item">
+            <span>Features</span>
+          </a>
+          <a href="https://vitabletech.in/" target="_blank" class="nav-pill-item">
+            <span>Solutions ▾</span>
+          </a>
+          <a href="https://gbp.vitabletech.in/" target="_blank" class="nav-pill-item">
+            <span>Docs</span>
+          </a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="/api-docs" target="_blank" class="btn-nav-outline">
+            Interactive Docs
+          </a>
+          <a href="https://vitabletech.in/" target="_blank" class="btn-nav-primary">
+            <span>Get Started Free</span> ➔
+          </a>
         </div>
       </div>
+    </header>
 
-      <!-- Main Application Card -->
-      <div class="main-card">
-        
-        <!-- Header -->
-        <div class="header-section">
-          <div class="brand-pill">
-            <span>🏢 Developed by <a href="https://vitabletech.in/" target="_blank">Vitabletech Team</a></span>
-            <span>•</span>
-            <span>v1.3.0 SDK</span>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge-pill">
+        <span>⚡ Enterprise-Grade GBP API Platform</span>
+      </div>
+      <h1 class="hero-title">
+        Google Business Profile <span class="gradient-text">API Explorer</span>
+      </h1>
+      <p class="hero-subtitle">
+        Test, explore, and manage the Google Business Profile API with a powerful, developer-friendly interface.
+        Built for agencies, developers, and enterprises to manage locations, reviews, posts, and more — at scale.
+      </p>
+    </section>
+
+    <!-- Main Flanked 3-Column Playground Layout -->
+    <main class="playground-layout">
+      <!-- Left Column: Feature Navigation Badges -->
+      <aside class="side-features-col">
+        <a href="/api-docs" target="_blank" class="feature-pill-card">
+          <div class="feature-pill-icon">&lt;/&gt;</div>
+          <div class="feature-pill-content">
+            <div class="feature-pill-title">Test GBP APIs in Real-time</div>
+            <div class="feature-pill-sub">Full Swagger UI interactive test suite</div>
           </div>
-          <h1>Google Business Profile API Explorer</h1>
-          <p class="tagline">
-            Test and interact with all Google Business Profile APIs (Locations, Performance Metrics, Reviews, Verifications, Quotas, and Menus) with your own credentials or pre-configured defaults.
-          </p>
+        </a>
+
+        <a href="/api-docs" target="_blank" class="feature-pill-card">
+          <div class="feature-pill-icon">📍</div>
+          <div class="feature-pill-content">
+            <div class="feature-pill-title">Manage Multiple Locations</div>
+            <div class="feature-pill-sub">Fetch, update & sync locations</div>
+          </div>
+        </a>
+
+        <a href="/api-docs" target="_blank" class="feature-pill-card">
+          <div class="feature-pill-icon">💬</div>
+          <div class="feature-pill-content">
+            <div class="feature-pill-title">Handle Reviews & Responses</div>
+            <div class="feature-pill-sub">Automated replies & rating insights</div>
+          </div>
+        </a>
+
+        <a href="/api-docs" target="_blank" class="feature-pill-card">
+          <div class="feature-pill-icon">📊</div>
+          <div class="feature-pill-content">
+            <div class="feature-pill-title">Create & Manage Posts</div>
+            <div class="feature-pill-sub">Events, offers & CTA announcements</div>
+          </div>
+        </a>
+
+        <a href="/api-docs" target="_blank" class="feature-pill-card">
+          <div class="feature-pill-icon">⚙️</div>
+          <div class="feature-pill-content">
+            <div class="feature-pill-title">Enterprise Scalable</div>
+            <div class="feature-pill-sub">Type-safe with auto-pagination</div>
+          </div>
+        </a>
+      </aside>
+
+      <!-- Center Column: Main Interactive Console Window -->
+      <section class="console-window">
+        <!-- Console Window Top Bar -->
+        <div class="console-topbar">
+          <div style="display: flex; align-items: center;">
+            <div class="console-window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="console-title-pill">
+              <span>⚡ GBPs Playground</span>
+            </div>
+          </div>
+
+          <div class="console-trust-badges">
+            <span>✓ Fully Tested APIs</span>
+            <span>✓ Enterprise-Ready</span>
+            <span>✓ Real-time Responses</span>
+          </div>
+
+          <div class="console-quick-links">
+            <a href="https://gbp.vitabletech.in/" target="_blank" class="btn-console-link">
+              <span>📖</span> Docs
+            </a>
+            <a href="/api-docs" target="_blank" class="btn-console-link">
+              <span>📊</span> API Log
+            </a>
+          </div>
         </div>
 
-        <!-- Body -->
-        <div class="card-body">
-          
+        <!-- Console Body -->
+        <div class="console-body">
+          <div class="console-subhead">
+            <h2>🏪 Google Business Profile API Explorer</h2>
+            <p>Test and interact with all Google Business Profile API endpoints. Authenticate, configure, and make real API calls with instant responses.</p>
+          </div>
+
+          <!-- Console Tabs Switcher -->
+          <div class="console-tabs">
+            <div class="tab-buttons">
+              <button type="button" class="tab-btn active">
+                <span>🔒</span> Authentication
+              </button>
+              <a href="/api-docs" target="_blank" class="tab-btn">
+                <span>&lt;/&gt;</span> Test Endpoints
+              </a>
+              <a href="https://gbp.vitabletech.in/guide/quickstart" target="_blank" class="tab-btn">
+                <span>📋</span> Sample Requests
+              </a>
+            </div>
+            <div class="tab-badge-mode">
+              <span>🟡</span> Sandbox / BYOC Mode
+            </div>
+          </div>
+
           <!-- Authentication Status Card -->
-          <div class="status-box">
+          <div class="auth-status-bar">
             <div>
-              <span style="font-weight: 600; color: #334155;">Authentication Status:</span>
+              <strong style="color: #1e293b;">Authentication Status:</strong>
               <span id="authStatusText" style="color: #64748b; margin-left: 6px;">Checking session...</span>
             </div>
             <div>
@@ -592,158 +1332,282 @@
             </div>
           </div>
 
-          <!-- BYOC (Bring Your Own Credentials) Form -->
-          <div class="config-box">
-            <div class="section-title">
-              <span>⚙️ OAuth Configuration &amp; Credentials</span>
+          <!-- BYOC OAuth Configuration Box -->
+          <div class="credentials-form-box">
+            <div class="form-section-title">
+              <span class="number-badge">1</span>
+              <span>OAuth Configuration &amp; Credentials</span>
             </div>
 
-            <!-- Dynamic Redirect URI Display -->
-            <div class="redirect-uri-container">
-              <div class="redirect-label">
-                <span>Google Authorized Redirect URI <span class="badge-req">Mandatory</span></span>
-                <span style="font-size: 11px; color: #64748b;">Copy and whitelist in Google Cloud Console</span>
-              </div>
-              <div class="redirect-bar">
-                <input
-                  type="text"
-                  id="redirectUriInput"
-                  class="redirect-input"
-                  value="https://gbp-playground.vitabletech.in/auth/google/callback"
-                  readonly
-                />
-                <script data-cfasync="false">
-                  try {
-                    document.getElementById('redirectUriInput').value =
-                      window.location.origin + '/auth/google/callback';
-                  } catch (e) {}
-                </script>
-                <button type="button" class="copy-btn" onclick="copyRedirectUri()">
-                  <span id="copyIcon">📋</span> <span id="copyText">Copy URI</span>
-                </button>
-              </div>
-              <p class="redirect-hint">
-                <span>ℹ️</span>
-                <span>In Google Cloud Console ➔ <strong>APIs &amp; Services ➔ Credentials ➔ Authorized redirect URIs</strong>, paste this exact URI.</span>
-              </p>
-            </div>
-
-            <!-- Credentials Form Inputs -->
-            <div class="form-grid">
+            <!-- Credentials Input Grid -->
+            <div class="form-grid-2col">
               <div class="form-group">
-                <label class="form-label" for="clientIdInput">Google Client ID</label>
-                <input
-                  type="text"
-                  id="clientIdInput"
-                  class="text-input"
-                  placeholder="e.g. 485790434071-...apps.googleusercontent.com"
-                />
+                <div class="form-label-row">
+                  <label class="form-label" for="clientIdInput">Google API Client ID</label>
+                  <span class="badge-tag-req">Required</span>
+                </div>
+                <div class="input-with-icon">
+                  <span class="input-icon-prefix">🔑</span>
+                  <input
+                    type="text"
+                    id="clientIdInput"
+                    class="text-input"
+                    placeholder="Enter your Google OAuth Client ID"
+                  />
+                </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="clientSecretInput">Google Client Secret</label>
-                <div class="input-wrapper">
+                <div class="form-label-row">
+                  <label class="form-label" for="clientSecretInput">Client Secret</label>
+                  <span class="badge-tag-req">Required</span>
+                </div>
+                <div class="input-with-icon">
+                  <span class="input-icon-prefix">🔒</span>
                   <input
                     type="password"
                     id="clientSecretInput"
                     class="text-input"
-                    placeholder="e.g. GOCSPX-..."
+                    placeholder="Enter your Client Secret"
                   />
-                  <button type="button" class="toggle-visibility" onclick="toggleSecretVisibility()">
+                  <button type="button" class="toggle-secret-btn" onclick="toggleSecretVisibility()">
                     <span id="toggleSecretText">Show</span>
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- Buttons Row -->
-            <div class="button-row">
-              <button type="button" class="btn btn-primary" onclick="loginWithGoogle()">
+            <!-- Dynamic Authorized Redirect URI Input -->
+            <div class="redirect-box">
+              <div class="form-label-row" style="margin-bottom: 6px;">
+                <label class="form-label" for="redirectUriInput">Redirect URI (Authorized Callback)</label>
+                <span style="font-size: 11px; color: #64748b;">Must match Google Cloud Console exactly</span>
+              </div>
+              <div class="redirect-input-group">
+                <div class="input-with-icon" style="flex: 1;">
+                  <span class="input-icon-prefix">🌐</span>
+                  <input
+                    type="text"
+                    id="redirectUriInput"
+                    class="redirect-input"
+                    value="https://gbp-playground.vitabletech.in/auth/google/callback"
+                    readonly
+                  />
+                </div>
+                <script data-cfasync="false">
+                  try {
+                    document.getElementById('redirectUriInput').value =
+                      window.location.origin + '/auth/google/callback';
+                  } catch (e) {}
+                </script>
+                <button type="button" class="btn-copy" onclick="copyRedirectUri()">
+                  <span id="copyIcon">📋</span> <span id="copyText">Copy URI</span>
+                </button>
+              </div>
+              <p class="field-help-hint">
+                ℹ️ Paste into Google Cloud Console ➔ <strong>APIs &amp; Services ➔ Credentials ➔ Authorized redirect URIs</strong>.
+              </p>
+            </div>
+
+            <!-- API Scope Selector -->
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label class="form-label" for="scopeSelect">API Scope</label>
+              <select id="scopeSelect" class="scope-select">
+                <option value="https://www.googleapis.com/auth/business.manage">https://www.googleapis.com/auth/business.manage (Full GBP Management)</option>
+              </select>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions-container">
+              <button type="button" class="btn-action btn-login-google" onclick="loginWithGoogle()">
                 <span>🚀</span> Login with Google Business Profile
               </button>
 
-              <button type="button" class="btn btn-secondary" onclick="saveCredentials()">
-                <span>💾</span> Save Credentials
+              <button type="button" class="btn-action btn-save-cfg" onclick="saveCredentials()">
+                <span>💾</span> Save Configuration
               </button>
 
-              <button type="button" class="btn btn-secondary" onclick="clearCredentials()">
+              <button type="button" class="btn-action btn-clear-cfg" onclick="clearCredentials()">
                 <span>🗑️</span> Clear Inputs
               </button>
+            </div>
 
-              <a href="/api-docs" class="btn btn-secondary" target="_blank">
-                <span>📘</span> Open Swagger API Docs
-              </a>
-
-              <button type="button" class="btn btn-secondary" onclick="logout()">
+            <!-- Sub Action Links -->
+            <div class="console-sub-actions">
+              <div class="sub-action-links">
+                <a href="/api-docs" target="_blank">
+                  <span>📖</span> View Example API Calls (Swagger)
+                </a>
+                <a href="https://gbp.vitabletech.in/" target="_blank">
+                  <span>📚</span> SDK Documentation
+                </a>
+              </div>
+              <button type="button" class="btn-logout" onclick="logout()">
                 <span>🚪</span> Logout
               </button>
             </div>
           </div>
 
-          <!-- Marketing Spotlight Section: Why Developers Choose @vitabletech/gbp-sdk -->
-          <div class="sdk-showcase">
-            <span class="sdk-badge">ENTERPRISE NODE.JS SDK</span>
-            <h3>Powered by @vitabletech/gbp-sdk (v1.3.0)</h3>
-            <p>
-              Tired of fragmented endpoints, token refreshing headaches, and manual pagination? <strong>@vitabletech/gbp-sdk</strong> is the definitive production SDK for Google Business Profile, built by the engineering team at Vitabletech.
+          <!-- Enterprise Spotlight: Powered by @vitabletech/gbp-sdk -->
+          <div class="sdk-spotlight-box">
+            <div class="sdk-spotlight-header">
+              <span class="sdk-version-pill">ENTERPRISE NODE.JS SDK</span>
+              <span style="font-size: 11px; color: #94a3b8;">v1.3.0 Release</span>
+            </div>
+            <h3 class="sdk-spotlight-title">Powered by @vitabletech/gbp-sdk</h3>
+            <p class="sdk-spotlight-desc">
+              Production-tested TypeScript SDK for Google Business Profile. Handles auto-token refresh, Performance API v1 time series, and multi-location pagination out of the box.
             </p>
 
-            <div class="features-grid">
-              <div class="feature-item">
-                <div class="feature-item-title">🔐 Zero-Config OAuth 2.0</div>
-                <div class="feature-item-desc">Thread-safe token manager with auto-refresh and pluggable file/memory storage.</div>
+            <div class="sdk-grid">
+              <div class="sdk-grid-item">
+                <div class="sdk-grid-title">🔐 Zero-Config OAuth 2.0</div>
+                <div class="sdk-grid-desc">Thread-safe token manager with auto-refresh and memory/file storage.</div>
               </div>
-              <div class="feature-item">
-                <div class="feature-item-title">📊 Performance API v1</div>
-                <div class="feature-item-desc">Daily time series metrics, mobile/desktop search views, and monthly keyword impression counts.</div>
+              <div class="sdk-grid-item">
+                <div class="sdk-grid-title">📊 Performance API v1</div>
+                <div class="sdk-grid-desc">Daily time series metrics, search queries, and keyword impressions.</div>
               </div>
-              <div class="feature-item">
-                <div class="feature-item-title">📑 Auto-Pagination</div>
-                <div class="feature-item-desc">Seamless <code>listAll()</code> and cursor paginators for thousands of records with 0 loops.</div>
+              <div class="sdk-grid-item">
+                <div class="sdk-grid-title">📑 Auto-Pagination</div>
+                <div class="sdk-grid-desc">Built-in cursor paginators handle thousands of records effortlessly.</div>
               </div>
-              <div class="feature-item">
-                <div class="feature-item-title">🛡️ Strict TypeScript</div>
-                <div class="feature-item-desc">100% typed request/response models for Locations, Menus, Verifications, and Quotas.</div>
+              <div class="sdk-grid-item">
+                <div class="sdk-grid-title">🛡️ Strict TypeScript</div>
+                <div class="sdk-grid-desc">100% typed request & response interfaces for seamless autocomplete.</div>
               </div>
             </div>
 
-            <div class="showcase-actions">
-              <a href="https://gbp.vitabletech.in/" target="_blank" class="showcase-btn-primary">
+            <div class="sdk-cta-row">
+              <a href="https://gbp.vitabletech.in/" target="_blank" class="btn-sdk-doc">
                 Explore Full Documentation ➔
               </a>
-              <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" class="showcase-btn-secondary">
+              <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" class="btn-sdk-npm">
                 View on npm (v1.3.0)
               </a>
-              <a href="https://vitabletech.in/" target="_blank" class="showcase-btn-secondary">
-                Contact Vitabletech Team
+              <a href="https://vitabletech.in/" target="_blank" class="btn-sdk-npm">
+                Hire VitableTech Team
               </a>
             </div>
           </div>
+        </div>
+      </section>
 
+      <!-- Right Column: 3D Visual & Checklist Card -->
+      <aside class="side-checklist-col">
+        <div class="storefront-card">
+          <!-- Scalable SVG Illustration of Google Business Profile Storefront & Analytics -->
+          <svg class="storefront-visual" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="55" width="110" height="70" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="2"/>
+            <!-- Store Awning with Google Brand Colors -->
+            <path d="M20 55 L35 25 L50 55 Z" fill="#4285F4"/>
+            <path d="M50 55 L65 25 L80 55 Z" fill="#EA4335"/>
+            <path d="M80 55 L95 25 L110 55 Z" fill="#FBBC05"/>
+            <path d="M110 55 L125 25 L140 55 Z" fill="#34A853"/>
+            <!-- Store Door and Window -->
+            <rect x="65" y="80" width="30" height="45" rx="3" fill="#3B82F6"/>
+            <rect x="35" y="75" width="22" height="25" rx="2" fill="#E2E8F0"/>
+            <rect x="103" y="75" width="22" height="25" rx="2" fill="#E2E8F0"/>
+            <!-- Location Pin with Pulse -->
+            <circle cx="125" cy="22" r="14" fill="#EA4335" opacity="0.15"/>
+            <path d="M125 10 C120 10 116 14 116 19 C116 26 125 35 125 35 C125 35 134 26 134 19 C134 14 130 10 125 10 Z" fill="#EA4335"/>
+            <circle cx="125" cy="18" r="3" fill="white"/>
+            <!-- Upward Trend Chart Badge -->
+            <rect x="95" y="90" width="50" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.06))"/>
+            <rect x="102" y="110" width="6" height="10" rx="1" fill="#818CF8"/>
+            <rect x="112" y="104" width="6" height="16" rx="1" fill="#6366F1"/>
+            <rect x="122" y="98" width="6" height="22" rx="1" fill="#4F46E5"/>
+            <rect x="132" y="94" width="6" height="26" rx="1" fill="#4338CA"/>
+          </svg>
+          <div class="storefront-title">Google Business Profile</div>
+          <div class="storefront-tag">Multi-Location API Engine</div>
+        </div>
+
+        <div class="checklist-card">
+          <h4>Enterprise Standards</h4>
+          <ul class="checklist-items">
+            <li>
+              <span class="check-circle">✓</span>
+              <span>Secure OAuth 2.0 (BYOC)</span>
+            </li>
+            <li>
+              <span class="check-circle">✓</span>
+              <span>Real-time API Testing</span>
+            </li>
+            <li>
+              <span class="check-circle">✓</span>
+              <span>Production Ready</span>
+            </li>
+            <li>
+              <span class="check-circle">✓</span>
+              <span>Built for Scale</span>
+            </li>
+            <li>
+              <span class="check-circle">✓</span>
+              <span>Zero Token Leakage</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Bottom 4-Column Enterprise Trust Bar -->
+    <section class="bottom-trust-section">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon-box">🛡️</div>
+          <div>
+            <div class="trust-title">Secure &amp; Compliant</div>
+            <div class="trust-desc">OAuth 2.0 client authentication with local credential storage.</div>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">🏢</div>
+          <div>
+            <div class="trust-title">Enterprise Ready</div>
+            <div class="trust-desc">Built for marketing agencies, multi-brand chains & SaaS platforms.</div>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">⚡</div>
+          <div>
+            <div class="trust-title">High Performance</div>
+            <div class="trust-desc">Thread-safe, rate-limit resilient, and auto-paginated SDK architecture.</div>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">👥</div>
+          <div>
+            <div class="trust-title">Developer Friendly</div>
+            <div class="trust-desc">Interactive Swagger docs, typed models, and production quickstarts.</div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Footer -->
-      <footer class="app-footer">
-        <p>
-          Google Business Profile API Explorer • Built with ❤️ by
-          <a href="https://vitabletech.in/" target="_blank">Vitabletech</a>
-        </p>
-        <p style="margin-top: 6px; font-size: 12px;">
-          <a href="https://gbp.vitabletech.in/" target="_blank">SDK Documentation</a> |
-          <a href="https://github.com/vitabletech/gbp-sdk" target="_blank">GitHub</a> |
-          <a href="https://developers.google.com/my-business" target="_blank">Google API Docs</a> |
-          <a href="https://vitabletech.in/" target="_blank">Vitabletech.in</a>
-        </p>
-      </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>
+        Google Business Profile API Explorer • Engineered by
+        <a href="https://vitabletech.in/" target="_blank">VitableTech</a>
+      </p>
+      <p style="margin-top: 8px; font-size: 12px; color: #94a3b8;">
+        <a href="https://gbp.vitabletech.in/" target="_blank">SDK Documentation</a> &nbsp;•&nbsp;
+        <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank">npm Registry (v1.3.0)</a> &nbsp;•&nbsp;
+        <a href="https://github.com/vitabletech/gbp-sdk" target="_blank">GitHub</a> &nbsp;•&nbsp;
+        <a href="/api-docs" target="_blank">Swagger API Explorer</a> &nbsp;•&nbsp;
+        <a href="https://vitabletech.in/" target="_blank">Vitabletech.in</a>
+      </p>
+    </footer>
 
-    <!-- Toast Component -->
-    <div id="toast" class="toast">Action completed successfully</div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast-msg">Action completed successfully</div>
 
+    <!-- Application Script Logic -->
     <script data-cfasync="false">
-      let serverDefaults = { clientId: '', clientSecret: '' };
-
       // Computes current active redirect URI based on window location
       function getActiveRedirectUri() {
         return window.location.origin + '/auth/google/callback';
@@ -755,7 +1619,7 @@
         toast.classList.add('show');
         setTimeout(() => {
           toast.classList.remove('show');
-        }, 3000);
+        }, 3200);
       }
 
       function copyRedirectUri() {
@@ -811,7 +1675,6 @@
         localStorage.setItem('gbp_custom_redirect_uri', redirectUri);
 
         try {
-          // Sync with backend
           const res = await fetch('/auth/config', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -839,7 +1702,7 @@
           return;
         }
 
-        // Save before initiating
+        // Save before initiating OAuth
         await saveCredentials(true);
 
         const authUrl = `/auth/google?clientId=${encodeURIComponent(clientId)}&clientSecret=${encodeURIComponent(clientSecret)}&redirectUri=${encodeURIComponent(redirectUri)}`;
