@@ -11,11 +11,6 @@
   included_files = ["data/**", "views/**"]
 
 [[redirects]]
-  from = "/api-docs*"
-  to = "/.netlify/functions/api/api-docs:splat"
-  status = 200
-
-[[redirects]]
   from = "/auth/*"
   to = "/.netlify/functions/api/auth/:splat"
   status = 200

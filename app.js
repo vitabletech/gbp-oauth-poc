@@ -12,7 +12,7 @@ const chainsRoutes = require('./routes/chains');
 
 // Import services
 const googleService = require('./services/google');
-const swaggerUi = require('swagger-ui-express');
+const fs = require('fs');
 const swaggerSpec = require('./services/swagger');
 
 const app = express();
@@ -21,7 +21,19 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'views')));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+// Swagger Documentation API Routes
+app.get(['/api-docs/swagger.json', '/swagger.json'], (req, res) => {
+  res.json(swaggerSpec);
+});
+
+app.get(['/api-docs', '/api-docs/', '/api-docs/index.html'], (req, res) => {
+  const docsHtmlPath = path.join(__dirname, 'views', 'api-docs', 'index.html');
+  if (fs.existsSync(docsHtmlPath)) {
+    return res.sendFile(docsHtmlPath);
+  }
+  res.redirect('/');
+});
 
 // Logging middleware
 app.use((req, res, next) => {
