@@ -611,6 +611,12 @@
                   class="redirect-input"
                   readonly
                 />
+                <script>
+                  try {
+                    document.getElementById('redirectUriInput').value =
+                      window.location.origin + '/auth/google/callback';
+                  } catch (e) {}
+                </script>
                 <button type="button" class="copy-btn" onclick="copyRedirectUri()">
                   <span id="copyIcon">📋</span> <span id="copyText">Copy URI</span>
                 </button>
@@ -876,11 +882,14 @@
         }
       }
 
-      // Initialize on load
-      window.addEventListener('DOMContentLoaded', async () => {
+      // Initialize on load (supports deferred and Cloudflare Rocket Loader execution)
+      async function initializeApp() {
         // Set dynamic redirect URI
         const activeUri = getActiveRedirectUri();
-        document.getElementById('redirectUriInput').value = activeUri;
+        const redirectInput = document.getElementById('redirectUriInput');
+        if (redirectInput) {
+          redirectInput.value = activeUri;
+        }
 
         // Fetch server default configuration
         try {
@@ -907,7 +916,13 @@
 
         // Check backend auth status
         checkAuthStatus();
-      });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeApp);
+      } else {
+        initializeApp();
+      }
     </script>
   </body>
 </html>

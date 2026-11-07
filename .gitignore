@@ -35,3 +35,5 @@ gbp-token.json
 todo
 log
 old-log
+# Local Netlify folder
+.netlify
