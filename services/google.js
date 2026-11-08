@@ -147,7 +147,13 @@ const handleCallback = async (code, state = null) => {
   }
 
   const clientToUse = getClient(targetCreds);
-  return clientToUse.handleAuthorizationCode(code);
+  if (typeof clientToUse.processAuthCode === 'function') {
+    return await clientToUse.processAuthCode(code);
+  }
+  if (typeof clientToUse.handleAuthorizationCode === 'function') {
+    return await clientToUse.handleAuthorizationCode(code);
+  }
+  throw new Error('GBPClient does not support processAuthCode or handleAuthorizationCode');
 };
 
 const getTokens = async () => {
