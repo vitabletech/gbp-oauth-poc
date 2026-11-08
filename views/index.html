@@ -15,8 +15,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gbp-playground.vitabletech.in" />
 
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -67,22 +67,84 @@
     }
 
     /* -------------------------------------------
-         Top Navigation Bar
-         ------------------------------------------- */
+       Top Marketing Announcement Banner
+       ------------------------------------------- */
+    .top-promo-banner {
+      background: linear-gradient(90deg, #1e1b4b 0%, #312e81 40%, #1e1b4b 100%);
+      color: white;
+      padding: 9px 20px;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 101;
+    }
+
+    .top-promo-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .promo-badge-glow {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      color: #0f172a;
+      padding: 2px 9px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
+    }
+
+    .promo-text {
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .promo-cta-link {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .promo-cta-link:hover {
+      background: white;
+      color: #312e81;
+      transform: translateY(-1px);
+    }
+
+    /* -------------------------------------------
+       Top Navigation Bar
+       ------------------------------------------- */
     .top-navbar {
       position: sticky;
       top: 0;
       z-index: 100;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      background: rgba(255, 255, 255, 0.88);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     }
 
     .nav-container {
       max-width: 1320px;
       margin: 0 auto;
-      padding: 12px 24px;
+      padding: 10px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -92,49 +154,19 @@
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
       text-decoration: none;
+      transition: opacity 0.2s ease;
     }
 
-    .brand-logo-icon {
-      width: 38px;
+    .nav-brand:hover {
+      opacity: 0.9;
+    }
+
+    .brand-logo-img {
       height: 38px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      font-size: 20px;
-      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.28);
-    }
-
-    .brand-titles {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-size: 19px;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .brand-name span.tech {
-      color: #4f46e5;
-    }
-
-    .brand-motto {
-      font-size: 10px;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: #64748b;
+      width: auto;
+      max-width: 200px;
+      display: block;
     }
 
     .nav-pills {
@@ -222,11 +254,11 @@
     }
 
     /* -------------------------------------------
-         Hero Section
-         ------------------------------------------- */
+       Hero Section
+       ------------------------------------------- */
     .hero-section {
       max-width: 1040px;
-      margin: 40px auto 28px;
+      margin: 36px auto 28px;
       padding: 0 24px;
       text-align: center;
     }
@@ -265,41 +297,41 @@
     .hero-subtitle {
       font-size: 16px;
       color: var(--text-muted);
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
     /* -------------------------------------------
-         Main Enterprise 3-Column / Flanked Layout
-         ------------------------------------------- */
+       Main Enterprise 3-Column / Flanked Layout
+       ------------------------------------------- */
     .playground-layout {
       max-width: 1360px;
-      margin: 0 auto 60px;
+      margin: 0 auto 50px;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: 260px 1fr 280px;
+      grid-template-columns: 270px 1fr 280px;
       gap: 24px;
       align-items: start;
     }
 
-    /* Left Sidebar Feature Pills */
+    /* Left Sidebar Feature Pills & Marketing Ad */
     .side-features-col {
       display: flex;
       flex-direction: column;
       gap: 12px;
       position: sticky;
-      top: 88px;
+      top: 96px;
     }
 
     .feature-pill-card {
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: var(--radius-lg);
-      padding: 14px 16px;
+      padding: 13px 15px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
       text-decoration: none;
@@ -313,14 +345,14 @@
     }
 
     .feature-pill-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
       color: #4f46e5;
       flex-shrink: 0;
     }
@@ -342,20 +374,102 @@
       color: #64748b;
     }
 
+    /* Sidebar Ad Card (Left) */
+    .sidebar-marketing-ad {
+      background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar-marketing-ad::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ad-tag-pill {
+      align-self: flex-start;
+      background: rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .ad-tag-pill.growth {
+      background: rgba(168, 85, 247, 0.2);
+      color: #c084fc;
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .ad-card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .ad-card-text {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+
+    .ad-card-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+    }
+
+    .ad-card-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.45);
+      background: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
+    }
+
     /* Right Sidebar 3D & Checklist Card */
     .side-checklist-col {
       display: flex;
       flex-direction: column;
       gap: 16px;
       position: sticky;
-      top: 88px;
+      top: 96px;
     }
 
     .storefront-card {
       background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
       border: 1px solid #e2e8f0;
       border-radius: var(--radius-lg);
-      padding: 24px 20px;
+      padding: 20px 18px;
       text-align: center;
       box-shadow: var(--shadow-md);
       display: flex;
@@ -365,19 +479,19 @@
 
     .storefront-visual {
       width: 140px;
-      height: 120px;
-      margin-bottom: 12px;
+      height: 110px;
+      margin-bottom: 10px;
     }
 
     .storefront-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .storefront-tag {
-      font-size: 12px;
+      font-size: 11px;
       color: #64748b;
     }
 
@@ -385,17 +499,17 @@
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: var(--radius-lg);
-      padding: 20px;
+      padding: 18px 20px;
       box-shadow: var(--shadow-sm);
     }
 
     .checklist-card h4 {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -405,35 +519,35 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
     .checklist-items li {
-      font-size: 13px;
+      font-size: 12px;
       color: #334155;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
 
     .checklist-items li .check-circle {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       border-radius: 50%;
       background: #dcfce7;
       color: #16a34a;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       flex-shrink: 0;
     }
 
     /* -------------------------------------------
-         Central Interactive Console Window
-         ------------------------------------------- */
+       Central Interactive Console Window
+       ------------------------------------------- */
     .console-window {
       background: var(--bg-card);
       border: 1px solid #e2e8f0;
@@ -442,7 +556,6 @@
       overflow: hidden;
     }
 
-    /* Console Dark Glass Header Bar */
     .console-topbar {
       background: #0f172a;
       color: white;
@@ -466,17 +579,9 @@
       border-radius: 50%;
     }
 
-    .dot.red {
-      background: #ef4444;
-    }
-
-    .dot.yellow {
-      background: #f59e0b;
-    }
-
-    .dot.green {
-      background: #10b981;
-    }
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #f59e0b; }
+    .dot.green { background: #10b981; }
 
     .console-title-pill {
       display: flex;
@@ -527,12 +632,10 @@
       background: rgba(255, 255, 255, 0.24);
     }
 
-    /* Console Body */
     .console-body {
       padding: 28px 32px 36px;
     }
 
-    /* Sub Header inside Card */
     .console-subhead {
       margin-bottom: 24px;
       text-align: left;
@@ -553,7 +656,6 @@
       color: #64748b;
     }
 
-    /* Console Tabs Switcher */
     .console-tabs {
       display: flex;
       align-items: center;
@@ -608,7 +710,6 @@
       gap: 5px;
     }
 
-    /* Auth Status Banner */
     .auth-status-bar {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -643,7 +744,6 @@
       border: 1px solid #cbd5e1;
     }
 
-    /* OAuth Config Box */
     .credentials-form-box {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -676,7 +776,6 @@
       justify-content: center;
     }
 
-    /* Form Grids */
     .form-grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -760,7 +859,6 @@
       color: #0f172a;
     }
 
-    /* Redirect URI Box */
     .redirect-box {
       margin-bottom: 18px;
     }
@@ -808,7 +906,6 @@
       margin-top: 5px;
     }
 
-    /* Scope Dropdown */
     .scope-select {
       width: 100%;
       padding: 10px 14px;
@@ -821,7 +918,6 @@
       margin-bottom: 22px;
     }
 
-    /* Form Action Buttons */
     .actions-container {
       display: flex;
       flex-wrap: wrap;
@@ -881,7 +977,6 @@
       border-color: #fca5a5;
     }
 
-    /* Sub Links under action buttons */
     .console-sub-actions {
       display: flex;
       align-items: center;
@@ -928,10 +1023,139 @@
     }
 
     /* -------------------------------------------
-         SDK Showcase Box inside Central View
-         ------------------------------------------- */
+       Mid-Page High-Conversion Ad Banner for VitableTech
+       ------------------------------------------- */
+    .vitable-marketing-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      color: white;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vitable-marketing-banner::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.45) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .vitable-banner-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .vitable-banner-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .vitable-banner-tag {
+      display: inline-block;
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      color: #0f172a;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .vitable-banner-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .vitable-banner-desc {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      max-width: 620px;
+    }
+
+    .vitable-banner-perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #93c5fd;
+    }
+
+    .vitable-banner-perks span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .vitable-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 180px;
+    }
+
+    .btn-hire-vitable {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-hire-vitable:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55);
+    }
+
+    .btn-visit-vitable {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-visit-vitable:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    /* -------------------------------------------
+       SDK Showcase Box inside Central View
+       ------------------------------------------- */
     .sdk-spotlight-box {
-      margin-top: 24px;
       background: linear-gradient(145deg, #0f172a 0%, #1e1b4b 100%);
       border-radius: var(--radius-lg);
       color: white;
@@ -1038,8 +1262,8 @@
     }
 
     /* -------------------------------------------
-         Bottom 4-Column Enterprise Trust Bar
-         ------------------------------------------- */
+       Bottom 4-Column Enterprise Trust Bar
+       ------------------------------------------- */
     .bottom-trust-section {
       max-width: 1320px;
       margin: 0 auto 50px;
@@ -1090,15 +1314,37 @@
     }
 
     /* -------------------------------------------
-         Footer
-         ------------------------------------------- */
+       Footer
+       ------------------------------------------- */
     .site-footer {
       border-top: 1px solid #e2e8f0;
       background: white;
-      padding: 32px 24px;
+      padding: 40px 24px 32px;
       text-align: center;
       font-size: 13px;
       color: #64748b;
+    }
+
+    .footer-brand-logo {
+      height: 32px;
+      width: auto;
+      margin: 0 auto 12px;
+      display: block;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+
+    .footer-hire-link {
+      display: inline-block;
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: underline;
+      margin-bottom: 16px;
+      font-size: 14px;
     }
 
     .site-footer a {
@@ -1109,6 +1355,54 @@
 
     .site-footer a:hover {
       text-decoration: underline;
+    }
+
+    /* Floating Promotional Pill */
+    .floating-promo-pill {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 999;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 9999px;
+      padding: 10px 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .floating-promo-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+      background: #1e1b4b;
+      border-color: #6366f1;
+    }
+
+    .floating-promo-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+      animation: pulse-ring 2s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
     /* Toast */
@@ -1136,8 +1430,8 @@
     }
 
     /* -------------------------------------------
-         Responsive Breakpoints
-         ------------------------------------------- */
+       Responsive Breakpoints
+       ------------------------------------------- */
     @media (max-width: 1180px) {
       .playground-layout {
         grid-template-columns: 1fr;
@@ -1150,11 +1444,15 @@
 
       .side-features-col {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       }
 
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .floating-promo-pill {
+        display: none;
       }
     }
 
@@ -1187,20 +1485,37 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .vitable-banner-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .vitable-banner-actions {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Top Marketing Announcement Banner -->
+  <div class="top-promo-banner">
+    <div class="top-promo-container">
+      <span class="promo-badge-glow">🚀 VITABLETECH ENGINEERING</span>
+      <span class="promo-text">Need custom Google Business Profile integrations, franchise automation, or bespoke AI apps?</span>
+      <a href="https://vitabletech.in/#contact" target="_blank" class="promo-cta-link">
+        Book Free Discovery Call ➔
+      </a>
+    </div>
+  </div>
+
   <!-- Top Enterprise Navigation -->
   <header class="top-navbar">
     <div class="nav-container">
-      <a href="https://vitabletech.in/" target="_blank" class="nav-brand">
-        <div class="brand-logo-icon">V</div>
-        <div class="brand-titles">
-          <div class="brand-name">Vitable<span class="tech">Tech</span></div>
-          <div class="brand-motto">Transparency | Trust | Growth</div>
-        </div>
+      <!-- Real VitableTech Logo -->
+      <a href="https://vitabletech.in/" target="_blank" class="nav-brand" title="VitableTech — Transparency | Trust | Growth">
+        <img src="/images/vitabletech-logo.svg" alt="VitableTech Logo" class="brand-logo-img" />
       </a>
 
       <nav class="nav-pills">
@@ -1223,8 +1538,8 @@
         <a href="/api-docs" target="_blank" class="btn-nav-outline">
           Interactive Docs
         </a>
-        <a href="https://vitabletech.in/" target="_blank" class="btn-nav-primary">
-          <span>Get Started Free</span> ➔
+        <a href="https://vitabletech.in/#contact" target="_blank" class="btn-nav-primary">
+          <span>Hire VitableTech</span> ➔
         </a>
       </div>
     </div>
@@ -1233,20 +1548,21 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-badge-pill">
-      <span>⚡ Enterprise-Grade GBP API Platform</span>
+      <span>⚡ Enterprise-Grade GBP API Platform by VitableTech</span>
     </div>
     <h1 class="hero-title">
       Google Business Profile <span class="gradient-text">API Explorer</span>
     </h1>
     <p class="hero-subtitle">
       Test, explore, and manage the Google Business Profile API with a powerful, developer-friendly interface.
-      Built for agencies, developers, and enterprises to manage locations, reviews, posts, and more — at scale.
+      Built by <a href="https://vitabletech.in/" target="_blank" style="color: #4f46e5; font-weight: 700; text-decoration: underline;">VitableTech</a>
+      for agencies, developers, and enterprises to manage locations, reviews, posts, and more — at scale.
     </p>
   </section>
 
   <!-- Main Flanked 3-Column Playground Layout -->
   <main class="playground-layout">
-    <!-- Left Column: Feature Navigation Badges -->
+    <!-- Left Column: Feature Navigation Badges & Sidebar Ad -->
     <aside class="side-features-col">
       <a href="/api-docs" target="_blank" class="feature-pill-card">
         <div class="feature-pill-icon">&lt;/&gt;</div>
@@ -1287,6 +1603,21 @@
           <div class="feature-pill-sub">Type-safe with auto-pagination</div>
         </div>
       </a>
+
+      <!-- Left Sidebar Marketing Ad for VitableTech -->
+      <div class="sidebar-marketing-ad">
+        <div class="ad-tag-pill">Sponsored</div>
+        <div class="ad-card-head">
+          <img src="/images/vitabletech-symbol.svg" alt="VitableTech" width="20" height="20" />
+          <span>VitableTech Services</span>
+        </div>
+        <p class="ad-card-text">
+          Need a custom Google Business Profile integration, automated review response bot, or custom franchise dashboard?
+        </p>
+        <a href="https://vitabletech.in/#contact" target="_blank" class="ad-card-cta">
+          Hire Our Team ➔
+        </a>
+      </div>
     </aside>
 
     <!-- Center Column: Main Interactive Console Window -->
@@ -1324,8 +1655,7 @@
       <div class="console-body">
         <div class="console-subhead">
           <h2>🏪 Google Business Profile API Explorer</h2>
-          <p>Test and interact with all Google Business Profile API endpoints. Authenticate, configure, and make real
-            API calls with instant responses.</p>
+          <p>Test and interact with all Google Business Profile API endpoints. Authenticate, configure, and make real API calls with instant responses.</p>
         </div>
 
         <!-- Console Tabs Switcher -->
@@ -1337,7 +1667,7 @@
             <a href="/api-docs" target="_blank" class="tab-btn">
               <span>&lt;/&gt;</span> Test Endpoints
             </a>
-            <a href="https://gbp-playground.vitabletech.in/api-docs/" target="_blank" class="tab-btn">
+            <a href="https://gbp.vitabletech.in/guide/quickstart" target="_blank" class="tab-btn">
               <span>📋</span> Sample Requests
             </a>
           </div>
@@ -1373,8 +1703,12 @@
               </div>
               <div class="input-with-icon">
                 <span class="input-icon-prefix">🔑</span>
-                <input type="text" id="clientIdInput" class="text-input"
-                  placeholder="Enter your Google OAuth Client ID" />
+                <input
+                  type="text"
+                  id="clientIdInput"
+                  class="text-input"
+                  placeholder="Enter your Google OAuth Client ID"
+                />
               </div>
             </div>
 
@@ -1385,8 +1719,12 @@
               </div>
               <div class="input-with-icon">
                 <span class="input-icon-prefix">🔒</span>
-                <input type="password" id="clientSecretInput" class="text-input"
-                  placeholder="Enter your Client Secret" />
+                <input
+                  type="password"
+                  id="clientSecretInput"
+                  class="text-input"
+                  placeholder="Enter your Client Secret"
+                />
                 <button type="button" class="toggle-secret-btn" onclick="toggleSecretVisibility()">
                   <span id="toggleSecretText">Show</span>
                 </button>
@@ -1403,22 +1741,26 @@
             <div class="redirect-input-group">
               <div class="input-with-icon" style="flex: 1;">
                 <span class="input-icon-prefix">🌐</span>
-                <input type="text" id="redirectUriInput" class="redirect-input"
-                  value="https://gbp-playground.vitabletech.in/auth/google/callback" readonly />
+                <input
+                  type="text"
+                  id="redirectUriInput"
+                  class="redirect-input"
+                  value="https://gbp-playground.vitabletech.in/auth/google/callback"
+                  readonly
+                />
               </div>
               <script data-cfasync="false">
                 try {
                   document.getElementById('redirectUriInput').value =
                     window.location.origin + '/auth/google/callback';
-                } catch (e) { }
+                } catch (e) {}
               </script>
               <button type="button" class="btn-copy" onclick="copyRedirectUri()">
                 <span id="copyIcon">📋</span> <span id="copyText">Copy URI</span>
               </button>
             </div>
             <p class="field-help-hint">
-              ℹ️ Paste into Google Cloud Console ➔ <strong>APIs &amp; Services ➔ Credentials ➔ Authorized redirect
-                URIs</strong>.
+              ℹ️ Paste into Google Cloud Console ➔ <strong>APIs &amp; Services ➔ Credentials ➔ Authorized redirect URIs</strong>.
             </p>
           </div>
 
@@ -1426,8 +1768,7 @@
           <div class="form-group" style="margin-bottom: 20px;">
             <label class="form-label" for="scopeSelect">API Scope</label>
             <select id="scopeSelect" class="scope-select">
-              <option value="https://www.googleapis.com/auth/business.manage">
-                https://www.googleapis.com/auth/business.manage (Full GBP Management)</option>
+              <option value="https://www.googleapis.com/auth/business.manage">https://www.googleapis.com/auth/business.manage (Full GBP Management)</option>
             </select>
           </div>
 
@@ -1462,6 +1803,33 @@
           </div>
         </div>
 
+        <!-- Mid-Page High-Conversion Ad Banner for VitableTech -->
+        <div class="vitable-marketing-banner">
+          <div class="vitable-banner-flex">
+            <div class="vitable-banner-info">
+              <span class="vitable-banner-tag">⚡ WORK WITH THE CREATORS</span>
+              <h3 class="vitable-banner-title">Need Custom Google Business Profile Engineering?</h3>
+              <p class="vitable-banner-desc">
+                Whether you are an agency managing hundreds of client locations, a multi-unit franchise scaling operations, or a SaaS platform needing custom Google Cloud integrations — the engineering team at <strong>VitableTech</strong> can build it for you.
+              </p>
+              <div class="vitable-banner-perks">
+                <span>✓ Custom API Integrations</span>
+                <span>✓ Multi-Location GBP Automation</span>
+                <span>✓ AI Review Response Bots</span>
+                <span>✓ Dedicated Engineering Support</span>
+              </div>
+            </div>
+            <div class="vitable-banner-actions">
+              <a href="https://vitabletech.in/#contact" target="_blank" class="btn-hire-vitable">
+                Hire VitableTech Team ➔
+              </a>
+              <a href="https://vitabletech.in/" target="_blank" class="btn-visit-vitable">
+                Explore VitableTech.in
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Enterprise Spotlight: Powered by @vitabletech/gbp-sdk -->
         <div class="sdk-spotlight-box">
           <div class="sdk-spotlight-header">
@@ -1470,8 +1838,7 @@
           </div>
           <h3 class="sdk-spotlight-title">Powered by @vitabletech/gbp-sdk</h3>
           <p class="sdk-spotlight-desc">
-            Production-tested TypeScript SDK for Google Business Profile. Handles auto-token refresh, Performance API v1
-            time series, and multi-location pagination out of the box.
+            Production-tested TypeScript SDK for Google Business Profile. Handles auto-token refresh, Performance API v1 time series, and multi-location pagination out of the box.
           </p>
 
           <div class="sdk-grid">
@@ -1489,7 +1856,7 @@
             </div>
             <div class="sdk-grid-item">
               <div class="sdk-grid-title">🛡️ Strict TypeScript</div>
-              <div class="sdk-grid-desc">100% typed request & response interfaces for seamless autocomplete.</div>
+              <div class="sdk-grid-desc">100% typed request &amp; response interfaces for seamless autocomplete.</div>
             </div>
           </div>
 
@@ -1500,7 +1867,7 @@
             <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank" class="btn-sdk-npm">
               View on npm (v1.3.0)
             </a>
-            <a href="https://vitabletech.in/" target="_blank" class="btn-sdk-npm">
+            <a href="https://vitabletech.in/#contact" target="_blank" class="btn-sdk-npm">
               Hire VitableTech Team
             </a>
           </div>
@@ -1508,27 +1875,22 @@
       </div>
     </section>
 
-    <!-- Right Column: 3D Visual & Checklist Card -->
+    <!-- Right Column: 3D Visual, Checklist & Growth Ad Card -->
     <aside class="side-checklist-col">
       <div class="storefront-card">
-        <!-- Scalable SVG Illustration of Google Business Profile Storefront & Analytics -->
         <svg class="storefront-visual" viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="25" y="55" width="110" height="70" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="2" />
-          <!-- Store Awning with Google Brand Colors -->
           <path d="M20 55 L35 25 L50 55 Z" fill="#4285F4" />
           <path d="M50 55 L65 25 L80 55 Z" fill="#EA4335" />
           <path d="M80 55 L95 25 L110 55 Z" fill="#FBBC05" />
           <path d="M110 55 L125 25 L140 55 Z" fill="#34A853" />
-          <!-- Store Door and Window -->
           <rect x="65" y="80" width="30" height="45" rx="3" fill="#3B82F6" />
           <rect x="35" y="75" width="22" height="25" rx="2" fill="#E2E8F0" />
           <rect x="103" y="75" width="22" height="25" rx="2" fill="#E2E8F0" />
-          <!-- Location Pin with Pulse -->
           <circle cx="125" cy="22" r="14" fill="#EA4335" opacity="0.15" />
           <path d="M125 10 C120 10 116 14 116 19 C116 26 125 35 125 35 C125 35 134 26 134 19 C134 14 130 10 125 10 Z"
             fill="#EA4335" />
           <circle cx="125" cy="18" r="3" fill="white" />
-          <!-- Upward Trend Chart Badge -->
           <rect x="95" y="90" width="50" height="36" rx="6" fill="#FFFFFF" stroke="#CBD5E1"
             filter="drop-shadow(0 4px 6px rgba(0,0,0,0.06))" />
           <rect x="102" y="110" width="6" height="10" rx="1" fill="#818CF8" />
@@ -1565,6 +1927,20 @@
           </li>
         </ul>
       </div>
+
+      <!-- Right Sidebar Growth Ad Card -->
+      <div class="sidebar-marketing-ad right-ad">
+        <div class="ad-tag-pill growth">Growth Partner</div>
+        <div class="ad-card-head">
+          <span>🚀 Multi-Location Portals</span>
+        </div>
+        <p class="ad-card-text">
+          Managing 50+ business locations? VitableTech designs custom white-label portals with automated posting and reviews.
+        </p>
+        <a href="https://vitabletech.in/#contact" target="_blank" class="ad-card-cta">
+          Talk to an Engineer ➔
+        </a>
+      </div>
     </aside>
   </main>
 
@@ -1583,7 +1959,7 @@
         <div class="trust-icon-box">🏢</div>
         <div>
           <div class="trust-title">Enterprise Ready</div>
-          <div class="trust-desc">Built for marketing agencies, multi-brand chains & SaaS platforms.</div>
+          <div class="trust-desc">Built for marketing agencies, multi-brand chains &amp; SaaS platforms.</div>
         </div>
       </div>
 
@@ -1607,26 +1983,40 @@
 
   <!-- Footer -->
   <footer class="site-footer">
+    <a href="https://vitabletech.in/" target="_blank" title="VitableTech — Transparency | Trust | Growth">
+      <img src="/images/vitabletech-logo.svg" alt="VitableTech" class="footer-brand-logo" />
+    </a>
+    <p class="footer-tagline">
+      Enterprise Cloud &amp; Google API Solutions &bull; Built with transparency, trust, and engineered for growth.
+    </p>
     <p>
-      Google Business Profile API Explorer • Engineered by
-      <a href="https://vitabletech.in/" target="_blank">VitableTech</a>
+      <a href="https://vitabletech.in/#contact" target="_blank" class="footer-hire-link">
+        Have a project in mind? Hire the VitableTech Engineering Team ➔
+      </a>
     </p>
     <p style="margin-top: 8px; font-size: 12px; color: #94a3b8;">
       <a href="https://gbp.vitabletech.in/" target="_blank">SDK Documentation</a> &nbsp;•&nbsp;
-      <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank">npm Registry (v1.3.0)</a>
-      &nbsp;•&nbsp;
+      <a href="https://www.npmjs.com/package/@vitabletech/gbp-sdk" target="_blank">npm Registry (v1.3.0)</a> &nbsp;•&nbsp;
       <a href="https://github.com/vitabletech/gbp-sdk" target="_blank">GitHub</a> &nbsp;•&nbsp;
       <a href="/api-docs" target="_blank">Swagger API Explorer</a> &nbsp;•&nbsp;
-      <a href="https://vitabletech.in/" target="_blank">Vitabletech.in</a>
+      <a href="https://vitabletech.in/" target="_blank">VitableTech.in</a>
     </p>
   </footer>
+
+  <!-- Floating Sticky Promotional Pill (Bottom Left) -->
+  <div class="floating-promo-pill">
+    <a href="https://vitabletech.in/#contact" target="_blank" class="floating-promo-link">
+      <span class="pulse-dot"></span>
+      <span>Need Custom GBP APIs? Hire VitableTech</span>
+      <span>➔</span>
+    </a>
+  </div>
 
   <!-- Toast Notification -->
   <div id="toast" class="toast-msg">Action completed successfully</div>
 
   <!-- Application Script Logic -->
   <script data-cfasync="false">
-    // Computes current active redirect URI based on window location
     function getActiveRedirectUri() {
       return window.location.origin + '/auth/google/callback';
     }
@@ -1761,7 +2151,6 @@
 
     // Initialize on load (supports deferred and Cloudflare Rocket Loader execution)
     async function initializeApp() {
-      // Set dynamic redirect URI
       const activeUri = getActiveRedirectUri();
       const redirectInput = document.getElementById('redirectUriInput');
       if (redirectInput) {
@@ -1783,7 +2172,6 @@
         document.getElementById('clientSecretInput').value = storedClientSecret;
       }
 
-      // Check backend auth status
       checkAuthStatus();
     }
 

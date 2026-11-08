@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Business Profile API Explorer | Swagger UI</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <title>Google Business Profile API Explorer | Swagger UI &bull; VitableTech</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui.min.css" />
     <style>
       html {
@@ -22,24 +23,29 @@
       .swagger-ui .topbar {
         display: none !important;
       }
+      
+      /* Branded Top Header */
       .custom-swagger-header {
         background: #0f172a;
         color: white;
-        padding: 14px 24px;
+        padding: 12px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid #1e293b;
         box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        flex-wrap: wrap;
+        gap: 12px;
       }
-      .custom-swagger-header a {
-        color: white;
-        text-decoration: none;
+      .custom-swagger-header .brand-area {
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        font-size: 15px;
+        gap: 14px;
+      }
+      .custom-swagger-header .brand-logo-img {
+        height: 32px;
+        width: auto;
+        display: block;
       }
       .custom-swagger-header .badge {
         background: #4f46e5;
@@ -50,31 +56,186 @@
         font-weight: 700;
         letter-spacing: 0.3px;
       }
+      .header-right-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
       .back-to-playground {
         background: rgba(255, 255, 255, 0.12);
         color: #f8fafc !important;
-        padding: 8px 16px;
+        padding: 7px 14px;
         border-radius: 6px;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
         transition: all 0.2s;
         border: 1px solid rgba(255, 255, 255, 0.2);
+        text-decoration: none;
       }
       .back-to-playground:hover {
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .btn-hire-top {
+        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        color: white !important;
+        padding: 7px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+      }
+      .btn-hire-top:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+      }
+
+      /* Marketing Promotional Strip */
+      .swagger-marketing-strip {
+        background: linear-gradient(90deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+        color: white;
+        padding: 10px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .strip-container {
+        max-width: 1360px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+      .strip-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #e0e7ff;
+      }
+      .strip-pill {
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        color: #0f172a;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .strip-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .strip-btn-cta {
+        background: #38bdf8;
+        color: #0f172a;
+        padding: 5px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .strip-btn-cta:hover {
+        background: #7dd3fc;
+      }
+      .strip-btn-link {
+        color: #cbd5e1;
+        text-decoration: underline;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .strip-btn-link:hover {
+        color: white;
+      }
+
+      /* Floating Promotional Pill */
+      .floating-promo-pill {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        z-index: 999;
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 9999px;
+        padding: 10px 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+      }
+      .floating-promo-pill:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+        background: #1e1b4b;
+        border-color: #6366f1;
+      }
+      .floating-promo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+        animation: pulse-ring 2s infinite;
+      }
+      @keyframes pulse-ring {
+        0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+        70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
       }
     </style>
   </head>
   <body>
+    <!-- Top Branded Header with Real Logo -->
     <header class="custom-swagger-header">
-      <a href="/">
-        <span>⚡ VitableTech &bull; Google Business Profile API Explorer</span>
-        <span class="badge">v1.3.0 SDK</span>
-      </a>
-      <a href="/" class="back-to-playground">← Back to Playground</a>
+      <div class="brand-area">
+        <a href="https://vitabletech.in/" target="_blank" title="VitableTech — Transparency | Trust | Growth">
+          <img src="/images/vitabletech-logo.svg" alt="VitableTech Logo" class="brand-logo-img" />
+        </a>
+        <span class="badge">GBP API Explorer &bull; v1.3.0</span>
+      </div>
+      <div class="header-right-actions">
+        <a href="/" class="back-to-playground">← Back to Playground</a>
+        <a href="https://vitabletech.in/#contact" target="_blank" class="btn-hire-top">Hire VitableTech ➔</a>
+      </div>
     </header>
 
+    <!-- Marketing Promotional Strip -->
+    <div class="swagger-marketing-strip">
+      <div class="strip-container">
+        <div class="strip-text">
+          <span class="strip-pill">🚀 ENTERPRISE PARTNER</span>
+          <span>Need custom Google Business Profile workflows, AI review automations, or high-scale multi-location software?</span>
+        </div>
+        <div class="strip-actions">
+          <a href="https://vitabletech.in/#contact" target="_blank" class="strip-btn-cta">Talk to VitableTech Engineers ➔</a>
+          <a href="https://vitabletech.in/" target="_blank" class="strip-btn-link">Visit VitableTech.in</a>
+        </div>
+      </div>
+    </div>
+
     <div id="swagger-ui"></div>
+
+    <!-- Floating Lead Magnet -->
+    <div class="floating-promo-pill">
+      <a href="https://vitabletech.in/#contact" target="_blank" class="floating-promo-link">
+        <span class="pulse-dot"></span>
+        <span>Need Custom GBP APIs? Hire VitableTech</span>
+        <span>➔</span>
+      </a>
+    </div>
 
     <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui-bundle.min.js"></script>
     <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui-standalone-preset.min.js"></script>
