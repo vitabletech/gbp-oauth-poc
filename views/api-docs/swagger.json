@@ -1,11 +1,19 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Google Business Profile OAuth POC",
-    "version": "1.0.0",
-    "description": "API documentation for Google Business Profile OAuth 2.0 sample application."
+    "title": "Google Business Profile API Explorer",
+    "version": "1.3.0",
+    "description": "Interactive API documentation for Google Business Profile endpoints powered by @vitabletech/gbp-sdk by VitableTech."
   },
   "servers": [
+    {
+      "url": "/",
+      "description": "Current Origin (Production / Local)"
+    },
+    {
+      "url": "https://gbp-playground.vitabletech.in",
+      "description": "Production (gbp-playground.vitabletech.in)"
+    },
     {
       "url": "http://localhost:3000",
       "description": "Local development server"
